@@ -46,14 +46,71 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BorrowDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BorrowDetails.Designer.cs">
+      <DependentUpon>BorrowDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BorrowItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BorrowItems.Designer.cs">
+      <DependentUpon>BorrowItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddItem.Designer.cs">
+      <DependentUpon>AddItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReturnItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReturnItems.Designer.cs">
+      <DependentUpon>ReturnItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReturnDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReturnDetails.Designer.cs">
+      <DependentUpon>ReturnDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoundPanel2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RoundedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MainDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainDashboard.Designer.cs">
+      <DependentUpon>MainDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BorrowDetails.resx">
+      <DependentUpon>BorrowDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BorrowItems.resx">
+      <DependentUpon>BorrowItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddItem.resx">
+      <DependentUpon>AddItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainDashboard.resx">
+      <DependentUpon>MainDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +119,14 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReturnDetails.resx">
+      <DependentUpon>ReturnDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReturnItems.resx">
+      <DependentUpon>ReturnItems.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +139,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\PUP Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\CSC Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\ArrowDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\Borrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\Return.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\Supplies.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\Outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\clipboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\time-left.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
