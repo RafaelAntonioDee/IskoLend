@@ -7,10 +7,10 @@ using IskoLendModels;
 
 namespace IskoLendDataManagement
 {
-    public class BorrowingRecordDataService
+    public class DashboardDataService
     {
         List<BorrowingRecord> borrowingRecords = new List<BorrowingRecord>();
-        public BorrowingRecordDataService()
+        public DashboardDataService()
         {
             BorrowingRecord borrowingRecord1 = new BorrowingRecord { BorrowID = "B0001", StudentID = "2023-02199-BN-0", FacilitatorID = "S001", BorrowedDate = DateTime.Now, StatusID = 1, DateCompleted = null };
 

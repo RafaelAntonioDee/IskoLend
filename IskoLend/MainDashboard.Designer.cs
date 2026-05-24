@@ -838,7 +838,7 @@
             this.cmbBorrowStatus.FormattingEnabled = true;
             this.cmbBorrowStatus.Location = new System.Drawing.Point(366, 109);
             this.cmbBorrowStatus.Name = "cmbBorrowStatus";
-            this.cmbBorrowStatus.Size = new System.Drawing.Size(107, 28);
+            this.cmbBorrowStatus.Size = new System.Drawing.Size(107, 24);
             this.cmbBorrowStatus.TabIndex = 38;
             // 
             // cmbBorrowDate
@@ -848,7 +848,7 @@
             this.cmbBorrowDate.FormattingEnabled = true;
             this.cmbBorrowDate.Location = new System.Drawing.Point(253, 109);
             this.cmbBorrowDate.Name = "cmbBorrowDate";
-            this.cmbBorrowDate.Size = new System.Drawing.Size(107, 28);
+            this.cmbBorrowDate.Size = new System.Drawing.Size(107, 24);
             this.cmbBorrowDate.TabIndex = 37;
             // 
             // txtSearchBorrow
@@ -856,7 +856,7 @@
             this.txtSearchBorrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchBorrow.Location = new System.Drawing.Point(20, 111);
             this.txtSearchBorrow.Name = "txtSearchBorrow";
-            this.txtSearchBorrow.Size = new System.Drawing.Size(227, 26);
+            this.txtSearchBorrow.Size = new System.Drawing.Size(227, 23);
             this.txtSearchBorrow.TabIndex = 35;
             // 
             // tblBorrowRecord
@@ -1090,7 +1090,7 @@
             this.cmbCategory.FormattingEnabled = true;
             this.cmbCategory.Location = new System.Drawing.Point(253, 109);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(107, 28);
+            this.cmbCategory.Size = new System.Drawing.Size(107, 24);
             this.cmbCategory.TabIndex = 37;
             // 
             // txtSearchSupply
@@ -1098,7 +1098,7 @@
             this.txtSearchSupply.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchSupply.Location = new System.Drawing.Point(20, 111);
             this.txtSearchSupply.Name = "txtSearchSupply";
-            this.txtSearchSupply.Size = new System.Drawing.Size(227, 26);
+            this.txtSearchSupply.Size = new System.Drawing.Size(227, 23);
             this.txtSearchSupply.TabIndex = 35;
             // 
             // tblSupplies
@@ -1209,6 +1209,7 @@
             this.Controls.Add(this.pnlDashboard);
             this.Controls.Add(this.pnlSideBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "MainDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlDashboard.ResumeLayout(false);

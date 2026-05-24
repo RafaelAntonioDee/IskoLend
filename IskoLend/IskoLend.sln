@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IskoLendModels", "..\IskoLe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IskoLendDataManagement", "..\IskoLendDataManagement\IskoLendDataManagement.csproj", "{278E9FF2-92D1-43FE-952D-20E51451299B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isko", "..\Isko\Isko.csproj", "{53855150-9C3E-4F4F-8E62-81F962C75941}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{278E9FF2-92D1-43FE-952D-20E51451299B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{278E9FF2-92D1-43FE-952D-20E51451299B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{278E9FF2-92D1-43FE-952D-20E51451299B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53855150-9C3E-4F4F-8E62-81F962C75941}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53855150-9C3E-4F4F-8E62-81F962C75941}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53855150-9C3E-4F4F-8E62-81F962C75941}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53855150-9C3E-4F4F-8E62-81F962C75941}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
