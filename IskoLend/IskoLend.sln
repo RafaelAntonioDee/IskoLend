@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IskoLend", "IskoLend.csproj", "{42935461-CF23-4901-9D5F-0955075A2C96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IskoLendModels", "..\IskoLendModels\IskoLendModels.csproj", "{55F836E5-093F-42E5-A8C8-67566FE1052C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IskoLendDataManagement", "..\IskoLendDataManagement\IskoLendDataManagement.csproj", "{278E9FF2-92D1-43FE-952D-20E51451299B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isko", "..\Isko\Isko.csproj", "{53855150-9C3E-4F4F-8E62-81F962C75941}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42935461-CF23-4901-9D5F-0955075A2C96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42935461-CF23-4901-9D5F-0955075A2C96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42935461-CF23-4901-9D5F-0955075A2C96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42935461-CF23-4901-9D5F-0955075A2C96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55F836E5-093F-42E5-A8C8-67566FE1052C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55F836E5-093F-42E5-A8C8-67566FE1052C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55F836E5-093F-42E5-A8C8-67566FE1052C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55F836E5-093F-42E5-A8C8-67566FE1052C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{278E9FF2-92D1-43FE-952D-20E51451299B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{278E9FF2-92D1-43FE-952D-20E51451299B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{278E9FF2-92D1-43FE-952D-20E51451299B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{278E9FF2-92D1-43FE-952D-20E51451299B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53855150-9C3E-4F4F-8E62-81F962C75941}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53855150-9C3E-4F4F-8E62-81F962C75941}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53855150-9C3E-4F4F-8E62-81F962C75941}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53855150-9C3E-4F4F-8E62-81F962C75941}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C22C8C27-286D-49B2-A8C6-49BA809DBDDE}
+	EndGlobalSection
+EndGlobal
