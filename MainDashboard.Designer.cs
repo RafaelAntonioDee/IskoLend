@@ -37,6 +37,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label10 = new System.Windows.Forms.Label();
             this.pnlDashboard = new System.Windows.Forms.Panel();
             this.btnViewBorrows = new IskoLend.RoundedPanel();
@@ -46,7 +49,7 @@
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrower = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BorrowQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -110,21 +113,39 @@
             this.pnlSupplies = new System.Windows.Forms.Panel();
             this.btnAdd = new IskoLend.RoundedPanel();
             this.label29 = new System.Windows.Forms.Label();
-            this.roundedPanel3 = new IskoLend.RoundedPanel();
-            this.btnEdit = new System.Windows.Forms.Label();
+            this.btnEdit = new IskoLend.RoundedPanel();
+            this.lbl28 = new System.Windows.Forms.Label();
             this.btnViewLogs = new IskoLend.RoundedPanel();
             this.label13 = new System.Windows.Forms.Label();
-            this.roundedPanel2 = new IskoLend.RoundedPanel();
-            this.btnRemove = new System.Windows.Forms.Label();
+            this.btnRemove = new IskoLend.RoundedPanel();
+            this.lbl29 = new System.Windows.Forms.Label();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.txtSearchSupply = new System.Windows.Forms.TextBox();
             this.tblSupplies = new System.Windows.Forms.DataGridView();
             this.SupplyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label25 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
+            this.pnlFacilitators = new System.Windows.Forms.Panel();
+            this.cmbActive = new System.Windows.Forms.ComboBox();
+            this.btnAddFaci = new IskoLend.RoundedPanel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.btnEditFaci = new IskoLend.RoundedPanel();
+            this.label28 = new System.Windows.Forms.Label();
+            this.btnRemoveFaci = new IskoLend.RoundedPanel();
+            this.label31 = new System.Windows.Forms.Label();
+            this.cmbPosition = new System.Windows.Forms.ComboBox();
+            this.txtSearchFacilitator = new System.Windows.Forms.TextBox();
+            this.tblFacilitators = new System.Windows.Forms.DataGridView();
+            this.FacilitatorID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.pnlDashboard.SuspendLayout();
             this.btnViewBorrows.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblBorrowSummary)).BeginInit();
@@ -154,10 +175,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblBorrowRecord)).BeginInit();
             this.pnlSupplies.SuspendLayout();
             this.btnAdd.SuspendLayout();
-            this.roundedPanel3.SuspendLayout();
+            this.btnEdit.SuspendLayout();
             this.btnViewLogs.SuspendLayout();
-            this.roundedPanel2.SuspendLayout();
+            this.btnRemove.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblSupplies)).BeginInit();
+            this.pnlFacilitators.SuspendLayout();
+            this.btnAddFaci.SuspendLayout();
+            this.btnEditFaci.SuspendLayout();
+            this.btnRemoveFaci.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblFacilitators)).BeginInit();
             this.SuspendLayout();
             // 
             // label10
@@ -258,7 +284,7 @@
             this.Date,
             this.Borrower,
             this.Item,
-            this.Type,
+            this.BorrowQty,
             this.Status});
             this.tblBorrowSummary.Enabled = false;
             this.tblBorrowSummary.EnableHeadersVisualStyles = false;
@@ -296,12 +322,12 @@
             this.Item.Name = "Item";
             this.Item.ReadOnly = true;
             // 
-            // Type
+            // BorrowQty
             // 
-            this.Type.HeaderText = "Type";
-            this.Type.MinimumWidth = 6;
-            this.Type.Name = "Type";
-            this.Type.ReadOnly = true;
+            this.BorrowQty.HeaderText = "Quantity";
+            this.BorrowQty.MinimumWidth = 6;
+            this.BorrowQty.Name = "BorrowQty";
+            this.BorrowQty.ReadOnly = true;
             // 
             // Status
             // 
@@ -527,7 +553,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(436, 47);
             this.label11.TabIndex = 6;
-            this.label11.Text = "Overview of supplies transactions and status";
+            this.label11.Text = "Overview of supplies transactions and status.";
             // 
             // pnlSideBar
             // 
@@ -558,6 +584,7 @@
             this.btnFacilitators.Name = "btnFacilitators";
             this.btnFacilitators.Size = new System.Drawing.Size(146, 39);
             this.btnFacilitators.TabIndex = 15;
+            this.btnFacilitators.Click += new System.EventHandler(this.btnFacilitators_Click);
             // 
             // pictureBox8
             // 
@@ -580,6 +607,7 @@
             this.label9.Size = new System.Drawing.Size(88, 20);
             this.label9.TabIndex = 12;
             this.label9.Text = "Facilitators";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // btnSupplies
             // 
@@ -985,9 +1013,9 @@
             // 
             this.pnlSupplies.BackColor = System.Drawing.SystemColors.Control;
             this.pnlSupplies.Controls.Add(this.btnAdd);
-            this.pnlSupplies.Controls.Add(this.roundedPanel3);
+            this.pnlSupplies.Controls.Add(this.btnEdit);
             this.pnlSupplies.Controls.Add(this.btnViewLogs);
-            this.pnlSupplies.Controls.Add(this.roundedPanel2);
+            this.pnlSupplies.Controls.Add(this.btnRemove);
             this.pnlSupplies.Controls.Add(this.cmbCategory);
             this.pnlSupplies.Controls.Add(this.txtSearchSupply);
             this.pnlSupplies.Controls.Add(this.tblSupplies);
@@ -1007,6 +1035,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(96, 32);
             this.btnAdd.TabIndex = 41;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label29
             // 
@@ -1019,27 +1048,30 @@
             this.label29.TabIndex = 12;
             this.label29.Text = "Add";
             this.label29.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // roundedPanel3
-            // 
-            this.roundedPanel3.BackColor = System.Drawing.Color.Orange;
-            this.roundedPanel3.Controls.Add(this.btnEdit);
-            this.roundedPanel3.Location = new System.Drawing.Point(700, 105);
-            this.roundedPanel3.Name = "roundedPanel3";
-            this.roundedPanel3.Size = new System.Drawing.Size(96, 32);
-            this.roundedPanel3.TabIndex = 40;
+            this.label29.Click += new System.EventHandler(this.label29_Click);
             // 
             // btnEdit
             // 
-            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(3, 6);
+            this.btnEdit.BackColor = System.Drawing.Color.Orange;
+            this.btnEdit.Controls.Add(this.lbl28);
+            this.btnEdit.Location = new System.Drawing.Point(700, 105);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(90, 22);
-            this.btnEdit.TabIndex = 12;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEdit.Size = new System.Drawing.Size(96, 32);
+            this.btnEdit.TabIndex = 40;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // lbl28
+            // 
+            this.lbl28.BackColor = System.Drawing.Color.Transparent;
+            this.lbl28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl28.ForeColor = System.Drawing.Color.White;
+            this.lbl28.Location = new System.Drawing.Point(3, 6);
+            this.lbl28.Name = "lbl28";
+            this.lbl28.Size = new System.Drawing.Size(90, 22);
+            this.lbl28.TabIndex = 12;
+            this.lbl28.Text = "Edit";
+            this.lbl28.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl28.Click += new System.EventHandler(this.lbl28_Click);
             // 
             // btnViewLogs
             // 
@@ -1049,6 +1081,7 @@
             this.btnViewLogs.Name = "btnViewLogs";
             this.btnViewLogs.Size = new System.Drawing.Size(124, 32);
             this.btnViewLogs.TabIndex = 37;
+            this.btnViewLogs.Click += new System.EventHandler(this.btnViewLogs_Click);
             // 
             // label13
             // 
@@ -1061,27 +1094,30 @@
             this.label13.TabIndex = 12;
             this.label13.Text = "View Logs";
             this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // roundedPanel2
-            // 
-            this.roundedPanel2.BackColor = System.Drawing.Color.Orange;
-            this.roundedPanel2.Controls.Add(this.btnRemove);
-            this.roundedPanel2.Location = new System.Drawing.Point(802, 105);
-            this.roundedPanel2.Name = "roundedPanel2";
-            this.roundedPanel2.Size = new System.Drawing.Size(96, 32);
-            this.roundedPanel2.TabIndex = 39;
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // btnRemove
             // 
-            this.btnRemove.BackColor = System.Drawing.Color.Transparent;
-            this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemove.ForeColor = System.Drawing.Color.White;
-            this.btnRemove.Location = new System.Drawing.Point(3, 6);
+            this.btnRemove.BackColor = System.Drawing.Color.Orange;
+            this.btnRemove.Controls.Add(this.lbl29);
+            this.btnRemove.Location = new System.Drawing.Point(802, 105);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(90, 22);
-            this.btnRemove.TabIndex = 12;
-            this.btnRemove.Text = "Remove";
-            this.btnRemove.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRemove.Size = new System.Drawing.Size(96, 32);
+            this.btnRemove.TabIndex = 39;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // lbl29
+            // 
+            this.lbl29.BackColor = System.Drawing.Color.Transparent;
+            this.lbl29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl29.ForeColor = System.Drawing.Color.White;
+            this.lbl29.Location = new System.Drawing.Point(3, 6);
+            this.lbl29.Name = "lbl29";
+            this.lbl29.Size = new System.Drawing.Size(90, 22);
+            this.lbl29.TabIndex = 12;
+            this.lbl29.Text = "Remove";
+            this.lbl29.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl29.Click += new System.EventHandler(this.lbl29_Click);
             // 
             // cmbCategory
             // 
@@ -1124,7 +1160,7 @@
             this.tblSupplies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SupplyID,
             this.Category,
-            this.Name,
+            this.SupplyName,
             this.Quantity});
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
@@ -1167,10 +1203,10 @@
             // 
             // Name
             // 
-            this.Name.HeaderText = "Name";
-            this.Name.MinimumWidth = 6;
-            this.Name.Name = "Name";
-            this.Name.ReadOnly = true;
+            this.SupplyName.HeaderText = "Name";
+            this.SupplyName.MinimumWidth = 6;
+            this.SupplyName.Name = "Name";
+            this.SupplyName.ReadOnly = true;
             // 
             // Quantity
             // 
@@ -1187,7 +1223,7 @@
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(436, 47);
             this.label25.TabIndex = 6;
-            this.label25.Text = "Track and manage supplies inventory";
+            this.label25.Text = "Track and manage supplies inventory.";
             // 
             // label27
             // 
@@ -1197,13 +1233,235 @@
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(307, 47);
             this.label27.TabIndex = 5;
-            this.label27.Text = "Supplies";
+            this.label27.Text = "Manage Supplies";
+            // 
+            // pnlFacilitators
+            // 
+            this.pnlFacilitators.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlFacilitators.Controls.Add(this.cmbActive);
+            this.pnlFacilitators.Controls.Add(this.btnAddFaci);
+            this.pnlFacilitators.Controls.Add(this.btnEditFaci);
+            this.pnlFacilitators.Controls.Add(this.btnRemoveFaci);
+            this.pnlFacilitators.Controls.Add(this.cmbPosition);
+            this.pnlFacilitators.Controls.Add(this.txtSearchFacilitator);
+            this.pnlFacilitators.Controls.Add(this.tblFacilitators);
+            this.pnlFacilitators.Controls.Add(this.label32);
+            this.pnlFacilitators.Controls.Add(this.label33);
+            this.pnlFacilitators.Location = new System.Drawing.Point(184, 1);
+            this.pnlFacilitators.Name = "pnlFacilitators";
+            this.pnlFacilitators.Size = new System.Drawing.Size(918, 753);
+            this.pnlFacilitators.TabIndex = 42;
+            this.pnlFacilitators.Visible = false;
+            // 
+            // cmbActive
+            // 
+            this.cmbActive.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbActive.FormattingEnabled = true;
+            this.cmbActive.Location = new System.Drawing.Point(366, 109);
+            this.cmbActive.Name = "cmbActive";
+            this.cmbActive.Size = new System.Drawing.Size(107, 28);
+            this.cmbActive.TabIndex = 42;
+            // 
+            // btnAddFaci
+            // 
+            this.btnAddFaci.BackColor = System.Drawing.Color.Orange;
+            this.btnAddFaci.Controls.Add(this.label16);
+            this.btnAddFaci.Location = new System.Drawing.Point(598, 105);
+            this.btnAddFaci.Name = "btnAddFaci";
+            this.btnAddFaci.Size = new System.Drawing.Size(96, 32);
+            this.btnAddFaci.TabIndex = 41;
+            this.btnAddFaci.Click += new System.EventHandler(this.btnAddFaci_Click);
+            // 
+            // label16
+            // 
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(3, 6);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(90, 22);
+            this.label16.TabIndex = 12;
+            this.label16.Text = "Add";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label16.Click += new System.EventHandler(this.label16_Click);
+            // 
+            // btnEditFaci
+            // 
+            this.btnEditFaci.BackColor = System.Drawing.Color.Orange;
+            this.btnEditFaci.Controls.Add(this.label28);
+            this.btnEditFaci.Location = new System.Drawing.Point(700, 105);
+            this.btnEditFaci.Name = "btnEditFaci";
+            this.btnEditFaci.Size = new System.Drawing.Size(96, 32);
+            this.btnEditFaci.TabIndex = 40;
+            this.btnEditFaci.Click += new System.EventHandler(this.btnEditFaci_Click);
+            // 
+            // label28
+            // 
+            this.label28.BackColor = System.Drawing.Color.Transparent;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.White;
+            this.label28.Location = new System.Drawing.Point(3, 6);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(90, 22);
+            this.label28.TabIndex = 12;
+            this.label28.Text = "Edit";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label28.Click += new System.EventHandler(this.label28_Click);
+            // 
+            // btnRemoveFaci
+            // 
+            this.btnRemoveFaci.BackColor = System.Drawing.Color.Orange;
+            this.btnRemoveFaci.Controls.Add(this.label31);
+            this.btnRemoveFaci.Location = new System.Drawing.Point(802, 105);
+            this.btnRemoveFaci.Name = "btnRemoveFaci";
+            this.btnRemoveFaci.Size = new System.Drawing.Size(96, 32);
+            this.btnRemoveFaci.TabIndex = 39;
+            this.btnRemoveFaci.Click += new System.EventHandler(this.btnRemoveFaci_Click);
+            // 
+            // label31
+            // 
+            this.label31.BackColor = System.Drawing.Color.Transparent;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.Color.White;
+            this.label31.Location = new System.Drawing.Point(3, 6);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(90, 22);
+            this.label31.TabIndex = 12;
+            this.label31.Text = "Remove";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label31.Click += new System.EventHandler(this.label31_Click);
+            // 
+            // cmbPosition
+            // 
+            this.cmbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPosition.FormattingEnabled = true;
+            this.cmbPosition.Location = new System.Drawing.Point(253, 109);
+            this.cmbPosition.Name = "cmbPosition";
+            this.cmbPosition.Size = new System.Drawing.Size(107, 28);
+            this.cmbPosition.TabIndex = 37;
+            // 
+            // txtSearchFacilitator
+            // 
+            this.txtSearchFacilitator.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchFacilitator.Location = new System.Drawing.Point(20, 111);
+            this.txtSearchFacilitator.Name = "txtSearchFacilitator";
+            this.txtSearchFacilitator.Size = new System.Drawing.Size(227, 26);
+            this.txtSearchFacilitator.TabIndex = 35;
+            // 
+            // tblFacilitators
+            // 
+            this.tblFacilitators.AllowUserToAddRows = false;
+            this.tblFacilitators.AllowUserToDeleteRows = false;
+            this.tblFacilitators.AllowUserToResizeColumns = false;
+            this.tblFacilitators.AllowUserToResizeRows = false;
+            this.tblFacilitators.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblFacilitators.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.tblFacilitators.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tblFacilitators.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblFacilitators.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.tblFacilitators.ColumnHeadersHeight = 40;
+            this.tblFacilitators.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.tblFacilitators.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FacilitatorID,
+            this.FirstName,
+            this.LastName,
+            this.Position,
+            this.isActive});
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Moccasin;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tblFacilitators.DefaultCellStyle = dataGridViewCellStyle11;
+            this.tblFacilitators.EnableHeadersVisualStyles = false;
+            this.tblFacilitators.GridColor = System.Drawing.Color.DimGray;
+            this.tblFacilitators.Location = new System.Drawing.Point(20, 151);
+            this.tblFacilitators.MultiSelect = false;
+            this.tblFacilitators.Name = "tblFacilitators";
+            this.tblFacilitators.ReadOnly = true;
+            this.tblFacilitators.RowHeadersVisible = false;
+            this.tblFacilitators.RowHeadersWidth = 51;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Moccasin;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            this.tblFacilitators.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.tblFacilitators.RowTemplate.Height = 40;
+            this.tblFacilitators.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tblFacilitators.Size = new System.Drawing.Size(878, 586);
+            this.tblFacilitators.TabIndex = 32;
+            // 
+            // FacilitatorID
+            // 
+            this.FacilitatorID.HeaderText = "FacilitatorID";
+            this.FacilitatorID.MinimumWidth = 6;
+            this.FacilitatorID.Name = "FacilitatorID";
+            this.FacilitatorID.ReadOnly = true;
+            // 
+            // FirstName
+            // 
+            this.FirstName.HeaderText = "First Name";
+            this.FirstName.MinimumWidth = 6;
+            this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
+            // 
+            // LastName
+            // 
+            this.LastName.HeaderText = "Last Name";
+            this.LastName.MinimumWidth = 6;
+            this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = true;
+            // 
+            // Position
+            // 
+            this.Position.HeaderText = "Position";
+            this.Position.MinimumWidth = 6;
+            this.Position.Name = "Position";
+            this.Position.ReadOnly = true;
+            // 
+            // isActive
+            // 
+            this.isActive.HeaderText = "isActive";
+            this.isActive.MinimumWidth = 6;
+            this.isActive.Name = "isActive";
+            this.isActive.ReadOnly = true;
+            // 
+            // label32
+            // 
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.Black;
+            this.label32.Location = new System.Drawing.Point(16, 72);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(436, 47);
+            this.label32.TabIndex = 6;
+            this.label32.Text = "Track and manage active facilitators.";
+            // 
+            // label33
+            // 
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.Maroon;
+            this.label33.Location = new System.Drawing.Point(15, 36);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(307, 47);
+            this.label33.TabIndex = 5;
+            this.label33.Text = "Manage Facilitators";
             // 
             // MainDashboard
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1100, 750);
+            this.Controls.Add(this.pnlFacilitators);
             this.Controls.Add(this.pnlSupplies);
             this.Controls.Add(this.pnlBorrowRecord);
             this.Controls.Add(this.pnlDashboard);
@@ -1242,10 +1500,16 @@
             this.pnlSupplies.ResumeLayout(false);
             this.pnlSupplies.PerformLayout();
             this.btnAdd.ResumeLayout(false);
-            this.roundedPanel3.ResumeLayout(false);
+            this.btnEdit.ResumeLayout(false);
             this.btnViewLogs.ResumeLayout(false);
-            this.roundedPanel2.ResumeLayout(false);
+            this.btnRemove.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tblSupplies)).EndInit();
+            this.pnlFacilitators.ResumeLayout(false);
+            this.pnlFacilitators.PerformLayout();
+            this.btnAddFaci.ResumeLayout(false);
+            this.btnEditFaci.ResumeLayout(false);
+            this.btnRemoveFaci.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tblFacilitators)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1296,11 +1560,6 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.DataGridView tblBorrowSummary;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Borrower;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Item;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.Label label24;
         private RoundedPanel btnViewBorrows;
         private System.Windows.Forms.Label Label26;
@@ -1324,8 +1583,8 @@
         private System.Windows.Forms.Panel pnlSupplies;
         private RoundedPanel btnViewLogs;
         private System.Windows.Forms.Label label13;
-        private RoundedPanel roundedPanel2;
-        private System.Windows.Forms.Label btnRemove;
+        private RoundedPanel btnRemove;
+        private System.Windows.Forms.Label lbl29;
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.TextBox txtSearchSupply;
         private System.Windows.Forms.DataGridView tblSupplies;
@@ -1333,12 +1592,35 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.DataGridViewTextBoxColumn SupplyID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SupplyName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private RoundedPanel btnAdd;
         private System.Windows.Forms.Label label29;
-        private RoundedPanel roundedPanel3;
-        private System.Windows.Forms.Label btnEdit;
+        private RoundedPanel btnEdit;
+        private System.Windows.Forms.Label lbl28;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Borrower;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Item;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BorrowQty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.Panel pnlFacilitators;
+        private RoundedPanel btnAddFaci;
+        private System.Windows.Forms.Label label16;
+        private RoundedPanel btnEditFaci;
+        private System.Windows.Forms.Label label28;
+        private RoundedPanel btnRemoveFaci;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.ComboBox cmbPosition;
+        private System.Windows.Forms.TextBox txtSearchFacilitator;
+        private System.Windows.Forms.DataGridView tblFacilitators;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FacilitatorID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Position;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isActive;
+        private System.Windows.Forms.ComboBox cmbActive;
     }
 }
 

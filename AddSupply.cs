@@ -7,30 +7,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace IskoLend
 {
-    public partial class AddItem : Form
+    public partial class AddSupply : Form
     {
         private int Quantity;
-        private String Item;
+        private string Category;
+        private string Item;
 
-        public AddItem()
+        public AddSupply()
         {
             InitializeComponent();
         }
 
+        private void AddSupply_Load(object sender, EventArgs e)
+        {
+            MaximizeBox = false;
+
+        }
+
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-            if (cmbItem.SelectedIndex == 0)
+            if (cmbCategory.SelectedIndex == 0)
+            {
+                MessageBox.Show("Please enter item category.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (txtItemName.Text == "")
             {
                 MessageBox.Show("Please enter an item.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (txtQty.Text == "")
-            {
-                MessageBox.Show("Please enter quantity.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
             else
             {
                 if (!int.TryParse(txtQty.Text, out Quantity))
@@ -39,20 +46,16 @@ namespace IskoLend
                 }
                 else
                 {
-                    Item = cmbItem.Text;
+                    Item = txtItemName.Text;
+                    Category = cmbCategory.Text;
                     this.Close();
                 }
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void label6_Click(object sender, EventArgs e)
         {
             btnAddItem_Click(sender, e);
-        }
-
-        private void AddItem_Load(object sender, EventArgs e)
-        {
-            MaximizeBox = false;
         }
     }
 }

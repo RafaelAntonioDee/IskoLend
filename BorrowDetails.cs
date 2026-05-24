@@ -23,6 +23,11 @@ namespace IskoLend
 
         private void BorrowDetails_Load(object sender, EventArgs e)
         {
+            cmbBorrowDate.Items.Add("Today");
+            cmbBorrowDate.Items.Add("Yesterday");
+            cmbBorrowDate.Items.Add("Last 7 Days");
+            cmbBorrowDate.Items.Add("This Month");
+
             MaximizeBox = false;
 
             

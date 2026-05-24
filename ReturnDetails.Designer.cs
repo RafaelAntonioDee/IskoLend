@@ -31,15 +31,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tblReturnDetails = new System.Windows.Forms.DataGridView();
-            this.cmbReturnDate = new System.Windows.Forms.ComboBox();
-            this.txtSearchBorrow = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             this.ReturnDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Supply = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FacilitatorID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReturnQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbReturnDate = new System.Windows.Forms.ComboBox();
+            this.txtSearchBorrow = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tblReturnDetails)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,6 +84,43 @@
             this.tblReturnDetails.TabIndex = 40;
             this.tblReturnDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblBorrowRecord_CellContentClick);
             // 
+            // ReturnDetailID
+            // 
+            this.ReturnDetailID.FillWeight = 105F;
+            this.ReturnDetailID.HeaderText = "ReturnDetailID";
+            this.ReturnDetailID.MinimumWidth = 6;
+            this.ReturnDetailID.Name = "ReturnDetailID";
+            this.ReturnDetailID.ReadOnly = true;
+            // 
+            // Supply
+            // 
+            this.Supply.HeaderText = "Supply";
+            this.Supply.MinimumWidth = 6;
+            this.Supply.Name = "Supply";
+            this.Supply.ReadOnly = true;
+            // 
+            // FacilitatorID
+            // 
+            this.FacilitatorID.FillWeight = 102F;
+            this.FacilitatorID.HeaderText = "FacilitatorID";
+            this.FacilitatorID.MinimumWidth = 6;
+            this.FacilitatorID.Name = "FacilitatorID";
+            this.FacilitatorID.ReadOnly = true;
+            // 
+            // ReturnQty
+            // 
+            this.ReturnQty.HeaderText = "ReturnQty";
+            this.ReturnQty.MinimumWidth = 6;
+            this.ReturnQty.Name = "ReturnQty";
+            this.ReturnQty.ReadOnly = true;
+            // 
+            // ReturnDate
+            // 
+            this.ReturnDate.HeaderText = "ReturnDate";
+            this.ReturnDate.MinimumWidth = 6;
+            this.ReturnDate.Name = "ReturnDate";
+            this.ReturnDate.ReadOnly = true;
+            // 
             // cmbReturnDate
             // 
             this.cmbReturnDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -124,43 +161,6 @@
             this.label22.TabIndex = 42;
             this.label22.Text = "Return Details";
             this.label22.Click += new System.EventHandler(this.label22_Click);
-            // 
-            // ReturnDetailID
-            // 
-            this.ReturnDetailID.FillWeight = 105F;
-            this.ReturnDetailID.HeaderText = "ReturnDetailID";
-            this.ReturnDetailID.MinimumWidth = 6;
-            this.ReturnDetailID.Name = "ReturnDetailID";
-            this.ReturnDetailID.ReadOnly = true;
-            // 
-            // Supply
-            // 
-            this.Supply.HeaderText = "Supply";
-            this.Supply.MinimumWidth = 6;
-            this.Supply.Name = "Supply";
-            this.Supply.ReadOnly = true;
-            // 
-            // FacilitatorID
-            // 
-            this.FacilitatorID.FillWeight = 102F;
-            this.FacilitatorID.HeaderText = "FacilitatorID";
-            this.FacilitatorID.MinimumWidth = 6;
-            this.FacilitatorID.Name = "FacilitatorID";
-            this.FacilitatorID.ReadOnly = true;
-            // 
-            // ReturnQty
-            // 
-            this.ReturnQty.HeaderText = "ReturnQty";
-            this.ReturnQty.MinimumWidth = 6;
-            this.ReturnQty.Name = "ReturnQty";
-            this.ReturnQty.ReadOnly = true;
-            // 
-            // ReturnDate
-            // 
-            this.ReturnDate.HeaderText = "ReturnDate";
-            this.ReturnDate.MinimumWidth = 6;
-            this.ReturnDate.Name = "ReturnDate";
-            this.ReturnDate.ReadOnly = true;
             // 
             // ReturnDetails
             // 

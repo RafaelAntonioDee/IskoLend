@@ -64,11 +64,35 @@
     <Compile Include="AddItem.Designer.cs">
       <DependentUpon>AddItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="AddSupply.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AddSupply.Designer.cs">
+      <DependentUpon>AddSupply.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditSupply.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditSupply.Designer.cs">
+      <DependentUpon>EditSupply.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditFacilitator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditFacilitator.Designer.cs">
+      <DependentUpon>EditFacilitator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddFacilitator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddFacilitator.Designer.cs">
+      <DependentUpon>AddFacilitator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupplyLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupplyLogs.Designer.cs">
+      <DependentUpon>SupplyLogs.cs</DependentUpon>
     </Compile>
     <Compile Include="ReturnItems.cs">
       <SubType>Form</SubType>
@@ -96,6 +120,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddFacilitator.resx">
+      <DependentUpon>AddFacilitator.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BorrowDetails.resx">
       <DependentUpon>BorrowDetails.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,8 +132,14 @@
     <EmbeddedResource Include="AddItem.resx">
       <DependentUpon>AddItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="AddSupply.resx">
+      <DependentUpon>AddSupply.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditFacilitator.resx">
+      <DependentUpon>EditFacilitator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditSupply.resx">
+      <DependentUpon>EditSupply.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainDashboard.resx">
       <DependentUpon>MainDashboard.cs</DependentUpon>
@@ -126,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReturnItems.resx">
       <DependentUpon>ReturnItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupplyLogs.resx">
+      <DependentUpon>SupplyLogs.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

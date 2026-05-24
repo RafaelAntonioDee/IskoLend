@@ -38,6 +38,15 @@ namespace IskoLend
             tblBorrowRecord.Rows.Add("test", "test", "test", "test", "test", "test");
             tblBorrowRecord.Rows.Add("test", "test", "test", "test", "test", "test");
 
+            tblSupplies.Rows.Add("test", "test", "test", "test", "test", "test");
+            tblSupplies.Rows.Add("test", "test", "test", "test", "test", "test");
+            tblSupplies.Rows.Add("test", "test", "test", "test", "test", "test");
+            tblSupplies.Rows.Add("test", "test", "test", "test", "test", "test");
+
+            tblFacilitators.Rows.Add("test", "test", "test", "test", true);
+            tblFacilitators.Rows.Add("test", "test", "test", "test", true);
+            tblFacilitators.Rows.Add("test", "test", "test", "test", false);
+            tblFacilitators.Rows.Add("test", "test", "test", "test", false);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -47,8 +56,13 @@ namespace IskoLend
             cmbBorrowDate.Items.Add("Last 7 Days");
             cmbBorrowDate.Items.Add("This Month");
 
+            cmbActive.Items.Add("Active");
+            cmbActive.Items.Add("Inactive");
+
             tblBorrowRecord.ClearSelection();
             tblBorrowSummary.ClearSelection();
+            tblSupplies.ClearSelection();
+            tblFacilitators.ClearSelection();
         }
 
         private void btnBorrowDetails_Click(object sender, EventArgs e)
@@ -81,6 +95,7 @@ namespace IskoLend
             pnlBorrowRecord.Visible = false;
             pnlDashboard.Visible = false;
             pnlSupplies.Visible = false;
+            pnlFacilitators.Visible = false;
 
         }
         private void label6_Click(object sender, EventArgs e)
@@ -143,6 +158,154 @@ namespace IskoLend
             btnSupplies_Click(sender, e);
         }
 
-        
+        private void btnViewLogs_Click(object sender, EventArgs e)
+        {
+            tblSupplies.ClearSelection();
+
+            SupplyLogs form = new SupplyLogs();
+            form.ShowDialog();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            tblSupplies.ClearSelection();
+
+            AddSupply form = new AddSupply();
+            form.ShowDialog();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (tblSupplies.SelectedRows.Count > 0)
+            {
+                tblSupplies.ClearSelection();
+                EditSupply form = new EditSupply();
+                form.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select a supply to edit", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }  
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            if (tblSupplies.SelectedRows.Count > 0)
+            {
+                tblSupplies.ClearSelection();
+
+                DialogResult result = MessageBox.Show("Are you sure you want to remove this item?","Confirmation",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    // proceed
+                }
+                else
+                {
+                    // cancelled
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a supply to delete", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+            btnViewLogs_Click(sender, e);
+        }
+
+        private void label29_Click(object sender, EventArgs e)
+        {
+            btnAdd_Click(sender, e);
+        }
+
+        private void lbl28_Click(object sender, EventArgs e)
+        {
+            btnEdit_Click(sender, e);
+        }
+
+        private void lbl29_Click(object sender, EventArgs e)
+        {
+            btnRemove_Click(sender, e);
+        }
+
+        private void btnAddFaci_Click(object sender, EventArgs e)
+        {
+            tblFacilitators.ClearSelection();
+
+            AddFacilitator form = new AddFacilitator();
+            form.ShowDialog();
+        }
+
+        private void btnEditFaci_Click(object sender, EventArgs e)
+        {
+
+            if (tblFacilitators.SelectedRows.Count > 0)
+            {
+                tblFacilitators.ClearSelection();
+
+                EditFacilitator form = new EditFacilitator();
+                form.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select which facilitator to edit", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnRemoveFaci_Click(object sender, EventArgs e)
+        {
+
+            if (tblFacilitators.SelectedRows.Count > 0)
+            {
+
+                tblFacilitators.ClearSelection();
+
+                DialogResult result = MessageBox.Show("Are you sure you want to remove this facilitator?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    // proceed
+                }
+                else
+                {
+                    // cancelled
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select which facilitator to delete", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+            btnAddFaci_Click(sender, e);
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+            btnEditFaci_Click(sender, e);
+        }
+
+        private void label31_Click(object sender, EventArgs e)
+        {
+            btnRemoveFaci_Click(sender, e);
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            btnFacilitators_Click(sender, e);
+        }
+
+        private void btnFacilitators_Click(object sender, EventArgs e)
+        {
+            CloseAllPanels();
+            pnlFacilitators.Visible = true;
+        }
+
+
     }
 }

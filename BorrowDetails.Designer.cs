@@ -74,7 +74,7 @@
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(436, 47);
             this.label19.TabIndex = 49;
-            this.label19.Text = "Track individual borrowing details";
+            this.label19.Text = "Track individual borrowing details.";
             // 
             // label22
             // 
