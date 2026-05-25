@@ -5,6 +5,10 @@ VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IskoLendInventory", "IskoLendInventory.csproj", "{C3A2D490-6C14-43AB-BFD4-2973B50B61D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IskoLendModel", "..\IskoLendModel\IskoLendModel.csproj", "{DF371425-AAF5-44E9-A04A-20C75099C158}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IskoLendDataManagement", "..\IskoLendDataManagement\IskoLendDataManagement.csproj", "{260655FD-BCA3-4384-9A3A-4E561CA7FD0A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +19,19 @@ Global
 		{C3A2D490-6C14-43AB-BFD4-2973B50B61D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3A2D490-6C14-43AB-BFD4-2973B50B61D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3A2D490-6C14-43AB-BFD4-2973B50B61D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF371425-AAF5-44E9-A04A-20C75099C158}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF371425-AAF5-44E9-A04A-20C75099C158}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF371425-AAF5-44E9-A04A-20C75099C158}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF371425-AAF5-44E9-A04A-20C75099C158}.Release|Any CPU.Build.0 = Release|Any CPU
+		{260655FD-BCA3-4384-9A3A-4E561CA7FD0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{260655FD-BCA3-4384-9A3A-4E561CA7FD0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{260655FD-BCA3-4384-9A3A-4E561CA7FD0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{260655FD-BCA3-4384-9A3A-4E561CA7FD0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {465ADE11-D48B-4D3B-A44A-CC241E9C0701}
 	EndGlobalSection
 EndGlobal

@@ -9,6 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\IskoLendDataManagement\IskoLendDataManagement.csproj" />
+    <ProjectReference Include="..\IskoLendModel\IskoLendModel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="AddFacilitator.cs">
       <SubType>Form</SubType>
     </Compile>

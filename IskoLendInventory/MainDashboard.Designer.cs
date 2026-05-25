@@ -28,1489 +28,1468 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label10 = new System.Windows.Forms.Label();
-            this.pnlDashboard = new System.Windows.Forms.Panel();
-            this.btnViewBorrows = new IskoLendInventory.RoundedPanel();
-            this.Label26 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.tblBorrowSummary = new System.Windows.Forms.DataGridView();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Borrower = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BorrowQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.lblTransactionsDone = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.lblSupplies = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.lblCurrentlyLent = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.lblTotalSupply = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.pnlSideBar = new IskoLendInventory.RoundedPanel();
-            this.btnFacilitators = new IskoLendInventory.RoundedPanel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.btnSupplies = new IskoLendInventory.RoundedPanel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnTransactions = new IskoLendInventory.RoundedPanel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnDashboard = new IskoLendInventory.RoundedPanel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnFacilDropDown = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblFacilitatorID = new System.Windows.Forms.Label();
-            this.lblFacilitatorName = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pnlBorrowRecord = new System.Windows.Forms.Panel();
-            this.btnBorrowDetails = new IskoLendInventory.RoundedPanel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnBorrow = new IskoLendInventory.RoundedPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cmbBorrowStatus = new System.Windows.Forms.ComboBox();
-            this.cmbBorrowDate = new System.Windows.Forms.ComboBox();
-            this.txtSearchBorrow = new System.Windows.Forms.TextBox();
-            this.tblBorrowRecord = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateCompleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.pnlSupplies = new System.Windows.Forms.Panel();
-            this.btnAdd = new IskoLendInventory.RoundedPanel();
-            this.label29 = new System.Windows.Forms.Label();
-            this.btnEdit = new IskoLendInventory.RoundedPanel();
-            this.lbl28 = new System.Windows.Forms.Label();
-            this.btnViewLogs = new IskoLendInventory.RoundedPanel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.btnRemove = new IskoLendInventory.RoundedPanel();
-            this.lbl29 = new System.Windows.Forms.Label();
-            this.cmbCategory = new System.Windows.Forms.ComboBox();
-            this.txtSearchSupply = new System.Windows.Forms.TextBox();
-            this.tblSupplies = new System.Windows.Forms.DataGridView();
-            this.SupplyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.pnlFacilitators = new System.Windows.Forms.Panel();
-            this.cmbActive = new System.Windows.Forms.ComboBox();
-            this.btnAddFaci = new IskoLendInventory.RoundedPanel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.btnEditFaci = new IskoLendInventory.RoundedPanel();
-            this.label28 = new System.Windows.Forms.Label();
-            this.btnRemoveFaci = new IskoLendInventory.RoundedPanel();
-            this.label31 = new System.Windows.Forms.Label();
-            this.cmbPosition = new System.Windows.Forms.ComboBox();
-            this.txtSearchFacilitator = new System.Windows.Forms.TextBox();
-            this.tblFacilitators = new System.Windows.Forms.DataGridView();
-            this.FacilitatorID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.pnlDashboard.SuspendLayout();
-            this.btnViewBorrows.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblBorrowSummary)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            this.pnlSideBar.SuspendLayout();
-            this.btnFacilitators.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.btnSupplies.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.btnTransactions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.btnDashboard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnFacilDropDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnlBorrowRecord.SuspendLayout();
-            this.btnBorrowDetails.SuspendLayout();
-            this.btnBorrow.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblBorrowRecord)).BeginInit();
-            this.pnlSupplies.SuspendLayout();
-            this.btnAdd.SuspendLayout();
-            this.btnEdit.SuspendLayout();
-            this.btnViewLogs.SuspendLayout();
-            this.btnRemove.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblSupplies)).BeginInit();
-            this.pnlFacilitators.SuspendLayout();
-            this.btnAddFaci.SuspendLayout();
-            this.btnEditFaci.SuspendLayout();
-            this.btnRemoveFaci.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblFacilitators)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            label10 = new Label();
+            pnlDashboard = new Panel();
+            btnViewBorrows = new RoundedPanel();
+            Label26 = new Label();
+            label24 = new Label();
+            tblBorrowSummary = new DataGridView();
+            pictureBox15 = new PictureBox();
+            label21 = new Label();
+            lblTransactionsDone = new Label();
+            label23 = new Label();
+            pictureBox16 = new PictureBox();
+            pictureBox13 = new PictureBox();
+            label18 = new Label();
+            lblSupplies = new Label();
+            label20 = new Label();
+            pictureBox14 = new PictureBox();
+            pictureBox11 = new PictureBox();
+            label15 = new Label();
+            lblCurrentlyLent = new Label();
+            label17 = new Label();
+            pictureBox12 = new PictureBox();
+            pictureBox10 = new PictureBox();
+            label14 = new Label();
+            lblTotalSupply = new Label();
+            label12 = new Label();
+            pictureBox9 = new PictureBox();
+            label11 = new Label();
+            Date = new DataGridViewTextBoxColumn();
+            Borrower = new DataGridViewTextBoxColumn();
+            Item = new DataGridViewTextBoxColumn();
+            BorrowQty = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
+            pnlSideBar = new RoundedPanel();
+            btnFacilitators = new RoundedPanel();
+            pictureBox8 = new PictureBox();
+            label9 = new Label();
+            btnSupplies = new RoundedPanel();
+            pictureBox7 = new PictureBox();
+            label8 = new Label();
+            btnTransactions = new RoundedPanel();
+            pictureBox4 = new PictureBox();
+            label3 = new Label();
+            btnDashboard = new RoundedPanel();
+            pictureBox3 = new PictureBox();
+            label2 = new Label();
+            btnFacilDropDown = new PictureBox();
+            pictureBox2 = new PictureBox();
+            lblFacilitatorID = new Label();
+            lblFacilitatorName = new Label();
+            label1 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            pictureBox1 = new PictureBox();
+            pnlBorrowRecord = new Panel();
+            btnBorrowDetails = new RoundedPanel();
+            label7 = new Label();
+            btnBorrow = new RoundedPanel();
+            label6 = new Label();
+            cmbBorrowStatus = new ComboBox();
+            cmbBorrowDate = new ComboBox();
+            txtSearchBorrow = new TextBox();
+            tblBorrowRecord = new DataGridView();
+            label19 = new Label();
+            label22 = new Label();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
+            DateCompleted = new DataGridViewTextBoxColumn();
+            pnlSupplies = new Panel();
+            btnAdd = new RoundedPanel();
+            label29 = new Label();
+            btnEdit = new RoundedPanel();
+            lbl28 = new Label();
+            btnViewLogs = new RoundedPanel();
+            label13 = new Label();
+            btnRemove = new RoundedPanel();
+            lbl29 = new Label();
+            cmbCategory = new ComboBox();
+            txtSearchSupply = new TextBox();
+            tblSupplies = new DataGridView();
+            SupplyID = new DataGridViewTextBoxColumn();
+            Category = new DataGridViewTextBoxColumn();
+            SupplyName = new DataGridViewTextBoxColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            label25 = new Label();
+            label27 = new Label();
+            pnlFacilitators = new Panel();
+            cmbActive = new ComboBox();
+            btnAddFaci = new RoundedPanel();
+            label16 = new Label();
+            btnEditFaci = new RoundedPanel();
+            label28 = new Label();
+            btnRemoveFaci = new RoundedPanel();
+            label31 = new Label();
+            cmbPosition = new ComboBox();
+            txtSearchFacilitator = new TextBox();
+            tblFacilitators = new DataGridView();
+            FacilitatorID = new DataGridViewTextBoxColumn();
+            FirstName = new DataGridViewTextBoxColumn();
+            LastName = new DataGridViewTextBoxColumn();
+            Position = new DataGridViewTextBoxColumn();
+            isActive = new DataGridViewCheckBoxColumn();
+            label32 = new Label();
+            label33 = new Label();
+            pnlDashboard.SuspendLayout();
+            btnViewBorrows.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tblBorrowSummary).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox15).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox16).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            pnlSideBar.SuspendLayout();
+            btnFacilitators.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            btnSupplies.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            btnTransactions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            btnDashboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnFacilDropDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pnlBorrowRecord.SuspendLayout();
+            btnBorrowDetails.SuspendLayout();
+            btnBorrow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tblBorrowRecord).BeginInit();
+            pnlSupplies.SuspendLayout();
+            btnAdd.SuspendLayout();
+            btnEdit.SuspendLayout();
+            btnViewLogs.SuspendLayout();
+            btnRemove.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tblSupplies).BeginInit();
+            pnlFacilitators.SuspendLayout();
+            btnAddFaci.SuspendLayout();
+            btnEditFaci.SuspendLayout();
+            btnRemoveFaci.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tblFacilitators).BeginInit();
+            SuspendLayout();
             // 
             // label10
             // 
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Maroon;
-            this.label10.Location = new System.Drawing.Point(15, 36);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(148, 47);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Dashboard";
+            label10.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.ForeColor = Color.Maroon;
+            label10.Location = new Point(15, 36);
+            label10.Name = "label10";
+            label10.Size = new Size(148, 47);
+            label10.TabIndex = 5;
+            label10.Text = "Dashboard";
             // 
             // pnlDashboard
             // 
-            this.pnlDashboard.Controls.Add(this.btnViewBorrows);
-            this.pnlDashboard.Controls.Add(this.label24);
-            this.pnlDashboard.Controls.Add(this.tblBorrowSummary);
-            this.pnlDashboard.Controls.Add(this.pictureBox15);
-            this.pnlDashboard.Controls.Add(this.label21);
-            this.pnlDashboard.Controls.Add(this.lblTransactionsDone);
-            this.pnlDashboard.Controls.Add(this.label23);
-            this.pnlDashboard.Controls.Add(this.pictureBox16);
-            this.pnlDashboard.Controls.Add(this.pictureBox13);
-            this.pnlDashboard.Controls.Add(this.label18);
-            this.pnlDashboard.Controls.Add(this.lblSupplies);
-            this.pnlDashboard.Controls.Add(this.label20);
-            this.pnlDashboard.Controls.Add(this.pictureBox14);
-            this.pnlDashboard.Controls.Add(this.pictureBox11);
-            this.pnlDashboard.Controls.Add(this.label15);
-            this.pnlDashboard.Controls.Add(this.lblCurrentlyLent);
-            this.pnlDashboard.Controls.Add(this.label17);
-            this.pnlDashboard.Controls.Add(this.pictureBox12);
-            this.pnlDashboard.Controls.Add(this.pictureBox10);
-            this.pnlDashboard.Controls.Add(this.label14);
-            this.pnlDashboard.Controls.Add(this.lblTotalSupply);
-            this.pnlDashboard.Controls.Add(this.label12);
-            this.pnlDashboard.Controls.Add(this.pictureBox9);
-            this.pnlDashboard.Controls.Add(this.label11);
-            this.pnlDashboard.Controls.Add(this.label10);
-            this.pnlDashboard.Location = new System.Drawing.Point(184, 1);
-            this.pnlDashboard.Name = "pnlDashboard";
-            this.pnlDashboard.Size = new System.Drawing.Size(918, 753);
-            this.pnlDashboard.TabIndex = 1;
+            pnlDashboard.Controls.Add(btnViewBorrows);
+            pnlDashboard.Controls.Add(label24);
+            pnlDashboard.Controls.Add(tblBorrowSummary);
+            pnlDashboard.Controls.Add(pictureBox15);
+            pnlDashboard.Controls.Add(label21);
+            pnlDashboard.Controls.Add(lblTransactionsDone);
+            pnlDashboard.Controls.Add(label23);
+            pnlDashboard.Controls.Add(pictureBox16);
+            pnlDashboard.Controls.Add(pictureBox13);
+            pnlDashboard.Controls.Add(label18);
+            pnlDashboard.Controls.Add(lblSupplies);
+            pnlDashboard.Controls.Add(label20);
+            pnlDashboard.Controls.Add(pictureBox14);
+            pnlDashboard.Controls.Add(pictureBox11);
+            pnlDashboard.Controls.Add(label15);
+            pnlDashboard.Controls.Add(lblCurrentlyLent);
+            pnlDashboard.Controls.Add(label17);
+            pnlDashboard.Controls.Add(pictureBox12);
+            pnlDashboard.Controls.Add(pictureBox10);
+            pnlDashboard.Controls.Add(label14);
+            pnlDashboard.Controls.Add(lblTotalSupply);
+            pnlDashboard.Controls.Add(label12);
+            pnlDashboard.Controls.Add(pictureBox9);
+            pnlDashboard.Controls.Add(label11);
+            pnlDashboard.Controls.Add(label10);
+            pnlDashboard.Location = new Point(184, 1);
+            pnlDashboard.Name = "pnlDashboard";
+            pnlDashboard.Size = new Size(918, 753);
+            pnlDashboard.TabIndex = 1;
             // 
             // btnViewBorrows
             // 
-            this.btnViewBorrows.BackColor = System.Drawing.Color.Maroon;
-            this.btnViewBorrows.Controls.Add(this.Label26);
-            this.btnViewBorrows.Location = new System.Drawing.Point(754, 314);
-            this.btnViewBorrows.Name = "btnViewBorrows";
-            this.btnViewBorrows.Size = new System.Drawing.Size(144, 32);
-            this.btnViewBorrows.TabIndex = 34;
-            this.btnViewBorrows.Click += new System.EventHandler(this.btnViewBorrows_Click);
+            btnViewBorrows.BackColor = Color.Maroon;
+            btnViewBorrows.Controls.Add(Label26);
+            btnViewBorrows.Location = new Point(754, 314);
+            btnViewBorrows.Name = "btnViewBorrows";
+            btnViewBorrows.Size = new Size(144, 32);
+            btnViewBorrows.TabIndex = 34;
+            btnViewBorrows.Click += btnViewBorrows_Click;
             // 
             // Label26
             // 
-            this.Label26.BackColor = System.Drawing.Color.Transparent;
-            this.Label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label26.ForeColor = System.Drawing.Color.White;
-            this.Label26.Location = new System.Drawing.Point(35, 8);
-            this.Label26.Name = "Label26";
-            this.Label26.Size = new System.Drawing.Size(88, 20);
-            this.Label26.TabIndex = 12;
-            this.Label26.Text = "View All";
-            this.Label26.Click += new System.EventHandler(this.Label26_Click);
+            Label26.BackColor = Color.Transparent;
+            Label26.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Label26.ForeColor = Color.White;
+            Label26.Location = new Point(35, 8);
+            Label26.Name = "Label26";
+            Label26.Size = new Size(88, 20);
+            Label26.TabIndex = 12;
+            Label26.Text = "View All";
+            Label26.Click += Label26_Click;
             // 
             // label24
             // 
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.Maroon;
-            this.label24.Location = new System.Drawing.Point(15, 317);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(264, 38);
-            this.label24.TabIndex = 33;
-            this.label24.Text = "Recently Borrowed";
+            label24.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label24.ForeColor = Color.Maroon;
+            label24.Location = new Point(15, 317);
+            label24.Name = "label24";
+            label24.Size = new Size(264, 38);
+            label24.TabIndex = 33;
+            label24.Text = "Recently Borrowed";
             // 
             // tblBorrowSummary
             // 
-            this.tblBorrowSummary.AllowUserToAddRows = false;
-            this.tblBorrowSummary.AllowUserToDeleteRows = false;
-            this.tblBorrowSummary.AllowUserToResizeColumns = false;
-            this.tblBorrowSummary.AllowUserToResizeRows = false;
-            this.tblBorrowSummary.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tblBorrowSummary.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.tblBorrowSummary.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tblBorrowSummary.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblBorrowSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.tblBorrowSummary.ColumnHeadersHeight = 40;
-            this.tblBorrowSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.tblBorrowSummary.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Date,
-            this.Borrower,
-            this.Item,
-            this.BorrowQty,
-            this.Status});
-            this.tblBorrowSummary.Enabled = false;
-            this.tblBorrowSummary.EnableHeadersVisualStyles = false;
-            this.tblBorrowSummary.GridColor = System.Drawing.Color.DimGray;
-            this.tblBorrowSummary.Location = new System.Drawing.Point(20, 358);
-            this.tblBorrowSummary.MultiSelect = false;
-            this.tblBorrowSummary.Name = "tblBorrowSummary";
-            this.tblBorrowSummary.ReadOnly = true;
-            this.tblBorrowSummary.RowHeadersVisible = false;
-            this.tblBorrowSummary.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            this.tblBorrowSummary.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.tblBorrowSummary.RowTemplate.Height = 40;
-            this.tblBorrowSummary.Size = new System.Drawing.Size(878, 385);
-            this.tblBorrowSummary.TabIndex = 32;
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date";
-            this.Date.MinimumWidth = 6;
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            // 
-            // Borrower
-            // 
-            this.Borrower.HeaderText = "Borrower";
-            this.Borrower.MinimumWidth = 6;
-            this.Borrower.Name = "Borrower";
-            this.Borrower.ReadOnly = true;
-            // 
-            // Item
-            // 
-            this.Item.HeaderText = "Item";
-            this.Item.MinimumWidth = 6;
-            this.Item.Name = "Item";
-            this.Item.ReadOnly = true;
-            // 
-            // BorrowQty
-            // 
-            this.BorrowQty.HeaderText = "Quantity";
-            this.BorrowQty.MinimumWidth = 6;
-            this.BorrowQty.Name = "BorrowQty";
-            this.BorrowQty.ReadOnly = true;
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.MinimumWidth = 6;
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
+            tblBorrowSummary.AllowUserToAddRows = false;
+            tblBorrowSummary.AllowUserToDeleteRows = false;
+            tblBorrowSummary.AllowUserToResizeColumns = false;
+            tblBorrowSummary.AllowUserToResizeRows = false;
+            tblBorrowSummary.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            tblBorrowSummary.BackgroundColor = SystemColors.Control;
+            tblBorrowSummary.BorderStyle = BorderStyle.None;
+            tblBorrowSummary.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.Maroon;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            tblBorrowSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            tblBorrowSummary.ColumnHeadersHeight = 40;
+            tblBorrowSummary.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            tblBorrowSummary.Enabled = false;
+            tblBorrowSummary.EnableHeadersVisualStyles = false;
+            tblBorrowSummary.GridColor = Color.DimGray;
+            tblBorrowSummary.Location = new Point(20, 358);
+            tblBorrowSummary.MultiSelect = false;
+            tblBorrowSummary.Name = "tblBorrowSummary";
+            tblBorrowSummary.ReadOnly = true;
+            tblBorrowSummary.RowHeadersVisible = false;
+            tblBorrowSummary.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            tblBorrowSummary.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            tblBorrowSummary.RowTemplate.Height = 40;
+            tblBorrowSummary.Size = new Size(878, 385);
+            tblBorrowSummary.TabIndex = 32;
             // 
             // pictureBox15
             // 
-            this.pictureBox15.Image = global::IskoLendInventory.Properties.Resources.box;
-            this.pictureBox15.InitialImage = null;
-            this.pictureBox15.Location = new System.Drawing.Point(827, 185);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox15.TabIndex = 29;
-            this.pictureBox15.TabStop = false;
+            pictureBox15.Image = Properties.Resources.box;
+            pictureBox15.InitialImage = null;
+            pictureBox15.Location = new Point(827, 185);
+            pictureBox15.Name = "pictureBox15";
+            pictureBox15.Size = new Size(50, 50);
+            pictureBox15.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox15.TabIndex = 29;
+            pictureBox15.TabStop = false;
             // 
             // label21
             // 
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(702, 249);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(184, 22);
-            this.label21.TabIndex = 28;
-            this.label21.Text = "Completed Transactions";
+            label21.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label21.ForeColor = Color.Black;
+            label21.Location = new Point(702, 249);
+            label21.Name = "label21";
+            label21.Size = new Size(184, 22);
+            label21.TabIndex = 28;
+            label21.Text = "Completed Transactions";
             // 
             // lblTransactionsDone
             // 
-            this.lblTransactionsDone.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTransactionsDone.ForeColor = System.Drawing.Color.Maroon;
-            this.lblTransactionsDone.Location = new System.Drawing.Point(702, 185);
-            this.lblTransactionsDone.Name = "lblTransactionsDone";
-            this.lblTransactionsDone.Size = new System.Drawing.Size(184, 47);
-            this.lblTransactionsDone.TabIndex = 27;
-            this.lblTransactionsDone.Text = "3";
+            lblTransactionsDone.Font = new Font("Microsoft Sans Serif", 26F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTransactionsDone.ForeColor = Color.Maroon;
+            lblTransactionsDone.Location = new Point(702, 185);
+            lblTransactionsDone.Name = "lblTransactionsDone";
+            lblTransactionsDone.Size = new Size(184, 47);
+            lblTransactionsDone.TabIndex = 27;
+            lblTransactionsDone.Text = "3";
             // 
             // label23
             // 
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.Maroon;
-            this.label23.Location = new System.Drawing.Point(702, 151);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(184, 47);
-            this.label23.TabIndex = 26;
-            this.label23.Text = "Transactions Done";
+            label23.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label23.ForeColor = Color.Maroon;
+            label23.Location = new Point(702, 151);
+            label23.Name = "label23";
+            label23.Size = new Size(184, 47);
+            label23.TabIndex = 26;
+            label23.Text = "Transactions Done";
             // 
             // pictureBox16
             // 
-            this.pictureBox16.Image = global::IskoLendInventory.Properties.Resources.Outline;
-            this.pictureBox16.InitialImage = null;
-            this.pictureBox16.Location = new System.Drawing.Point(690, 133);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(208, 149);
-            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox16.TabIndex = 25;
-            this.pictureBox16.TabStop = false;
+            pictureBox16.Image = Properties.Resources.Outline;
+            pictureBox16.InitialImage = null;
+            pictureBox16.Location = new Point(690, 133);
+            pictureBox16.Name = "pictureBox16";
+            pictureBox16.Size = new Size(208, 149);
+            pictureBox16.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox16.TabIndex = 25;
+            pictureBox16.TabStop = false;
             // 
             // pictureBox13
             // 
-            this.pictureBox13.Image = global::IskoLendInventory.Properties.Resources.warning;
-            this.pictureBox13.InitialImage = null;
-            this.pictureBox13.Location = new System.Drawing.Point(604, 185);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox13.TabIndex = 24;
-            this.pictureBox13.TabStop = false;
+            pictureBox13.Image = Properties.Resources.warning;
+            pictureBox13.InitialImage = null;
+            pictureBox13.Location = new Point(604, 185);
+            pictureBox13.Name = "pictureBox13";
+            pictureBox13.Size = new Size(50, 50);
+            pictureBox13.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox13.TabIndex = 24;
+            pictureBox13.TabStop = false;
             // 
             // label18
             // 
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(479, 249);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(184, 22);
-            this.label18.TabIndex = 23;
-            this.label18.Text = "Items Lost";
+            label18.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label18.ForeColor = Color.Black;
+            label18.Location = new Point(479, 249);
+            label18.Name = "label18";
+            label18.Size = new Size(184, 22);
+            label18.TabIndex = 23;
+            label18.Text = "Items Lost";
             // 
             // lblSupplies
             // 
-            this.lblSupplies.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSupplies.ForeColor = System.Drawing.Color.Maroon;
-            this.lblSupplies.Location = new System.Drawing.Point(479, 185);
-            this.lblSupplies.Name = "lblSupplies";
-            this.lblSupplies.Size = new System.Drawing.Size(184, 47);
-            this.lblSupplies.TabIndex = 22;
-            this.lblSupplies.Text = "16";
+            lblSupplies.Font = new Font("Microsoft Sans Serif", 26F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSupplies.ForeColor = Color.Maroon;
+            lblSupplies.Location = new Point(479, 185);
+            lblSupplies.Name = "lblSupplies";
+            lblSupplies.Size = new Size(184, 47);
+            lblSupplies.TabIndex = 22;
+            lblSupplies.Text = "16";
             // 
             // label20
             // 
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Maroon;
-            this.label20.Location = new System.Drawing.Point(479, 151);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(184, 47);
-            this.label20.TabIndex = 21;
-            this.label20.Text = "Lost Supplies";
+            label20.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label20.ForeColor = Color.Maroon;
+            label20.Location = new Point(479, 151);
+            label20.Name = "label20";
+            label20.Size = new Size(184, 47);
+            label20.TabIndex = 21;
+            label20.Text = "Lost Supplies";
             // 
             // pictureBox14
             // 
-            this.pictureBox14.Image = global::IskoLendInventory.Properties.Resources.Outline;
-            this.pictureBox14.InitialImage = null;
-            this.pictureBox14.Location = new System.Drawing.Point(467, 133);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(208, 149);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox14.TabIndex = 20;
-            this.pictureBox14.TabStop = false;
+            pictureBox14.Image = Properties.Resources.Outline;
+            pictureBox14.InitialImage = null;
+            pictureBox14.Location = new Point(467, 133);
+            pictureBox14.Name = "pictureBox14";
+            pictureBox14.Size = new Size(208, 149);
+            pictureBox14.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox14.TabIndex = 20;
+            pictureBox14.TabStop = false;
             // 
             // pictureBox11
             // 
-            this.pictureBox11.Image = global::IskoLendInventory.Properties.Resources.time_left;
-            this.pictureBox11.InitialImage = null;
-            this.pictureBox11.Location = new System.Drawing.Point(381, 185);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 19;
-            this.pictureBox11.TabStop = false;
+            pictureBox11.Image = Properties.Resources.time_left;
+            pictureBox11.InitialImage = null;
+            pictureBox11.Location = new Point(381, 185);
+            pictureBox11.Name = "pictureBox11";
+            pictureBox11.Size = new Size(50, 50);
+            pictureBox11.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox11.TabIndex = 19;
+            pictureBox11.TabStop = false;
             // 
             // label15
             // 
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(256, 249);
-            this.label15.Name = "label15";
-            this.label15.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label15.Size = new System.Drawing.Size(184, 22);
-            this.label15.TabIndex = 18;
-            this.label15.Text = "Ongoing Transactions";
+            label15.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label15.ForeColor = Color.Black;
+            label15.Location = new Point(256, 249);
+            label15.Name = "label15";
+            label15.RightToLeft = RightToLeft.No;
+            label15.Size = new Size(184, 22);
+            label15.TabIndex = 18;
+            label15.Text = "Ongoing Transactions";
             // 
             // lblCurrentlyLent
             // 
-            this.lblCurrentlyLent.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrentlyLent.ForeColor = System.Drawing.Color.Maroon;
-            this.lblCurrentlyLent.Location = new System.Drawing.Point(256, 185);
-            this.lblCurrentlyLent.Name = "lblCurrentlyLent";
-            this.lblCurrentlyLent.Size = new System.Drawing.Size(184, 47);
-            this.lblCurrentlyLent.TabIndex = 17;
-            this.lblCurrentlyLent.Text = "12";
+            lblCurrentlyLent.Font = new Font("Microsoft Sans Serif", 26F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCurrentlyLent.ForeColor = Color.Maroon;
+            lblCurrentlyLent.Location = new Point(256, 185);
+            lblCurrentlyLent.Name = "lblCurrentlyLent";
+            lblCurrentlyLent.Size = new Size(184, 47);
+            lblCurrentlyLent.TabIndex = 17;
+            lblCurrentlyLent.Text = "12";
             // 
             // label17
             // 
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Maroon;
-            this.label17.Location = new System.Drawing.Point(256, 151);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(184, 47);
-            this.label17.TabIndex = 16;
-            this.label17.Text = "Currently Lent";
+            label17.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label17.ForeColor = Color.Maroon;
+            label17.Location = new Point(256, 151);
+            label17.Name = "label17";
+            label17.Size = new Size(184, 47);
+            label17.TabIndex = 16;
+            label17.Text = "Currently Lent";
             // 
             // pictureBox12
             // 
-            this.pictureBox12.Image = global::IskoLendInventory.Properties.Resources.Outline;
-            this.pictureBox12.InitialImage = null;
-            this.pictureBox12.Location = new System.Drawing.Point(244, 133);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(208, 149);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox12.TabIndex = 15;
-            this.pictureBox12.TabStop = false;
+            pictureBox12.Image = Properties.Resources.Outline;
+            pictureBox12.InitialImage = null;
+            pictureBox12.Location = new Point(244, 133);
+            pictureBox12.Name = "pictureBox12";
+            pictureBox12.Size = new Size(208, 149);
+            pictureBox12.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox12.TabIndex = 15;
+            pictureBox12.TabStop = false;
             // 
             // pictureBox10
             // 
-            this.pictureBox10.Image = global::IskoLendInventory.Properties.Resources.box;
-            this.pictureBox10.InitialImage = null;
-            this.pictureBox10.Location = new System.Drawing.Point(157, 185);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox10.TabIndex = 14;
-            this.pictureBox10.TabStop = false;
+            pictureBox10.Image = Properties.Resources.box;
+            pictureBox10.InitialImage = null;
+            pictureBox10.Location = new Point(157, 185);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(50, 50);
+            pictureBox10.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox10.TabIndex = 14;
+            pictureBox10.TabStop = false;
             // 
             // label14
             // 
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(32, 249);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(184, 22);
-            this.label14.TabIndex = 13;
-            this.label14.Text = "Available Supplies";
+            label14.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.Black;
+            label14.Location = new Point(32, 249);
+            label14.Name = "label14";
+            label14.Size = new Size(184, 22);
+            label14.TabIndex = 13;
+            label14.Text = "Available Supplies";
             // 
             // lblTotalSupply
             // 
-            this.lblTotalSupply.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalSupply.ForeColor = System.Drawing.Color.Maroon;
-            this.lblTotalSupply.Location = new System.Drawing.Point(32, 185);
-            this.lblTotalSupply.Name = "lblTotalSupply";
-            this.lblTotalSupply.Size = new System.Drawing.Size(184, 47);
-            this.lblTotalSupply.TabIndex = 12;
-            this.lblTotalSupply.Text = "28";
+            lblTotalSupply.Font = new Font("Microsoft Sans Serif", 26F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalSupply.ForeColor = Color.Maroon;
+            lblTotalSupply.Location = new Point(32, 185);
+            lblTotalSupply.Name = "lblTotalSupply";
+            lblTotalSupply.Size = new Size(184, 47);
+            lblTotalSupply.TabIndex = 12;
+            lblTotalSupply.Text = "28";
             // 
             // label12
             // 
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Maroon;
-            this.label12.Location = new System.Drawing.Point(32, 151);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(184, 47);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Total Supplies";
+            label12.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.Maroon;
+            label12.Location = new Point(32, 151);
+            label12.Name = "label12";
+            label12.Size = new Size(184, 47);
+            label12.TabIndex = 11;
+            label12.Text = "Total Supplies";
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Image = global::IskoLendInventory.Properties.Resources.Outline;
-            this.pictureBox9.InitialImage = null;
-            this.pictureBox9.Location = new System.Drawing.Point(20, 133);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(208, 149);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 10;
-            this.pictureBox9.TabStop = false;
+            pictureBox9.Image = Properties.Resources.Outline;
+            pictureBox9.InitialImage = null;
+            pictureBox9.Location = new Point(20, 133);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(208, 149);
+            pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox9.TabIndex = 10;
+            pictureBox9.TabStop = false;
             // 
             // label11
             // 
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(16, 72);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(436, 47);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "Overview of supplies transactions and status.";
+            label11.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.Black;
+            label11.Location = new Point(16, 72);
+            label11.Name = "label11";
+            label11.Size = new Size(436, 47);
+            label11.TabIndex = 6;
+            label11.Text = "Overview of supplies transactions and status.";
+            // 
+            // Date
+            // 
+            Date.HeaderText = "Date";
+            Date.MinimumWidth = 6;
+            Date.Name = "Date";
+            Date.ReadOnly = true;
+            // 
+            // Borrower
+            // 
+            Borrower.HeaderText = "Borrower";
+            Borrower.MinimumWidth = 6;
+            Borrower.Name = "Borrower";
+            Borrower.ReadOnly = true;
+            // 
+            // Item
+            // 
+            Item.HeaderText = "Item";
+            Item.MinimumWidth = 6;
+            Item.Name = "Item";
+            Item.ReadOnly = true;
+            // 
+            // BorrowQty
+            // 
+            BorrowQty.HeaderText = "Quantity";
+            BorrowQty.MinimumWidth = 6;
+            BorrowQty.Name = "BorrowQty";
+            BorrowQty.ReadOnly = true;
+            // 
+            // Status
+            // 
+            Status.HeaderText = "Status";
+            Status.MinimumWidth = 6;
+            Status.Name = "Status";
+            Status.ReadOnly = true;
             // 
             // pnlSideBar
             // 
-            this.pnlSideBar.BackColor = System.Drawing.Color.Maroon;
-            this.pnlSideBar.Controls.Add(this.btnFacilitators);
-            this.pnlSideBar.Controls.Add(this.btnSupplies);
-            this.pnlSideBar.Controls.Add(this.btnTransactions);
-            this.pnlSideBar.Controls.Add(this.btnDashboard);
-            this.pnlSideBar.Controls.Add(this.btnFacilDropDown);
-            this.pnlSideBar.Controls.Add(this.pictureBox2);
-            this.pnlSideBar.Controls.Add(this.lblFacilitatorID);
-            this.pnlSideBar.Controls.Add(this.lblFacilitatorName);
-            this.pnlSideBar.Controls.Add(this.label1);
-            this.pnlSideBar.Controls.Add(this.label5);
-            this.pnlSideBar.Controls.Add(this.label4);
-            this.pnlSideBar.Controls.Add(this.pictureBox1);
-            this.pnlSideBar.Location = new System.Drawing.Point(-38, 0);
-            this.pnlSideBar.Name = "pnlSideBar";
-            this.pnlSideBar.Size = new System.Drawing.Size(219, 751);
-            this.pnlSideBar.TabIndex = 2;
+            pnlSideBar.BackColor = Color.Maroon;
+            pnlSideBar.Controls.Add(btnFacilitators);
+            pnlSideBar.Controls.Add(btnSupplies);
+            pnlSideBar.Controls.Add(btnTransactions);
+            pnlSideBar.Controls.Add(btnDashboard);
+            pnlSideBar.Controls.Add(btnFacilDropDown);
+            pnlSideBar.Controls.Add(pictureBox2);
+            pnlSideBar.Controls.Add(lblFacilitatorID);
+            pnlSideBar.Controls.Add(lblFacilitatorName);
+            pnlSideBar.Controls.Add(label1);
+            pnlSideBar.Controls.Add(label5);
+            pnlSideBar.Controls.Add(label4);
+            pnlSideBar.Controls.Add(pictureBox1);
+            pnlSideBar.Location = new Point(-38, 0);
+            pnlSideBar.Name = "pnlSideBar";
+            pnlSideBar.Size = new Size(219, 751);
+            pnlSideBar.TabIndex = 2;
             // 
             // btnFacilitators
             // 
-            this.btnFacilitators.BackColor = System.Drawing.Color.Orange;
-            this.btnFacilitators.Controls.Add(this.pictureBox8);
-            this.btnFacilitators.Controls.Add(this.label9);
-            this.btnFacilitators.Location = new System.Drawing.Point(52, 445);
-            this.btnFacilitators.Name = "btnFacilitators";
-            this.btnFacilitators.Size = new System.Drawing.Size(146, 39);
-            this.btnFacilitators.TabIndex = 15;
-            this.btnFacilitators.Click += new System.EventHandler(this.btnFacilitators_Click);
+            btnFacilitators.BackColor = Color.Orange;
+            btnFacilitators.Controls.Add(pictureBox8);
+            btnFacilitators.Controls.Add(label9);
+            btnFacilitators.Location = new Point(52, 445);
+            btnFacilitators.Name = "btnFacilitators";
+            btnFacilitators.Size = new Size(146, 39);
+            btnFacilitators.TabIndex = 15;
+            btnFacilitators.Click += btnFacilitators_Click;
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = global::IskoLendInventory.Properties.Resources.dashboard;
-            this.pictureBox8.InitialImage = null;
-            this.pictureBox8.Location = new System.Drawing.Point(9, 7);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 13;
-            this.pictureBox8.TabStop = false;
+            pictureBox8.Image = Properties.Resources.dashboard;
+            pictureBox8.InitialImage = null;
+            pictureBox8.Location = new Point(9, 7);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(25, 25);
+            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox8.TabIndex = 13;
+            pictureBox8.TabStop = false;
             // 
             // label9
             // 
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(40, 10);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(88, 20);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Facilitators";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            label9.BackColor = Color.Transparent;
+            label9.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(40, 10);
+            label9.Name = "label9";
+            label9.Size = new Size(88, 20);
+            label9.TabIndex = 12;
+            label9.Text = "Facilitators";
+            label9.Click += label9_Click;
             // 
             // btnSupplies
             // 
-            this.btnSupplies.BackColor = System.Drawing.Color.Orange;
-            this.btnSupplies.Controls.Add(this.pictureBox7);
-            this.btnSupplies.Controls.Add(this.label8);
-            this.btnSupplies.Location = new System.Drawing.Point(52, 400);
-            this.btnSupplies.Name = "btnSupplies";
-            this.btnSupplies.Size = new System.Drawing.Size(146, 39);
-            this.btnSupplies.TabIndex = 14;
-            this.btnSupplies.Click += new System.EventHandler(this.btnSupplies_Click);
+            btnSupplies.BackColor = Color.Orange;
+            btnSupplies.Controls.Add(pictureBox7);
+            btnSupplies.Controls.Add(label8);
+            btnSupplies.Location = new Point(52, 400);
+            btnSupplies.Name = "btnSupplies";
+            btnSupplies.Size = new Size(146, 39);
+            btnSupplies.TabIndex = 14;
+            btnSupplies.Click += btnSupplies_Click;
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = global::IskoLendInventory.Properties.Resources.Supplies;
-            this.pictureBox7.InitialImage = null;
-            this.pictureBox7.Location = new System.Drawing.Point(9, 7);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 13;
-            this.pictureBox7.TabStop = false;
+            pictureBox7.Image = Properties.Resources.Supplies;
+            pictureBox7.InitialImage = null;
+            pictureBox7.Location = new Point(9, 7);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(25, 25);
+            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox7.TabIndex = 13;
+            pictureBox7.TabStop = false;
             // 
             // label8
             // 
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(40, 10);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 20);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Supplies";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            label8.BackColor = Color.Transparent;
+            label8.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(40, 10);
+            label8.Name = "label8";
+            label8.Size = new Size(88, 20);
+            label8.TabIndex = 12;
+            label8.Text = "Supplies";
+            label8.Click += label8_Click;
             // 
             // btnTransactions
             // 
-            this.btnTransactions.BackColor = System.Drawing.Color.Orange;
-            this.btnTransactions.Controls.Add(this.pictureBox4);
-            this.btnTransactions.Controls.Add(this.label3);
-            this.btnTransactions.Location = new System.Drawing.Point(52, 355);
-            this.btnTransactions.Name = "btnTransactions";
-            this.btnTransactions.Size = new System.Drawing.Size(146, 39);
-            this.btnTransactions.TabIndex = 11;
-            this.btnTransactions.Click += new System.EventHandler(this.btnTransactions_Click);
+            btnTransactions.BackColor = Color.Orange;
+            btnTransactions.Controls.Add(pictureBox4);
+            btnTransactions.Controls.Add(label3);
+            btnTransactions.Location = new Point(52, 355);
+            btnTransactions.Name = "btnTransactions";
+            btnTransactions.Size = new Size(146, 39);
+            btnTransactions.TabIndex = 11;
+            btnTransactions.Click += btnTransactions_Click;
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::IskoLendInventory.Properties.Resources.Borrow;
-            this.pictureBox4.InitialImage = null;
-            this.pictureBox4.Location = new System.Drawing.Point(9, 7);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 13;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            pictureBox4.Image = Properties.Resources.Borrow;
+            pictureBox4.InitialImage = null;
+            pictureBox4.Location = new Point(9, 7);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(25, 25);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 13;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
             // 
             // label3
             // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(40, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 20);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Transactions";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(40, 10);
+            label3.Name = "label3";
+            label3.Size = new Size(94, 20);
+            label3.TabIndex = 12;
+            label3.Text = "Transactions";
+            label3.Click += label3_Click;
             // 
             // btnDashboard
             // 
-            this.btnDashboard.BackColor = System.Drawing.Color.Orange;
-            this.btnDashboard.Controls.Add(this.pictureBox3);
-            this.btnDashboard.Controls.Add(this.label2);
-            this.btnDashboard.Location = new System.Drawing.Point(53, 310);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(145, 39);
-            this.btnDashboard.TabIndex = 2;
-            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            btnDashboard.BackColor = Color.Orange;
+            btnDashboard.Controls.Add(pictureBox3);
+            btnDashboard.Controls.Add(label2);
+            btnDashboard.Location = new Point(53, 310);
+            btnDashboard.Name = "btnDashboard";
+            btnDashboard.Size = new Size(145, 39);
+            btnDashboard.TabIndex = 2;
+            btnDashboard.Click += btnDashboard_Click;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::IskoLendInventory.Properties.Resources.dashboard;
-            this.pictureBox3.InitialImage = null;
-            this.pictureBox3.Location = new System.Drawing.Point(9, 7);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 13;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            pictureBox3.Image = Properties.Resources.dashboard;
+            pictureBox3.InitialImage = null;
+            pictureBox3.Location = new Point(9, 7);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(25, 25);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 13;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(40, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 20);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Dashboard";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(40, 10);
+            label2.Name = "label2";
+            label2.Size = new Size(88, 20);
+            label2.TabIndex = 12;
+            label2.Text = "Dashboard";
+            label2.Click += label2_Click;
             // 
             // btnFacilDropDown
             // 
-            this.btnFacilDropDown.Image = global::IskoLendInventory.Properties.Resources.ArrowDown;
-            this.btnFacilDropDown.InitialImage = null;
-            this.btnFacilDropDown.Location = new System.Drawing.Point(173, 247);
-            this.btnFacilDropDown.Name = "btnFacilDropDown";
-            this.btnFacilDropDown.Size = new System.Drawing.Size(25, 25);
-            this.btnFacilDropDown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnFacilDropDown.TabIndex = 10;
-            this.btnFacilDropDown.TabStop = false;
+            btnFacilDropDown.Image = Properties.Resources.ArrowDown;
+            btnFacilDropDown.InitialImage = null;
+            btnFacilDropDown.Location = new Point(173, 247);
+            btnFacilDropDown.Name = "btnFacilDropDown";
+            btnFacilDropDown.Size = new Size(25, 25);
+            btnFacilDropDown.SizeMode = PictureBoxSizeMode.StretchImage;
+            btnFacilDropDown.TabIndex = 10;
+            btnFacilDropDown.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::IskoLendInventory.Properties.Resources.user;
-            this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(52, 237);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Image = Properties.Resources.user;
+            pictureBox2.InitialImage = null;
+            pictureBox2.Location = new Point(52, 237);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(35, 35);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 9;
+            pictureBox2.TabStop = false;
             // 
             // lblFacilitatorID
             // 
-            this.lblFacilitatorID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFacilitatorID.ForeColor = System.Drawing.Color.White;
-            this.lblFacilitatorID.Location = new System.Drawing.Point(93, 256);
-            this.lblFacilitatorID.Name = "lblFacilitatorID";
-            this.lblFacilitatorID.Size = new System.Drawing.Size(148, 29);
-            this.lblFacilitatorID.TabIndex = 8;
-            this.lblFacilitatorID.Text = "FACI-0001";
+            lblFacilitatorID.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblFacilitatorID.ForeColor = Color.White;
+            lblFacilitatorID.Location = new Point(93, 256);
+            lblFacilitatorID.Name = "lblFacilitatorID";
+            lblFacilitatorID.Size = new Size(148, 29);
+            lblFacilitatorID.TabIndex = 8;
+            lblFacilitatorID.Text = "FACI-0001";
             // 
             // lblFacilitatorName
             // 
-            this.lblFacilitatorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFacilitatorName.ForeColor = System.Drawing.Color.White;
-            this.lblFacilitatorName.Location = new System.Drawing.Point(93, 234);
-            this.lblFacilitatorName.Name = "lblFacilitatorName";
-            this.lblFacilitatorName.Size = new System.Drawing.Size(148, 29);
-            this.lblFacilitatorName.TabIndex = 7;
-            this.lblFacilitatorName.Text = "John Doe";
+            lblFacilitatorName.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFacilitatorName.ForeColor = Color.White;
+            lblFacilitatorName.Location = new Point(93, 234);
+            lblFacilitatorName.Name = "lblFacilitatorName";
+            lblFacilitatorName.Size = new Size(148, 29);
+            lblFacilitatorName.TabIndex = 7;
+            lblFacilitatorName.Text = "John Doe";
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(49, 204);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 30);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Facilitator";
+            label1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(49, 204);
+            label1.Name = "label1";
+            label1.Size = new Size(148, 30);
+            label1.TabIndex = 6;
+            label1.Text = "Facilitator";
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(122, 29);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 60);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "CENTRAL STUDENT COUNCIL";
+            label5.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(122, 29);
+            label5.Name = "label5";
+            label5.Size = new Size(94, 60);
+            label5.TabIndex = 5;
+            label5.Text = "CENTRAL STUDENT COUNCIL";
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(50, 130);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(148, 47);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "School Supply Lending System ";
+            label4.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(50, 130);
+            label4.Name = "label4";
+            label4.Size = new Size(148, 47);
+            label4.TabIndex = 4;
+            label4.Text = "School Supply Lending System ";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::IskoLendInventory.Properties.Resources.CSC_Logo;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(41, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(90, 90);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = Properties.Resources.CSC_Logo;
+            pictureBox1.InitialImage = null;
+            pictureBox1.Location = new Point(41, 14);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(90, 90);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // pnlBorrowRecord
             // 
-            this.pnlBorrowRecord.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlBorrowRecord.Controls.Add(this.btnBorrowDetails);
-            this.pnlBorrowRecord.Controls.Add(this.btnBorrow);
-            this.pnlBorrowRecord.Controls.Add(this.cmbBorrowStatus);
-            this.pnlBorrowRecord.Controls.Add(this.cmbBorrowDate);
-            this.pnlBorrowRecord.Controls.Add(this.txtSearchBorrow);
-            this.pnlBorrowRecord.Controls.Add(this.tblBorrowRecord);
-            this.pnlBorrowRecord.Controls.Add(this.label19);
-            this.pnlBorrowRecord.Controls.Add(this.label22);
-            this.pnlBorrowRecord.Location = new System.Drawing.Point(184, 1);
-            this.pnlBorrowRecord.Name = "pnlBorrowRecord";
-            this.pnlBorrowRecord.Size = new System.Drawing.Size(918, 753);
-            this.pnlBorrowRecord.TabIndex = 39;
-            this.pnlBorrowRecord.Visible = false;
+            pnlBorrowRecord.BackColor = SystemColors.Control;
+            pnlBorrowRecord.Controls.Add(btnBorrowDetails);
+            pnlBorrowRecord.Controls.Add(btnBorrow);
+            pnlBorrowRecord.Controls.Add(cmbBorrowStatus);
+            pnlBorrowRecord.Controls.Add(cmbBorrowDate);
+            pnlBorrowRecord.Controls.Add(txtSearchBorrow);
+            pnlBorrowRecord.Controls.Add(tblBorrowRecord);
+            pnlBorrowRecord.Controls.Add(label19);
+            pnlBorrowRecord.Controls.Add(label22);
+            pnlBorrowRecord.Location = new Point(184, 1);
+            pnlBorrowRecord.Name = "pnlBorrowRecord";
+            pnlBorrowRecord.Size = new Size(918, 753);
+            pnlBorrowRecord.TabIndex = 39;
+            pnlBorrowRecord.Visible = false;
             // 
             // btnBorrowDetails
             // 
-            this.btnBorrowDetails.BackColor = System.Drawing.Color.Orange;
-            this.btnBorrowDetails.Controls.Add(this.label7);
-            this.btnBorrowDetails.Location = new System.Drawing.Point(539, 105);
-            this.btnBorrowDetails.Name = "btnBorrowDetails";
-            this.btnBorrowDetails.Size = new System.Drawing.Size(193, 32);
-            this.btnBorrowDetails.TabIndex = 37;
-            this.btnBorrowDetails.Click += new System.EventHandler(this.btnBorrowDetails_Click);
+            btnBorrowDetails.BackColor = Color.Orange;
+            btnBorrowDetails.Controls.Add(label7);
+            btnBorrowDetails.Location = new Point(539, 105);
+            btnBorrowDetails.Name = "btnBorrowDetails";
+            btnBorrowDetails.Size = new Size(193, 32);
+            btnBorrowDetails.TabIndex = 37;
+            btnBorrowDetails.Click += btnBorrowDetails_Click;
             // 
             // label7
             // 
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(16, 6);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(165, 22);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "View Borrow Details";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(16, 6);
+            label7.Name = "label7";
+            label7.Size = new Size(165, 22);
+            label7.TabIndex = 12;
+            label7.Text = "View Borrow Details";
+            label7.TextAlign = ContentAlignment.TopCenter;
+            label7.Click += label7_Click;
             // 
             // btnBorrow
             // 
-            this.btnBorrow.BackColor = System.Drawing.Color.Orange;
-            this.btnBorrow.Controls.Add(this.label6);
-            this.btnBorrow.Location = new System.Drawing.Point(738, 105);
-            this.btnBorrow.Name = "btnBorrow";
-            this.btnBorrow.Size = new System.Drawing.Size(160, 32);
-            this.btnBorrow.TabIndex = 39;
-            this.btnBorrow.Click += new System.EventHandler(this.btnBorrow_Click);
+            btnBorrow.BackColor = Color.Orange;
+            btnBorrow.Controls.Add(label6);
+            btnBorrow.Location = new Point(738, 105);
+            btnBorrow.Name = "btnBorrow";
+            btnBorrow.Size = new Size(160, 32);
+            btnBorrow.TabIndex = 39;
+            btnBorrow.Click += btnBorrow_Click;
             // 
             // label6
             // 
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(16, 6);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(132, 22);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Borrow Item  +";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(16, 6);
+            label6.Name = "label6";
+            label6.Size = new Size(132, 22);
+            label6.TabIndex = 12;
+            label6.Text = "Borrow Item  +";
+            label6.TextAlign = ContentAlignment.TopCenter;
+            label6.Click += label6_Click;
             // 
             // cmbBorrowStatus
             // 
-            this.cmbBorrowStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBorrowStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbBorrowStatus.FormattingEnabled = true;
-            this.cmbBorrowStatus.Location = new System.Drawing.Point(366, 109);
-            this.cmbBorrowStatus.Name = "cmbBorrowStatus";
-            this.cmbBorrowStatus.Size = new System.Drawing.Size(107, 28);
-            this.cmbBorrowStatus.TabIndex = 38;
+            cmbBorrowStatus.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBorrowStatus.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbBorrowStatus.FormattingEnabled = true;
+            cmbBorrowStatus.Location = new Point(366, 109);
+            cmbBorrowStatus.Name = "cmbBorrowStatus";
+            cmbBorrowStatus.Size = new Size(107, 24);
+            cmbBorrowStatus.TabIndex = 38;
             // 
             // cmbBorrowDate
             // 
-            this.cmbBorrowDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBorrowDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbBorrowDate.FormattingEnabled = true;
-            this.cmbBorrowDate.Location = new System.Drawing.Point(253, 109);
-            this.cmbBorrowDate.Name = "cmbBorrowDate";
-            this.cmbBorrowDate.Size = new System.Drawing.Size(107, 28);
-            this.cmbBorrowDate.TabIndex = 37;
+            cmbBorrowDate.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBorrowDate.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbBorrowDate.FormattingEnabled = true;
+            cmbBorrowDate.Location = new Point(253, 109);
+            cmbBorrowDate.Name = "cmbBorrowDate";
+            cmbBorrowDate.Size = new Size(107, 24);
+            cmbBorrowDate.TabIndex = 37;
             // 
             // txtSearchBorrow
             // 
-            this.txtSearchBorrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchBorrow.Location = new System.Drawing.Point(20, 111);
-            this.txtSearchBorrow.Name = "txtSearchBorrow";
-            this.txtSearchBorrow.Size = new System.Drawing.Size(227, 26);
-            this.txtSearchBorrow.TabIndex = 35;
+            txtSearchBorrow.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtSearchBorrow.Location = new Point(20, 111);
+            txtSearchBorrow.Name = "txtSearchBorrow";
+            txtSearchBorrow.Size = new Size(227, 23);
+            txtSearchBorrow.TabIndex = 35;
             // 
             // tblBorrowRecord
             // 
-            this.tblBorrowRecord.AllowUserToAddRows = false;
-            this.tblBorrowRecord.AllowUserToDeleteRows = false;
-            this.tblBorrowRecord.AllowUserToResizeColumns = false;
-            this.tblBorrowRecord.AllowUserToResizeRows = false;
-            this.tblBorrowRecord.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tblBorrowRecord.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.tblBorrowRecord.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tblBorrowRecord.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblBorrowRecord.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.tblBorrowRecord.ColumnHeadersHeight = 40;
-            this.tblBorrowRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.tblBorrowRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn7,
-            this.DateCompleted});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Moccasin;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tblBorrowRecord.DefaultCellStyle = dataGridViewCellStyle4;
-            this.tblBorrowRecord.EnableHeadersVisualStyles = false;
-            this.tblBorrowRecord.GridColor = System.Drawing.Color.DimGray;
-            this.tblBorrowRecord.Location = new System.Drawing.Point(20, 151);
-            this.tblBorrowRecord.MultiSelect = false;
-            this.tblBorrowRecord.Name = "tblBorrowRecord";
-            this.tblBorrowRecord.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblBorrowRecord.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.tblBorrowRecord.RowHeadersVisible = false;
-            this.tblBorrowRecord.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Moccasin;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.tblBorrowRecord.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.tblBorrowRecord.RowTemplate.Height = 40;
-            this.tblBorrowRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tblBorrowRecord.Size = new System.Drawing.Size(878, 586);
-            this.tblBorrowRecord.TabIndex = 32;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "BorrowID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "FacilitatorID";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "StudentID";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "BorrowDate";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "StatusID";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // DateCompleted
-            // 
-            this.DateCompleted.HeaderText = "DateCompleted";
-            this.DateCompleted.MinimumWidth = 6;
-            this.DateCompleted.Name = "DateCompleted";
-            this.DateCompleted.ReadOnly = true;
+            tblBorrowRecord.AllowUserToAddRows = false;
+            tblBorrowRecord.AllowUserToDeleteRows = false;
+            tblBorrowRecord.AllowUserToResizeColumns = false;
+            tblBorrowRecord.AllowUserToResizeRows = false;
+            tblBorrowRecord.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            tblBorrowRecord.BackgroundColor = SystemColors.Control;
+            tblBorrowRecord.BorderStyle = BorderStyle.None;
+            tblBorrowRecord.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.Maroon;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Maroon;
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            tblBorrowRecord.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            tblBorrowRecord.ColumnHeadersHeight = 40;
+            tblBorrowRecord.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            tblBorrowRecord.DefaultCellStyle = dataGridViewCellStyle4;
+            tblBorrowRecord.EnableHeadersVisualStyles = false;
+            tblBorrowRecord.GridColor = Color.DimGray;
+            tblBorrowRecord.Location = new Point(20, 151);
+            tblBorrowRecord.MultiSelect = false;
+            tblBorrowRecord.Name = "tblBorrowRecord";
+            tblBorrowRecord.ReadOnly = true;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = Color.Maroon;
+            dataGridViewCellStyle5.SelectionForeColor = Color.White;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            tblBorrowRecord.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            tblBorrowRecord.RowHeadersVisible = false;
+            tblBorrowRecord.RowHeadersWidth = 51;
+            dataGridViewCellStyle6.BackColor = SystemColors.Control;
+            dataGridViewCellStyle6.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
+            tblBorrowRecord.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            tblBorrowRecord.RowTemplate.Height = 40;
+            tblBorrowRecord.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            tblBorrowRecord.Size = new Size(878, 586);
+            tblBorrowRecord.TabIndex = 32;
             // 
             // label19
             // 
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(16, 72);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(436, 47);
-            this.label19.TabIndex = 6;
-            this.label19.Text = "Track and manage borrowing transactions.";
+            label19.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label19.ForeColor = Color.Black;
+            label19.Location = new Point(16, 72);
+            label19.Name = "label19";
+            label19.Size = new Size(436, 47);
+            label19.TabIndex = 6;
+            label19.Text = "Track and manage borrowing transactions.";
             // 
             // label22
             // 
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Maroon;
-            this.label22.Location = new System.Drawing.Point(15, 36);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(307, 47);
-            this.label22.TabIndex = 5;
-            this.label22.Text = "Borrow Record";
+            label22.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label22.ForeColor = Color.Maroon;
+            label22.Location = new Point(15, 36);
+            label22.Name = "label22";
+            label22.Size = new Size(307, 47);
+            label22.TabIndex = 5;
+            label22.Text = "Borrow Record";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.HeaderText = "BorrowID";
+            dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.HeaderText = "FacilitatorID";
+            dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.HeaderText = "StudentID";
+            dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewTextBoxColumn5.HeaderText = "BorrowDate";
+            dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewTextBoxColumn7.HeaderText = "StatusID";
+            dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // DateCompleted
+            // 
+            DateCompleted.HeaderText = "DateCompleted";
+            DateCompleted.MinimumWidth = 6;
+            DateCompleted.Name = "DateCompleted";
+            DateCompleted.ReadOnly = true;
             // 
             // pnlSupplies
             // 
-            this.pnlSupplies.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlSupplies.Controls.Add(this.btnAdd);
-            this.pnlSupplies.Controls.Add(this.btnEdit);
-            this.pnlSupplies.Controls.Add(this.btnViewLogs);
-            this.pnlSupplies.Controls.Add(this.btnRemove);
-            this.pnlSupplies.Controls.Add(this.cmbCategory);
-            this.pnlSupplies.Controls.Add(this.txtSearchSupply);
-            this.pnlSupplies.Controls.Add(this.tblSupplies);
-            this.pnlSupplies.Controls.Add(this.label25);
-            this.pnlSupplies.Controls.Add(this.label27);
-            this.pnlSupplies.Location = new System.Drawing.Point(184, 1);
-            this.pnlSupplies.Name = "pnlSupplies";
-            this.pnlSupplies.Size = new System.Drawing.Size(918, 753);
-            this.pnlSupplies.TabIndex = 40;
-            this.pnlSupplies.Visible = false;
+            pnlSupplies.BackColor = SystemColors.Control;
+            pnlSupplies.Controls.Add(btnAdd);
+            pnlSupplies.Controls.Add(btnEdit);
+            pnlSupplies.Controls.Add(btnViewLogs);
+            pnlSupplies.Controls.Add(btnRemove);
+            pnlSupplies.Controls.Add(cmbCategory);
+            pnlSupplies.Controls.Add(txtSearchSupply);
+            pnlSupplies.Controls.Add(tblSupplies);
+            pnlSupplies.Controls.Add(label25);
+            pnlSupplies.Controls.Add(label27);
+            pnlSupplies.Location = new Point(184, 1);
+            pnlSupplies.Name = "pnlSupplies";
+            pnlSupplies.Size = new Size(918, 753);
+            pnlSupplies.TabIndex = 40;
+            pnlSupplies.Visible = false;
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.Orange;
-            this.btnAdd.Controls.Add(this.label29);
-            this.btnAdd.Location = new System.Drawing.Point(598, 105);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(96, 32);
-            this.btnAdd.TabIndex = 41;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            btnAdd.BackColor = Color.Orange;
+            btnAdd.Controls.Add(label29);
+            btnAdd.Location = new Point(598, 105);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(96, 32);
+            btnAdd.TabIndex = 41;
+            btnAdd.Click += btnAdd_Click;
             // 
             // label29
             // 
-            this.label29.BackColor = System.Drawing.Color.Transparent;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.White;
-            this.label29.Location = new System.Drawing.Point(3, 6);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(90, 22);
-            this.label29.TabIndex = 12;
-            this.label29.Text = "Add";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label29.Click += new System.EventHandler(this.label29_Click);
+            label29.BackColor = Color.Transparent;
+            label29.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label29.ForeColor = Color.White;
+            label29.Location = new Point(3, 6);
+            label29.Name = "label29";
+            label29.Size = new Size(90, 22);
+            label29.TabIndex = 12;
+            label29.Text = "Add";
+            label29.TextAlign = ContentAlignment.TopCenter;
+            label29.Click += label29_Click;
             // 
             // btnEdit
             // 
-            this.btnEdit.BackColor = System.Drawing.Color.Orange;
-            this.btnEdit.Controls.Add(this.lbl28);
-            this.btnEdit.Location = new System.Drawing.Point(700, 105);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(96, 32);
-            this.btnEdit.TabIndex = 40;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            btnEdit.BackColor = Color.Orange;
+            btnEdit.Controls.Add(lbl28);
+            btnEdit.Location = new Point(700, 105);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(96, 32);
+            btnEdit.TabIndex = 40;
+            btnEdit.Click += btnEdit_Click;
             // 
             // lbl28
             // 
-            this.lbl28.BackColor = System.Drawing.Color.Transparent;
-            this.lbl28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl28.ForeColor = System.Drawing.Color.White;
-            this.lbl28.Location = new System.Drawing.Point(3, 6);
-            this.lbl28.Name = "lbl28";
-            this.lbl28.Size = new System.Drawing.Size(90, 22);
-            this.lbl28.TabIndex = 12;
-            this.lbl28.Text = "Edit";
-            this.lbl28.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbl28.Click += new System.EventHandler(this.lbl28_Click);
+            lbl28.BackColor = Color.Transparent;
+            lbl28.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl28.ForeColor = Color.White;
+            lbl28.Location = new Point(3, 6);
+            lbl28.Name = "lbl28";
+            lbl28.Size = new Size(90, 22);
+            lbl28.TabIndex = 12;
+            lbl28.Text = "Edit";
+            lbl28.TextAlign = ContentAlignment.TopCenter;
+            lbl28.Click += lbl28_Click;
             // 
             // btnViewLogs
             // 
-            this.btnViewLogs.BackColor = System.Drawing.Color.Orange;
-            this.btnViewLogs.Controls.Add(this.label13);
-            this.btnViewLogs.Location = new System.Drawing.Point(467, 105);
-            this.btnViewLogs.Name = "btnViewLogs";
-            this.btnViewLogs.Size = new System.Drawing.Size(124, 32);
-            this.btnViewLogs.TabIndex = 37;
-            this.btnViewLogs.Click += new System.EventHandler(this.btnViewLogs_Click);
+            btnViewLogs.BackColor = Color.Orange;
+            btnViewLogs.Controls.Add(label13);
+            btnViewLogs.Location = new Point(467, 105);
+            btnViewLogs.Name = "btnViewLogs";
+            btnViewLogs.Size = new Size(124, 32);
+            btnViewLogs.TabIndex = 37;
+            btnViewLogs.Click += btnViewLogs_Click;
             // 
             // label13
             // 
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(3, 6);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(118, 22);
-            this.label13.TabIndex = 12;
-            this.label13.Text = "View Logs";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label13.Click += new System.EventHandler(this.label13_Click);
+            label13.BackColor = Color.Transparent;
+            label13.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.ForeColor = Color.White;
+            label13.Location = new Point(3, 6);
+            label13.Name = "label13";
+            label13.Size = new Size(118, 22);
+            label13.TabIndex = 12;
+            label13.Text = "View Logs";
+            label13.TextAlign = ContentAlignment.TopCenter;
+            label13.Click += label13_Click;
             // 
             // btnRemove
             // 
-            this.btnRemove.BackColor = System.Drawing.Color.Orange;
-            this.btnRemove.Controls.Add(this.lbl29);
-            this.btnRemove.Location = new System.Drawing.Point(802, 105);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(96, 32);
-            this.btnRemove.TabIndex = 39;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            btnRemove.BackColor = Color.Orange;
+            btnRemove.Controls.Add(lbl29);
+            btnRemove.Location = new Point(802, 105);
+            btnRemove.Name = "btnRemove";
+            btnRemove.Size = new Size(96, 32);
+            btnRemove.TabIndex = 39;
+            btnRemove.Click += btnRemove_Click;
             // 
             // lbl29
             // 
-            this.lbl29.BackColor = System.Drawing.Color.Transparent;
-            this.lbl29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl29.ForeColor = System.Drawing.Color.White;
-            this.lbl29.Location = new System.Drawing.Point(3, 6);
-            this.lbl29.Name = "lbl29";
-            this.lbl29.Size = new System.Drawing.Size(90, 22);
-            this.lbl29.TabIndex = 12;
-            this.lbl29.Text = "Remove";
-            this.lbl29.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbl29.Click += new System.EventHandler(this.lbl29_Click);
+            lbl29.BackColor = Color.Transparent;
+            lbl29.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl29.ForeColor = Color.White;
+            lbl29.Location = new Point(3, 6);
+            lbl29.Name = "lbl29";
+            lbl29.Size = new Size(90, 22);
+            lbl29.TabIndex = 12;
+            lbl29.Text = "Remove";
+            lbl29.TextAlign = ContentAlignment.TopCenter;
+            lbl29.Click += lbl29_Click;
             // 
             // cmbCategory
             // 
-            this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(253, 109);
-            this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(107, 28);
-            this.cmbCategory.TabIndex = 37;
+            cmbCategory.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCategory.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbCategory.FormattingEnabled = true;
+            cmbCategory.Location = new Point(253, 109);
+            cmbCategory.Name = "cmbCategory";
+            cmbCategory.Size = new Size(107, 24);
+            cmbCategory.TabIndex = 37;
             // 
             // txtSearchSupply
             // 
-            this.txtSearchSupply.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchSupply.Location = new System.Drawing.Point(20, 111);
-            this.txtSearchSupply.Name = "txtSearchSupply";
-            this.txtSearchSupply.Size = new System.Drawing.Size(227, 26);
-            this.txtSearchSupply.TabIndex = 35;
+            txtSearchSupply.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtSearchSupply.Location = new Point(20, 111);
+            txtSearchSupply.Name = "txtSearchSupply";
+            txtSearchSupply.Size = new Size(227, 23);
+            txtSearchSupply.TabIndex = 35;
             // 
             // tblSupplies
             // 
-            this.tblSupplies.AllowUserToAddRows = false;
-            this.tblSupplies.AllowUserToDeleteRows = false;
-            this.tblSupplies.AllowUserToResizeColumns = false;
-            this.tblSupplies.AllowUserToResizeRows = false;
-            this.tblSupplies.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tblSupplies.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.tblSupplies.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tblSupplies.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblSupplies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.tblSupplies.ColumnHeadersHeight = 40;
-            this.tblSupplies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.tblSupplies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SupplyID,
-            this.Category,
-            this.SupplyName,
-            this.Quantity});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Moccasin;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tblSupplies.DefaultCellStyle = dataGridViewCellStyle8;
-            this.tblSupplies.EnableHeadersVisualStyles = false;
-            this.tblSupplies.GridColor = System.Drawing.Color.DimGray;
-            this.tblSupplies.Location = new System.Drawing.Point(20, 151);
-            this.tblSupplies.MultiSelect = false;
-            this.tblSupplies.Name = "tblSupplies";
-            this.tblSupplies.ReadOnly = true;
-            this.tblSupplies.RowHeadersVisible = false;
-            this.tblSupplies.RowHeadersWidth = 51;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Moccasin;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            this.tblSupplies.RowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.tblSupplies.RowTemplate.Height = 40;
-            this.tblSupplies.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tblSupplies.Size = new System.Drawing.Size(878, 586);
-            this.tblSupplies.TabIndex = 32;
+            tblSupplies.AllowUserToAddRows = false;
+            tblSupplies.AllowUserToDeleteRows = false;
+            tblSupplies.AllowUserToResizeColumns = false;
+            tblSupplies.AllowUserToResizeRows = false;
+            tblSupplies.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            tblSupplies.BackgroundColor = SystemColors.Control;
+            tblSupplies.BorderStyle = BorderStyle.None;
+            tblSupplies.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.Maroon;
+            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = Color.Maroon;
+            dataGridViewCellStyle7.SelectionForeColor = Color.White;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            tblSupplies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            tblSupplies.ColumnHeadersHeight = 40;
+            tblSupplies.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            tblSupplies.Columns.AddRange(new DataGridViewColumn[] { SupplyID, Category, SupplyName, Quantity });
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = SystemColors.Window;
+            dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            tblSupplies.DefaultCellStyle = dataGridViewCellStyle8;
+            tblSupplies.EnableHeadersVisualStyles = false;
+            tblSupplies.GridColor = Color.DimGray;
+            tblSupplies.Location = new Point(20, 151);
+            tblSupplies.MultiSelect = false;
+            tblSupplies.Name = "tblSupplies";
+            tblSupplies.ReadOnly = true;
+            tblSupplies.RowHeadersVisible = false;
+            tblSupplies.RowHeadersWidth = 51;
+            dataGridViewCellStyle9.BackColor = SystemColors.Control;
+            dataGridViewCellStyle9.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle9.SelectionForeColor = Color.Black;
+            tblSupplies.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            tblSupplies.RowTemplate.Height = 40;
+            tblSupplies.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            tblSupplies.Size = new Size(878, 586);
+            tblSupplies.TabIndex = 32;
             // 
             // SupplyID
             // 
-            this.SupplyID.HeaderText = "SupplyID";
-            this.SupplyID.MinimumWidth = 6;
-            this.SupplyID.Name = "SupplyID";
-            this.SupplyID.ReadOnly = true;
+            SupplyID.HeaderText = "SupplyID";
+            SupplyID.MinimumWidth = 6;
+            SupplyID.Name = "SupplyID";
+            SupplyID.ReadOnly = true;
             // 
             // Category
             // 
-            this.Category.HeaderText = "Category";
-            this.Category.MinimumWidth = 6;
-            this.Category.Name = "Category";
-            this.Category.ReadOnly = true;
+            Category.HeaderText = "Category";
+            Category.MinimumWidth = 6;
+            Category.Name = "Category";
+            Category.ReadOnly = true;
             // 
-            // Name
+            // SupplyName
             // 
-            this.SupplyName.HeaderText = "Name";
-            this.SupplyName.MinimumWidth = 6;
-            this.SupplyName.Name = "Name";
-            this.SupplyName.ReadOnly = true;
+            SupplyName.HeaderText = "Name";
+            SupplyName.MinimumWidth = 6;
+            SupplyName.Name = "SupplyName";
+            SupplyName.ReadOnly = true;
             // 
             // Quantity
             // 
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.MinimumWidth = 6;
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
+            Quantity.HeaderText = "Quantity";
+            Quantity.MinimumWidth = 6;
+            Quantity.Name = "Quantity";
+            Quantity.ReadOnly = true;
             // 
             // label25
             // 
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.Black;
-            this.label25.Location = new System.Drawing.Point(16, 72);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(436, 47);
-            this.label25.TabIndex = 6;
-            this.label25.Text = "Track and manage supplies inventory.";
+            label25.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label25.ForeColor = Color.Black;
+            label25.Location = new Point(16, 72);
+            label25.Name = "label25";
+            label25.Size = new Size(436, 47);
+            label25.TabIndex = 6;
+            label25.Text = "Track and manage supplies inventory.";
             // 
             // label27
             // 
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.Maroon;
-            this.label27.Location = new System.Drawing.Point(15, 36);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(307, 47);
-            this.label27.TabIndex = 5;
-            this.label27.Text = "Manage Supplies";
+            label27.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label27.ForeColor = Color.Maroon;
+            label27.Location = new Point(15, 36);
+            label27.Name = "label27";
+            label27.Size = new Size(307, 47);
+            label27.TabIndex = 5;
+            label27.Text = "Manage Supplies";
             // 
             // pnlFacilitators
             // 
-            this.pnlFacilitators.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlFacilitators.Controls.Add(this.cmbActive);
-            this.pnlFacilitators.Controls.Add(this.btnAddFaci);
-            this.pnlFacilitators.Controls.Add(this.btnEditFaci);
-            this.pnlFacilitators.Controls.Add(this.btnRemoveFaci);
-            this.pnlFacilitators.Controls.Add(this.cmbPosition);
-            this.pnlFacilitators.Controls.Add(this.txtSearchFacilitator);
-            this.pnlFacilitators.Controls.Add(this.tblFacilitators);
-            this.pnlFacilitators.Controls.Add(this.label32);
-            this.pnlFacilitators.Controls.Add(this.label33);
-            this.pnlFacilitators.Location = new System.Drawing.Point(184, 1);
-            this.pnlFacilitators.Name = "pnlFacilitators";
-            this.pnlFacilitators.Size = new System.Drawing.Size(918, 753);
-            this.pnlFacilitators.TabIndex = 42;
-            this.pnlFacilitators.Visible = false;
+            pnlFacilitators.BackColor = SystemColors.Control;
+            pnlFacilitators.Controls.Add(cmbActive);
+            pnlFacilitators.Controls.Add(btnAddFaci);
+            pnlFacilitators.Controls.Add(btnEditFaci);
+            pnlFacilitators.Controls.Add(btnRemoveFaci);
+            pnlFacilitators.Controls.Add(cmbPosition);
+            pnlFacilitators.Controls.Add(txtSearchFacilitator);
+            pnlFacilitators.Controls.Add(tblFacilitators);
+            pnlFacilitators.Controls.Add(label32);
+            pnlFacilitators.Controls.Add(label33);
+            pnlFacilitators.Location = new Point(184, 1);
+            pnlFacilitators.Name = "pnlFacilitators";
+            pnlFacilitators.Size = new Size(918, 753);
+            pnlFacilitators.TabIndex = 42;
+            pnlFacilitators.Visible = false;
             // 
             // cmbActive
             // 
-            this.cmbActive.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbActive.FormattingEnabled = true;
-            this.cmbActive.Location = new System.Drawing.Point(366, 109);
-            this.cmbActive.Name = "cmbActive";
-            this.cmbActive.Size = new System.Drawing.Size(107, 28);
-            this.cmbActive.TabIndex = 42;
+            cmbActive.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbActive.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbActive.FormattingEnabled = true;
+            cmbActive.Location = new Point(366, 109);
+            cmbActive.Name = "cmbActive";
+            cmbActive.Size = new Size(107, 24);
+            cmbActive.TabIndex = 42;
             // 
             // btnAddFaci
             // 
-            this.btnAddFaci.BackColor = System.Drawing.Color.Orange;
-            this.btnAddFaci.Controls.Add(this.label16);
-            this.btnAddFaci.Location = new System.Drawing.Point(598, 105);
-            this.btnAddFaci.Name = "btnAddFaci";
-            this.btnAddFaci.Size = new System.Drawing.Size(96, 32);
-            this.btnAddFaci.TabIndex = 41;
-            this.btnAddFaci.Click += new System.EventHandler(this.btnAddFaci_Click);
+            btnAddFaci.BackColor = Color.Orange;
+            btnAddFaci.Controls.Add(label16);
+            btnAddFaci.Location = new Point(598, 105);
+            btnAddFaci.Name = "btnAddFaci";
+            btnAddFaci.Size = new Size(96, 32);
+            btnAddFaci.TabIndex = 41;
+            btnAddFaci.Click += btnAddFaci_Click;
             // 
             // label16
             // 
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(3, 6);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(90, 22);
-            this.label16.TabIndex = 12;
-            this.label16.Text = "Add";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label16.Click += new System.EventHandler(this.label16_Click);
+            label16.BackColor = Color.Transparent;
+            label16.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label16.ForeColor = Color.White;
+            label16.Location = new Point(3, 6);
+            label16.Name = "label16";
+            label16.Size = new Size(90, 22);
+            label16.TabIndex = 12;
+            label16.Text = "Add";
+            label16.TextAlign = ContentAlignment.TopCenter;
+            label16.Click += label16_Click;
             // 
             // btnEditFaci
             // 
-            this.btnEditFaci.BackColor = System.Drawing.Color.Orange;
-            this.btnEditFaci.Controls.Add(this.label28);
-            this.btnEditFaci.Location = new System.Drawing.Point(700, 105);
-            this.btnEditFaci.Name = "btnEditFaci";
-            this.btnEditFaci.Size = new System.Drawing.Size(96, 32);
-            this.btnEditFaci.TabIndex = 40;
-            this.btnEditFaci.Click += new System.EventHandler(this.btnEditFaci_Click);
+            btnEditFaci.BackColor = Color.Orange;
+            btnEditFaci.Controls.Add(label28);
+            btnEditFaci.Location = new Point(700, 105);
+            btnEditFaci.Name = "btnEditFaci";
+            btnEditFaci.Size = new Size(96, 32);
+            btnEditFaci.TabIndex = 40;
+            btnEditFaci.Click += btnEditFaci_Click;
             // 
             // label28
             // 
-            this.label28.BackColor = System.Drawing.Color.Transparent;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(3, 6);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(90, 22);
-            this.label28.TabIndex = 12;
-            this.label28.Text = "Edit";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label28.Click += new System.EventHandler(this.label28_Click);
+            label28.BackColor = Color.Transparent;
+            label28.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label28.ForeColor = Color.White;
+            label28.Location = new Point(3, 6);
+            label28.Name = "label28";
+            label28.Size = new Size(90, 22);
+            label28.TabIndex = 12;
+            label28.Text = "Edit";
+            label28.TextAlign = ContentAlignment.TopCenter;
+            label28.Click += label28_Click;
             // 
             // btnRemoveFaci
             // 
-            this.btnRemoveFaci.BackColor = System.Drawing.Color.Orange;
-            this.btnRemoveFaci.Controls.Add(this.label31);
-            this.btnRemoveFaci.Location = new System.Drawing.Point(802, 105);
-            this.btnRemoveFaci.Name = "btnRemoveFaci";
-            this.btnRemoveFaci.Size = new System.Drawing.Size(96, 32);
-            this.btnRemoveFaci.TabIndex = 39;
-            this.btnRemoveFaci.Click += new System.EventHandler(this.btnRemoveFaci_Click);
+            btnRemoveFaci.BackColor = Color.Orange;
+            btnRemoveFaci.Controls.Add(label31);
+            btnRemoveFaci.Location = new Point(802, 105);
+            btnRemoveFaci.Name = "btnRemoveFaci";
+            btnRemoveFaci.Size = new Size(96, 32);
+            btnRemoveFaci.TabIndex = 39;
+            btnRemoveFaci.Click += btnRemoveFaci_Click;
             // 
             // label31
             // 
-            this.label31.BackColor = System.Drawing.Color.Transparent;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.Color.White;
-            this.label31.Location = new System.Drawing.Point(3, 6);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(90, 22);
-            this.label31.TabIndex = 12;
-            this.label31.Text = "Remove";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label31.Click += new System.EventHandler(this.label31_Click);
+            label31.BackColor = Color.Transparent;
+            label31.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label31.ForeColor = Color.White;
+            label31.Location = new Point(3, 6);
+            label31.Name = "label31";
+            label31.Size = new Size(90, 22);
+            label31.TabIndex = 12;
+            label31.Text = "Remove";
+            label31.TextAlign = ContentAlignment.TopCenter;
+            label31.Click += label31_Click;
             // 
             // cmbPosition
             // 
-            this.cmbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbPosition.FormattingEnabled = true;
-            this.cmbPosition.Location = new System.Drawing.Point(253, 109);
-            this.cmbPosition.Name = "cmbPosition";
-            this.cmbPosition.Size = new System.Drawing.Size(107, 28);
-            this.cmbPosition.TabIndex = 37;
+            cmbPosition.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbPosition.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbPosition.FormattingEnabled = true;
+            cmbPosition.Location = new Point(253, 109);
+            cmbPosition.Name = "cmbPosition";
+            cmbPosition.Size = new Size(107, 24);
+            cmbPosition.TabIndex = 37;
             // 
             // txtSearchFacilitator
             // 
-            this.txtSearchFacilitator.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchFacilitator.Location = new System.Drawing.Point(20, 111);
-            this.txtSearchFacilitator.Name = "txtSearchFacilitator";
-            this.txtSearchFacilitator.Size = new System.Drawing.Size(227, 26);
-            this.txtSearchFacilitator.TabIndex = 35;
+            txtSearchFacilitator.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtSearchFacilitator.Location = new Point(20, 111);
+            txtSearchFacilitator.Name = "txtSearchFacilitator";
+            txtSearchFacilitator.Size = new Size(227, 23);
+            txtSearchFacilitator.TabIndex = 35;
             // 
             // tblFacilitators
             // 
-            this.tblFacilitators.AllowUserToAddRows = false;
-            this.tblFacilitators.AllowUserToDeleteRows = false;
-            this.tblFacilitators.AllowUserToResizeColumns = false;
-            this.tblFacilitators.AllowUserToResizeRows = false;
-            this.tblFacilitators.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tblFacilitators.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.tblFacilitators.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tblFacilitators.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblFacilitators.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.tblFacilitators.ColumnHeadersHeight = 40;
-            this.tblFacilitators.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.tblFacilitators.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FacilitatorID,
-            this.FirstName,
-            this.LastName,
-            this.Position,
-            this.isActive});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Moccasin;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tblFacilitators.DefaultCellStyle = dataGridViewCellStyle11;
-            this.tblFacilitators.EnableHeadersVisualStyles = false;
-            this.tblFacilitators.GridColor = System.Drawing.Color.DimGray;
-            this.tblFacilitators.Location = new System.Drawing.Point(20, 151);
-            this.tblFacilitators.MultiSelect = false;
-            this.tblFacilitators.Name = "tblFacilitators";
-            this.tblFacilitators.ReadOnly = true;
-            this.tblFacilitators.RowHeadersVisible = false;
-            this.tblFacilitators.RowHeadersWidth = 51;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Moccasin;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            this.tblFacilitators.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.tblFacilitators.RowTemplate.Height = 40;
-            this.tblFacilitators.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tblFacilitators.Size = new System.Drawing.Size(878, 586);
-            this.tblFacilitators.TabIndex = 32;
+            tblFacilitators.AllowUserToAddRows = false;
+            tblFacilitators.AllowUserToDeleteRows = false;
+            tblFacilitators.AllowUserToResizeColumns = false;
+            tblFacilitators.AllowUserToResizeRows = false;
+            tblFacilitators.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            tblFacilitators.BackgroundColor = SystemColors.Control;
+            tblFacilitators.BorderStyle = BorderStyle.None;
+            tblFacilitators.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = Color.Maroon;
+            dataGridViewCellStyle10.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle10.ForeColor = Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = Color.Maroon;
+            dataGridViewCellStyle10.SelectionForeColor = Color.White;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            tblFacilitators.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            tblFacilitators.ColumnHeadersHeight = 40;
+            tblFacilitators.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            tblFacilitators.Columns.AddRange(new DataGridViewColumn[] { FacilitatorID, FirstName, LastName, Position, isActive });
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = SystemColors.Window;
+            dataGridViewCellStyle11.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle11.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
+            tblFacilitators.DefaultCellStyle = dataGridViewCellStyle11;
+            tblFacilitators.EnableHeadersVisualStyles = false;
+            tblFacilitators.GridColor = Color.DimGray;
+            tblFacilitators.Location = new Point(20, 151);
+            tblFacilitators.MultiSelect = false;
+            tblFacilitators.Name = "tblFacilitators";
+            tblFacilitators.ReadOnly = true;
+            tblFacilitators.RowHeadersVisible = false;
+            tblFacilitators.RowHeadersWidth = 51;
+            dataGridViewCellStyle12.BackColor = SystemColors.Control;
+            dataGridViewCellStyle12.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle12.SelectionForeColor = Color.Black;
+            tblFacilitators.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            tblFacilitators.RowTemplate.Height = 40;
+            tblFacilitators.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            tblFacilitators.Size = new Size(878, 586);
+            tblFacilitators.TabIndex = 32;
             // 
             // FacilitatorID
             // 
-            this.FacilitatorID.HeaderText = "FacilitatorID";
-            this.FacilitatorID.MinimumWidth = 6;
-            this.FacilitatorID.Name = "FacilitatorID";
-            this.FacilitatorID.ReadOnly = true;
+            FacilitatorID.HeaderText = "FacilitatorID";
+            FacilitatorID.MinimumWidth = 6;
+            FacilitatorID.Name = "FacilitatorID";
+            FacilitatorID.ReadOnly = true;
             // 
             // FirstName
             // 
-            this.FirstName.HeaderText = "First Name";
-            this.FirstName.MinimumWidth = 6;
-            this.FirstName.Name = "FirstName";
-            this.FirstName.ReadOnly = true;
+            FirstName.HeaderText = "First Name";
+            FirstName.MinimumWidth = 6;
+            FirstName.Name = "FirstName";
+            FirstName.ReadOnly = true;
             // 
             // LastName
             // 
-            this.LastName.HeaderText = "Last Name";
-            this.LastName.MinimumWidth = 6;
-            this.LastName.Name = "LastName";
-            this.LastName.ReadOnly = true;
+            LastName.HeaderText = "Last Name";
+            LastName.MinimumWidth = 6;
+            LastName.Name = "LastName";
+            LastName.ReadOnly = true;
             // 
             // Position
             // 
-            this.Position.HeaderText = "Position";
-            this.Position.MinimumWidth = 6;
-            this.Position.Name = "Position";
-            this.Position.ReadOnly = true;
+            Position.HeaderText = "Position";
+            Position.MinimumWidth = 6;
+            Position.Name = "Position";
+            Position.ReadOnly = true;
             // 
             // isActive
             // 
-            this.isActive.HeaderText = "isActive";
-            this.isActive.MinimumWidth = 6;
-            this.isActive.Name = "isActive";
-            this.isActive.ReadOnly = true;
+            isActive.HeaderText = "isActive";
+            isActive.MinimumWidth = 6;
+            isActive.Name = "isActive";
+            isActive.ReadOnly = true;
             // 
             // label32
             // 
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.Black;
-            this.label32.Location = new System.Drawing.Point(16, 72);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(436, 47);
-            this.label32.TabIndex = 6;
-            this.label32.Text = "Track and manage active facilitators.";
+            label32.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label32.ForeColor = Color.Black;
+            label32.Location = new Point(16, 72);
+            label32.Name = "label32";
+            label32.Size = new Size(436, 47);
+            label32.TabIndex = 6;
+            label32.Text = "Track and manage active facilitators.";
             // 
             // label33
             // 
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.ForeColor = System.Drawing.Color.Maroon;
-            this.label33.Location = new System.Drawing.Point(15, 36);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(307, 47);
-            this.label33.TabIndex = 5;
-            this.label33.Text = "Manage Facilitators";
+            label33.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label33.ForeColor = Color.Maroon;
+            label33.Location = new Point(15, 36);
+            label33.Name = "label33";
+            label33.Size = new Size(307, 47);
+            label33.TabIndex = 5;
+            label33.Text = "Manage Facilitators";
             // 
             // MainDashboard
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1100, 750);
-            this.Controls.Add(this.pnlFacilitators);
-            this.Controls.Add(this.pnlSupplies);
-            this.Controls.Add(this.pnlBorrowRecord);
-            this.Controls.Add(this.pnlDashboard);
-            this.Controls.Add(this.pnlSideBar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.pnlDashboard.ResumeLayout(false);
-            this.btnViewBorrows.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tblBorrowSummary)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            this.pnlSideBar.ResumeLayout(false);
-            this.btnFacilitators.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            this.btnSupplies.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.btnTransactions.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.btnDashboard.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnFacilDropDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnlBorrowRecord.ResumeLayout(false);
-            this.pnlBorrowRecord.PerformLayout();
-            this.btnBorrowDetails.ResumeLayout(false);
-            this.btnBorrow.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tblBorrowRecord)).EndInit();
-            this.pnlSupplies.ResumeLayout(false);
-            this.pnlSupplies.PerformLayout();
-            this.btnAdd.ResumeLayout(false);
-            this.btnEdit.ResumeLayout(false);
-            this.btnViewLogs.ResumeLayout(false);
-            this.btnRemove.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tblSupplies)).EndInit();
-            this.pnlFacilitators.ResumeLayout(false);
-            this.pnlFacilitators.PerformLayout();
-            this.btnAddFaci.ResumeLayout(false);
-            this.btnEditFaci.ResumeLayout(false);
-            this.btnRemoveFaci.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tblFacilitators)).EndInit();
-            this.ResumeLayout(false);
+            AutoScaleMode = AutoScaleMode.None;
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(1100, 750);
+            Controls.Add(pnlSideBar);
+            Controls.Add(pnlBorrowRecord);
+            Controls.Add(pnlDashboard);
+            Controls.Add(pnlFacilitators);
+            Controls.Add(pnlSupplies);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "MainDashboard";
+            StartPosition = FormStartPosition.CenterScreen;
+            Load += Form1_Load;
+            pnlDashboard.ResumeLayout(false);
+            btnViewBorrows.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)tblBorrowSummary).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox15).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox16).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            pnlSideBar.ResumeLayout(false);
+            btnFacilitators.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            btnSupplies.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            btnTransactions.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            btnDashboard.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnFacilDropDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            pnlBorrowRecord.ResumeLayout(false);
+            pnlBorrowRecord.PerformLayout();
+            btnBorrowDetails.ResumeLayout(false);
+            btnBorrow.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)tblBorrowRecord).EndInit();
+            pnlSupplies.ResumeLayout(false);
+            pnlSupplies.PerformLayout();
+            btnAdd.ResumeLayout(false);
+            btnEdit.ResumeLayout(false);
+            btnViewLogs.ResumeLayout(false);
+            btnRemove.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)tblSupplies).EndInit();
+            pnlFacilitators.ResumeLayout(false);
+            pnlFacilitators.PerformLayout();
+            btnAddFaci.ResumeLayout(false);
+            btnEditFaci.ResumeLayout(false);
+            btnRemoveFaci.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)tblFacilitators).EndInit();
+            ResumeLayout(false);
 
         }
 

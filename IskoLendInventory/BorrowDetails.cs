@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IskoLendDataManagement;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,13 +13,14 @@ namespace IskoLendInventory
 {
     public partial class BorrowDetails : Form
     {
-        public BorrowDetails()
+        private readonly string _borrowID;
+        private readonly BorrowingRecordDataService _dsBR;
+        public BorrowDetails(BorrowingRecordDataService dbBR, string BorrowID)
         {
             InitializeComponent();
-            tblBorrowRecord.Rows.Add("test", "test", "test", "test", "test", "test");
-            tblBorrowRecord.Rows.Add("test", "test", "test", "test", "test", "test");
-            tblBorrowRecord.Rows.Add("test", "test", "test", "test", "test", "test");
-            tblBorrowRecord.Rows.Add("test", "test", "test", "test", "test", "test");
+            _borrowID = BorrowID;
+            _dsBR = dbBR;
+            tblBorrowDetail.DataSource = dbBR.GetSelectedBorrowDetail(BorrowID);
         }
 
         private void BorrowDetails_Load(object sender, EventArgs e)
@@ -31,15 +33,17 @@ namespace IskoLendInventory
             MaximizeBox = false;
 
             
-            tblBorrowRecord.ClearSelection();
+            tblBorrowDetail.ClearSelection();
 
         }
         private void btnReturnDetails_Click(object sender, EventArgs e)
         {
-            if (tblBorrowRecord.SelectedRows.Count > 0)
+            if (tblBorrowDetail.SelectedRows.Count > 0)
             {
-                tblBorrowRecord.ClearSelection();
-                ReturnDetails form = new ReturnDetails();
+                DataGridViewRow row = tblBorrowDetail.SelectedRows[0];
+                string? ItemName = row.Cells[0].Value.ToString();
+                tblBorrowDetail.ClearSelection();
+                ReturnDetails form = new ReturnDetails(_dsBR,_borrowID, ItemName);
                 form.ShowDialog();
             }
             else
@@ -55,9 +59,9 @@ namespace IskoLendInventory
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            if (tblBorrowRecord.SelectedRows.Count > 0)
+            if (tblBorrowDetail.SelectedRows.Count > 0)
             {
-                tblBorrowRecord.ClearSelection();
+                tblBorrowDetail.ClearSelection();
                 ReturnItems form = new ReturnItems();
                 form.ShowDialog();
             }

@@ -28,296 +28,270 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label22 = new System.Windows.Forms.Label();
-            this.roundedPanel23 = new IskoLendInventory.RoundedPanel2();
-            this.roundedPanel24 = new IskoLendInventory.RoundedPanel2();
-            this.btnAddItem = new IskoLendInventory.RoundedPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tblItems = new System.Windows.Forms.DataGridView();
-            this.SupplyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.roundedPanel21 = new IskoLendInventory.RoundedPanel2();
-            this.roundedPanel22 = new IskoLendInventory.RoundedPanel2();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cmbDate = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtStudentID = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.btnSave = new IskoLendInventory.RoundedPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.roundedPanel23.SuspendLayout();
-            this.roundedPanel24.SuspendLayout();
-            this.btnAddItem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblItems)).BeginInit();
-            this.roundedPanel21.SuspendLayout();
-            this.roundedPanel22.SuspendLayout();
-            this.btnSave.SuspendLayout();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            label22 = new Label();
+            roundedPanel23 = new RoundedPanel2();
+            roundedPanel24 = new RoundedPanel2();
+            btnAddItem = new RoundedPanel();
+            label2 = new Label();
+            tblItems = new DataGridView();
+            label1 = new Label();
+            roundedPanel21 = new RoundedPanel2();
+            roundedPanel22 = new RoundedPanel2();
+            label6 = new Label();
+            label5 = new Label();
+            cmbDate = new DateTimePicker();
+            label4 = new Label();
+            label19 = new Label();
+            txtStudentID = new TextBox();
+            label24 = new Label();
+            btnSave = new RoundedPanel();
+            label3 = new Label();
+            roundedPanel23.SuspendLayout();
+            roundedPanel24.SuspendLayout();
+            btnAddItem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tblItems).BeginInit();
+            roundedPanel21.SuspendLayout();
+            roundedPanel22.SuspendLayout();
+            btnSave.SuspendLayout();
+            SuspendLayout();
             // 
             // label22
             // 
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Maroon;
-            this.label22.Location = new System.Drawing.Point(12, 9);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(307, 47);
-            this.label22.TabIndex = 50;
-            this.label22.Text = "Record Borrow";
+            label22.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label22.ForeColor = Color.Maroon;
+            label22.Location = new Point(12, 9);
+            label22.Name = "label22";
+            label22.Size = new Size(307, 47);
+            label22.TabIndex = 50;
+            label22.Text = "Record Borrow";
             // 
             // roundedPanel23
             // 
-            this.roundedPanel23.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.roundedPanel23.Controls.Add(this.roundedPanel24);
-            this.roundedPanel23.Location = new System.Drawing.Point(20, 215);
-            this.roundedPanel23.Name = "roundedPanel23";
-            this.roundedPanel23.Size = new System.Drawing.Size(499, 258);
-            this.roundedPanel23.TabIndex = 55;
+            roundedPanel23.BackColor = SystemColors.ControlLight;
+            roundedPanel23.Controls.Add(roundedPanel24);
+            roundedPanel23.Location = new Point(20, 215);
+            roundedPanel23.Name = "roundedPanel23";
+            roundedPanel23.Size = new Size(499, 258);
+            roundedPanel23.TabIndex = 55;
             // 
             // roundedPanel24
             // 
-            this.roundedPanel24.BackColor = System.Drawing.SystemColors.Control;
-            this.roundedPanel24.Controls.Add(this.btnAddItem);
-            this.roundedPanel24.Controls.Add(this.tblItems);
-            this.roundedPanel24.Controls.Add(this.label1);
-            this.roundedPanel24.Location = new System.Drawing.Point(0, 3);
-            this.roundedPanel24.Name = "roundedPanel24";
-            this.roundedPanel24.Size = new System.Drawing.Size(496, 252);
-            this.roundedPanel24.TabIndex = 55;
+            roundedPanel24.BackColor = SystemColors.Control;
+            roundedPanel24.Controls.Add(btnAddItem);
+            roundedPanel24.Controls.Add(tblItems);
+            roundedPanel24.Controls.Add(label1);
+            roundedPanel24.Location = new Point(0, 3);
+            roundedPanel24.Name = "roundedPanel24";
+            roundedPanel24.Size = new Size(496, 252);
+            roundedPanel24.TabIndex = 55;
             // 
             // btnAddItem
             // 
-            this.btnAddItem.BackColor = System.Drawing.Color.Orange;
-            this.btnAddItem.Controls.Add(this.label2);
-            this.btnAddItem.Location = new System.Drawing.Point(17, 205);
-            this.btnAddItem.Name = "btnAddItem";
-            this.btnAddItem.Size = new System.Drawing.Size(121, 32);
-            this.btnAddItem.TabIndex = 57;
-            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
+            btnAddItem.BackColor = Color.Orange;
+            btnAddItem.Controls.Add(label2);
+            btnAddItem.Location = new Point(17, 205);
+            btnAddItem.Name = "btnAddItem";
+            btnAddItem.Size = new Size(121, 32);
+            btnAddItem.TabIndex = 57;
+            btnAddItem.Click += btnAddItem_Click;
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 22);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "+ Add Item";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(3, 6);
+            label2.Name = "label2";
+            label2.Size = new Size(115, 22);
+            label2.TabIndex = 12;
+            label2.Text = "+ Add Item";
+            label2.TextAlign = ContentAlignment.TopCenter;
+            label2.Click += label2_Click;
             // 
             // tblItems
             // 
-            this.tblItems.AllowUserToAddRows = false;
-            this.tblItems.AllowUserToDeleteRows = false;
-            this.tblItems.AllowUserToResizeColumns = false;
-            this.tblItems.AllowUserToResizeRows = false;
-            this.tblItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tblItems.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.tblItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tblItems.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.tblItems.ColumnHeadersHeight = 40;
-            this.tblItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.tblItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SupplyID,
-            this.Item,
-            this.Quantity});
-            this.tblItems.Enabled = false;
-            this.tblItems.EnableHeadersVisualStyles = false;
-            this.tblItems.GridColor = System.Drawing.Color.DimGray;
-            this.tblItems.Location = new System.Drawing.Point(17, 43);
-            this.tblItems.Name = "tblItems";
-            this.tblItems.ReadOnly = true;
-            this.tblItems.RowHeadersVisible = false;
-            this.tblItems.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            this.tblItems.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.tblItems.RowTemplate.Height = 40;
-            this.tblItems.Size = new System.Drawing.Size(461, 156);
-            this.tblItems.TabIndex = 56;
-            // 
-            // SupplyID
-            // 
-            this.SupplyID.HeaderText = "SupplyID";
-            this.SupplyID.MinimumWidth = 6;
-            this.SupplyID.Name = "SupplyID";
-            this.SupplyID.ReadOnly = true;
-            // 
-            // Item
-            // 
-            this.Item.HeaderText = "Item";
-            this.Item.MinimumWidth = 6;
-            this.Item.Name = "Item";
-            this.Item.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.MinimumWidth = 6;
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
+            tblItems.AllowUserToAddRows = false;
+            tblItems.AllowUserToResizeColumns = false;
+            tblItems.AllowUserToResizeRows = false;
+            tblItems.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            tblItems.BackgroundColor = SystemColors.Control;
+            tblItems.BorderStyle = BorderStyle.None;
+            tblItems.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.Maroon;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Maroon;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            tblItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            tblItems.ColumnHeadersHeight = 40;
+            tblItems.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            tblItems.EnableHeadersVisualStyles = false;
+            tblItems.GridColor = Color.DimGray;
+            tblItems.Location = new Point(17, 43);
+            tblItems.Name = "tblItems";
+            tblItems.ReadOnly = true;
+            tblItems.RowHeadersVisible = false;
+            tblItems.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
+            tblItems.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            tblItems.RowTemplate.Height = 40;
+            tblItems.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            tblItems.Size = new Size(461, 156);
+            tblItems.TabIndex = 56;
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(12, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(264, 38);
-            this.label1.TabIndex = 53;
-            this.label1.Text = "Items";
+            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Maroon;
+            label1.Location = new Point(12, 11);
+            label1.Name = "label1";
+            label1.Size = new Size(264, 38);
+            label1.TabIndex = 53;
+            label1.Text = "Items";
             // 
             // roundedPanel21
             // 
-            this.roundedPanel21.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.roundedPanel21.Controls.Add(this.roundedPanel22);
-            this.roundedPanel21.Location = new System.Drawing.Point(17, 59);
-            this.roundedPanel21.Name = "roundedPanel21";
-            this.roundedPanel21.Size = new System.Drawing.Size(502, 150);
-            this.roundedPanel21.TabIndex = 54;
+            roundedPanel21.BackColor = SystemColors.ControlLight;
+            roundedPanel21.Controls.Add(roundedPanel22);
+            roundedPanel21.Location = new Point(17, 59);
+            roundedPanel21.Name = "roundedPanel21";
+            roundedPanel21.Size = new Size(502, 150);
+            roundedPanel21.TabIndex = 54;
             // 
             // roundedPanel22
             // 
-            this.roundedPanel22.BackColor = System.Drawing.SystemColors.Control;
-            this.roundedPanel22.Controls.Add(this.label6);
-            this.roundedPanel22.Controls.Add(this.label5);
-            this.roundedPanel22.Controls.Add(this.cmbDate);
-            this.roundedPanel22.Controls.Add(this.label4);
-            this.roundedPanel22.Controls.Add(this.label19);
-            this.roundedPanel22.Controls.Add(this.txtStudentID);
-            this.roundedPanel22.Controls.Add(this.label24);
-            this.roundedPanel22.Location = new System.Drawing.Point(3, 3);
-            this.roundedPanel22.Name = "roundedPanel22";
-            this.roundedPanel22.Size = new System.Drawing.Size(496, 144);
-            this.roundedPanel22.TabIndex = 55;
+            roundedPanel22.BackColor = SystemColors.Control;
+            roundedPanel22.Controls.Add(label6);
+            roundedPanel22.Controls.Add(label5);
+            roundedPanel22.Controls.Add(cmbDate);
+            roundedPanel22.Controls.Add(label4);
+            roundedPanel22.Controls.Add(label19);
+            roundedPanel22.Controls.Add(txtStudentID);
+            roundedPanel22.Controls.Add(label24);
+            roundedPanel22.Location = new Point(3, 3);
+            roundedPanel22.Name = "roundedPanel22";
+            roundedPanel22.Size = new Size(496, 144);
+            roundedPanel22.TabIndex = 55;
             // 
             // label6
             // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Maroon;
-            this.label6.Location = new System.Drawing.Point(65, 93);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(22, 23);
-            this.label6.TabIndex = 59;
-            this.label6.Text = "*";
+            label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Maroon;
+            label6.Location = new Point(65, 93);
+            label6.Name = "label6";
+            label6.Size = new Size(22, 23);
+            label6.TabIndex = 59;
+            label6.Text = "*";
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Maroon;
-            this.label5.Location = new System.Drawing.Point(104, 48);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(22, 23);
-            this.label5.TabIndex = 58;
-            this.label5.Text = "*";
+            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Maroon;
+            label5.Location = new Point(104, 48);
+            label5.Name = "label5";
+            label5.Size = new Size(22, 23);
+            label5.TabIndex = 58;
+            label5.Text = "*";
             // 
             // cmbDate
             // 
-            this.cmbDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbDate.Location = new System.Drawing.Point(143, 93);
-            this.cmbDate.MaxDate = new System.DateTime(2039, 12, 31, 0, 0, 0, 0);
-            this.cmbDate.MinDate = new System.DateTime(2026, 5, 24, 0, 0, 0, 0);
-            this.cmbDate.Name = "cmbDate";
-            this.cmbDate.Size = new System.Drawing.Size(335, 26);
-            this.cmbDate.TabIndex = 57;
+            cmbDate.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbDate.Location = new Point(143, 93);
+            cmbDate.MaxDate = new DateTime(2039, 12, 31, 0, 0, 0, 0);
+            cmbDate.MinDate = new DateTime(2026, 5, 24, 0, 0, 0, 0);
+            cmbDate.Name = "cmbDate";
+            cmbDate.Size = new Size(335, 23);
+            cmbDate.TabIndex = 57;
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(13, 95);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 24);
-            this.label4.TabIndex = 56;
-            this.label4.Text = "Date";
+            label4.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(13, 95);
+            label4.Name = "label4";
+            label4.Size = new Size(95, 24);
+            label4.TabIndex = 56;
+            label4.Text = "Date";
             // 
             // label19
             // 
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(13, 52);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(95, 24);
-            this.label19.TabIndex = 55;
-            this.label19.Text = "StudentID";
+            label19.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label19.ForeColor = Color.Black;
+            label19.Location = new Point(13, 52);
+            label19.Name = "label19";
+            label19.Size = new Size(95, 24);
+            label19.TabIndex = 55;
+            label19.Text = "StudentID";
             // 
             // txtStudentID
             // 
-            this.txtStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentID.Location = new System.Drawing.Point(143, 49);
-            this.txtStudentID.Name = "txtStudentID";
-            this.txtStudentID.Size = new System.Drawing.Size(335, 26);
-            this.txtStudentID.TabIndex = 54;
+            txtStudentID.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtStudentID.Location = new Point(143, 49);
+            txtStudentID.Name = "txtStudentID";
+            txtStudentID.Size = new Size(335, 23);
+            txtStudentID.TabIndex = 54;
             // 
             // label24
             // 
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.Maroon;
-            this.label24.Location = new System.Drawing.Point(12, 11);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(264, 38);
-            this.label24.TabIndex = 53;
-            this.label24.Text = "Borrow Information";
+            label24.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label24.ForeColor = Color.Maroon;
+            label24.Location = new Point(12, 11);
+            label24.Name = "label24";
+            label24.Size = new Size(264, 38);
+            label24.TabIndex = 53;
+            label24.Text = "Borrow Information";
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.Orange;
-            this.btnSave.Controls.Add(this.label3);
-            this.btnSave.Location = new System.Drawing.Point(359, 479);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(160, 32);
-            this.btnSave.TabIndex = 58;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            btnSave.BackColor = Color.Orange;
+            btnSave.Controls.Add(label3);
+            btnSave.Location = new Point(359, 479);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(160, 32);
+            btnSave.TabIndex = 58;
+            btnSave.Click += btnSave_Click;
             // 
             // label3
             // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(16, 6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 22);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Save Borrow";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(16, 6);
+            label3.Name = "label3";
+            label3.Size = new Size(123, 22);
+            label3.TabIndex = 12;
+            label3.Text = "Save Borrow";
+            label3.TextAlign = ContentAlignment.TopCenter;
+            label3.Click += label3_Click;
             // 
             // BorrowItems
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(537, 519);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.roundedPanel23);
-            this.Controls.Add(this.roundedPanel21);
-            this.Controls.Add(this.label22);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "BorrowItems";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.BorrowItems_Load);
-            this.roundedPanel23.ResumeLayout(false);
-            this.roundedPanel24.ResumeLayout(false);
-            this.btnAddItem.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tblItems)).EndInit();
-            this.roundedPanel21.ResumeLayout(false);
-            this.roundedPanel22.ResumeLayout(false);
-            this.roundedPanel22.PerformLayout();
-            this.btnSave.ResumeLayout(false);
-            this.ResumeLayout(false);
+            AutoScaleMode = AutoScaleMode.None;
+            ClientSize = new Size(537, 519);
+            Controls.Add(btnSave);
+            Controls.Add(roundedPanel23);
+            Controls.Add(roundedPanel21);
+            Controls.Add(label22);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Name = "BorrowItems";
+            StartPosition = FormStartPosition.CenterScreen;
+            Load += BorrowItems_Load;
+            roundedPanel23.ResumeLayout(false);
+            roundedPanel24.ResumeLayout(false);
+            btnAddItem.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)tblItems).EndInit();
+            roundedPanel21.ResumeLayout(false);
+            roundedPanel22.ResumeLayout(false);
+            roundedPanel22.PerformLayout();
+            btnSave.ResumeLayout(false);
+            ResumeLayout(false);
 
         }
 
@@ -334,9 +308,6 @@
         private System.Windows.Forms.Label label2;
         private RoundedPanel btnSave;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SupplyID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Item;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.TextBox txtStudentID;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label5;

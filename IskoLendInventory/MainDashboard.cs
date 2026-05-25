@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IskoLendDataManagement;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,13 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Drawing2D;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace IskoLendInventory
 {
     public partial class MainDashboard : Form
     {
+        DashboardDataService dsDB = new DashboardDataService();
+        BorrowingRecordDataService dsBR = new BorrowingRecordDataService();
         public MainDashboard()
         {
 
@@ -25,18 +27,9 @@ namespace IskoLendInventory
 
 
 
-            tblBorrowSummary.Rows.Add("2025-002", "de Dela Cruz", "Laptop", "return", "returned");
-            tblBorrowSummary.Rows.Add("2025-001", "ger Dela Cruz", "pc", "borrow", "completed");
-            tblBorrowSummary.Rows.Add("2025-003", "san Dela Cruz", "Laptop", "borrow", "completed");
-            tblBorrowSummary.Rows.Add("2025-001", "Juan Dela Cruz", "Laptop", "borrow", "completed");
-            tblBorrowSummary.Rows.Add("2025-001", "Juan Dela Cruz", "Laptop", "borrow", "completed");
-            tblBorrowSummary.Rows.Add("2025-001", "Juan Dela Cruz", "Laptop", "borrow", "completed");
-            tblBorrowSummary.Rows.Add("2025-001", "Juan Dela Cruz", "Laptop", "borrow", "completed");
+            tblBorrowSummary.DataSource = dsDB.GetAllSummary();
 
-            tblBorrowRecord.Rows.Add("test", "test", "test", "test", "test","test");
-            tblBorrowRecord.Rows.Add("test", "test", "test", "test", "test", "test");
-            tblBorrowRecord.Rows.Add("test", "test", "test", "test", "test", "test");
-            tblBorrowRecord.Rows.Add("test", "test", "test", "test", "test", "test");
+            tblBorrowRecord.DataSource = dsBR.GetAllBorrowingRecord();
 
             tblSupplies.Rows.Add("test", "test", "test", "test", "test", "test");
             tblSupplies.Rows.Add("test", "test", "test", "test", "test", "test");
@@ -69,8 +62,10 @@ namespace IskoLendInventory
         {
             if (tblBorrowRecord.SelectedRows.Count > 0)
             {
+                DataGridViewRow row = tblBorrowRecord.SelectedRows[0];
+                string? BorrowID = Convert.ToString(row.Cells[0].Value);
                 tblBorrowRecord.ClearSelection();
-                BorrowDetails form = new BorrowDetails();
+                BorrowDetails form = new BorrowDetails(dsBR,BorrowID);
                 form.ShowDialog();
             }
             else
@@ -86,7 +81,7 @@ namespace IskoLendInventory
 
         private void btnBorrow_Click(object sender, EventArgs e)
         {
-            BorrowItems form = new BorrowItems();
+            BorrowItems form = new BorrowItems(dsBR);
             form.ShowDialog();
         }
 

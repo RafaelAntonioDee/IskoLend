@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IskoLendDataManagement;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,17 @@ namespace IskoLendInventory
 {
     public partial class ReturnDetails : Form
     {
-        public ReturnDetails()
+        private readonly BorrowingRecordDataService _dsBR;
+        private readonly string _borrowID;
+        private readonly string _itemName;
+        public ReturnDetails(BorrowingRecordDataService dsBR, string BorrowID, string ItemName)
         {
+
             InitializeComponent();
+            _dsBR = dsBR;
+            _borrowID = BorrowID;
+            _itemName = ItemName;
+            tblReturnDetails.DataSource = dsBR.GetSelectedReturnDetail(BorrowID, ItemName);
         }
 
         private void ReturnDetails_Load(object sender, EventArgs e)
@@ -28,11 +37,6 @@ namespace IskoLendInventory
             tblReturnDetails.ClearSelection();
         }
 
-        private void ReturnDetails_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            BorrowDetails form = new BorrowDetails();
-            form.ShowDialog();
-        }
 
         private void roundedPanel1_Paint(object sender, PaintEventArgs e)
         {
