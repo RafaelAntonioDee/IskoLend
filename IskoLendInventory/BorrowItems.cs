@@ -60,8 +60,6 @@ namespace IskoLendInventory
             string StudentID = txtStudentID.Text;
             if (!(string.IsNullOrEmpty(StudentID))&& _dsBR.isStudent(StudentID))
             {
-                if (cmbDate.Text.Length > 0)
-                {
                     if (tblItems.Rows.Count > 0)
                     {
                         //record = new BorrowingRecord
@@ -81,11 +79,7 @@ namespace IskoLendInventory
                     {
                         MessageBox.Show("Please add atleast 1 item.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Please enter Date.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+
             }
             else
             {

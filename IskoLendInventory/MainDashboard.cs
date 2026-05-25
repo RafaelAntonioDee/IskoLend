@@ -65,7 +65,7 @@ namespace IskoLendInventory
                 DataGridViewRow row = tblBorrowRecord.SelectedRows[0];
                 string? BorrowID = Convert.ToString(row.Cells[0].Value);
                 tblBorrowRecord.ClearSelection();
-                BorrowDetails form = new BorrowDetails(dsBR,BorrowID);
+                BorrowDetails form = new BorrowDetails(dsBR, BorrowID);
                 form.ShowDialog();
             }
             else
@@ -102,13 +102,21 @@ namespace IskoLendInventory
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             CloseAllPanels();
+
             pnlDashboard.Visible = true;
+
+            tblBorrowSummary.ClearSelection();
+
         }
 
         private void btnTransactions_Click(object sender, EventArgs e)
         {
             CloseAllPanels();
+
             pnlBorrowRecord.Visible = true;
+
+            tblBorrowRecord.ClearSelection();
+
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -135,6 +143,8 @@ namespace IskoLendInventory
         {
             CloseAllPanels();
             pnlBorrowRecord.Visible = true;
+
+            tblBorrowRecord.ClearSelection();
         }
 
         private void Label26_Click(object sender, EventArgs e)
@@ -144,8 +154,12 @@ namespace IskoLendInventory
 
         private void btnSupplies_Click(object sender, EventArgs e)
         {
+
             CloseAllPanels();
             pnlSupplies.Visible = true;
+
+            tblSupplies.ClearSelection();
+
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -155,18 +169,22 @@ namespace IskoLendInventory
 
         private void btnViewLogs_Click(object sender, EventArgs e)
         {
-            tblSupplies.ClearSelection();
 
             SupplyLogs form = new SupplyLogs();
             form.ShowDialog();
+
+            tblSupplies.ClearSelection();
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            tblSupplies.ClearSelection();
 
             AddSupply form = new AddSupply();
             form.ShowDialog();
+
+            tblSupplies.ClearSelection();
+
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -180,7 +198,7 @@ namespace IskoLendInventory
             else
             {
                 MessageBox.Show("Please select a supply to edit", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }  
+            }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -189,7 +207,7 @@ namespace IskoLendInventory
             {
                 tblSupplies.ClearSelection();
 
-                DialogResult result = MessageBox.Show("Are you sure you want to remove this item?","Confirmation",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("Are you sure you want to remove this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (result == DialogResult.Yes)
                 {
@@ -228,10 +246,12 @@ namespace IskoLendInventory
 
         private void btnAddFaci_Click(object sender, EventArgs e)
         {
-            tblFacilitators.ClearSelection();
+            
 
             AddFacilitator form = new AddFacilitator();
             form.ShowDialog();
+
+            tblFacilitators.ClearSelection();
         }
 
         private void btnEditFaci_Click(object sender, EventArgs e)
@@ -297,10 +317,31 @@ namespace IskoLendInventory
 
         private void btnFacilitators_Click(object sender, EventArgs e)
         {
+            
+
             CloseAllPanels();
             pnlFacilitators.Visible = true;
+            tblFacilitators.ClearSelection();
         }
 
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            btnSupplies_Click(sender, e);
+        }
 
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            btnFacilitators_Click(sender, e);
+        }
+
+        private void label30_Click(object sender, EventArgs e)
+        {
+            btnExit_Click_1(sender,e);
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            Dispose();
+        }
     }
 }

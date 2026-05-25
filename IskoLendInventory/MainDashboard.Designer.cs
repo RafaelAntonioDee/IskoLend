@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
             label10 = new Label();
             pnlDashboard = new Panel();
             btnViewBorrows = new RoundedPanel();
@@ -73,6 +73,9 @@
             BorrowQty = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
             pnlSideBar = new RoundedPanel();
+            btnExit = new Label();
+            label30 = new Label();
+            cmbFacilitator = new ComboBox();
             btnFacilitators = new RoundedPanel();
             pictureBox8 = new PictureBox();
             label9 = new Label();
@@ -85,10 +88,8 @@
             btnDashboard = new RoundedPanel();
             pictureBox3 = new PictureBox();
             label2 = new Label();
-            btnFacilDropDown = new PictureBox();
             pictureBox2 = new PictureBox();
             lblFacilitatorID = new Label();
-            lblFacilitatorName = new Label();
             label1 = new Label();
             label5 = new Label();
             label4 = new Label();
@@ -166,7 +167,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             btnDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnFacilDropDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlBorrowRecord.SuspendLayout();
@@ -270,14 +270,14 @@
             tblBorrowSummary.BackgroundColor = SystemColors.Control;
             tblBorrowSummary.BorderStyle = BorderStyle.None;
             tblBorrowSummary.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.Maroon;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            tblBorrowSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = Color.Maroon;
+            dataGridViewCellStyle13.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle13.ForeColor = Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = Color.White;
+            dataGridViewCellStyle13.SelectionForeColor = SystemColors.Highlight;
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
+            tblBorrowSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             tblBorrowSummary.ColumnHeadersHeight = 40;
             tblBorrowSummary.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             tblBorrowSummary.Enabled = false;
@@ -289,15 +289,15 @@
             tblBorrowSummary.ReadOnly = true;
             tblBorrowSummary.RowHeadersVisible = false;
             tblBorrowSummary.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            tblBorrowSummary.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.BackColor = SystemColors.Control;
+            tblBorrowSummary.RowsDefaultCellStyle = dataGridViewCellStyle14;
             tblBorrowSummary.RowTemplate.Height = 40;
             tblBorrowSummary.Size = new Size(878, 385);
             tblBorrowSummary.TabIndex = 32;
             // 
             // pictureBox15
             // 
-            pictureBox15.Image = Properties.Resources.box;
+            pictureBox15.Image = Properties.Resources.checked__1_;
             pictureBox15.InitialImage = null;
             pictureBox15.Location = new Point(827, 185);
             pictureBox15.Name = "pictureBox15";
@@ -520,6 +520,7 @@
             Date.MinimumWidth = 6;
             Date.Name = "Date";
             Date.ReadOnly = true;
+            Date.Width = 125;
             // 
             // Borrower
             // 
@@ -527,6 +528,7 @@
             Borrower.MinimumWidth = 6;
             Borrower.Name = "Borrower";
             Borrower.ReadOnly = true;
+            Borrower.Width = 125;
             // 
             // Item
             // 
@@ -534,6 +536,7 @@
             Item.MinimumWidth = 6;
             Item.Name = "Item";
             Item.ReadOnly = true;
+            Item.Width = 125;
             // 
             // BorrowQty
             // 
@@ -541,6 +544,7 @@
             BorrowQty.MinimumWidth = 6;
             BorrowQty.Name = "BorrowQty";
             BorrowQty.ReadOnly = true;
+            BorrowQty.Width = 125;
             // 
             // Status
             // 
@@ -548,18 +552,20 @@
             Status.MinimumWidth = 6;
             Status.Name = "Status";
             Status.ReadOnly = true;
+            Status.Width = 125;
             // 
             // pnlSideBar
             // 
             pnlSideBar.BackColor = Color.Maroon;
+            pnlSideBar.Controls.Add(btnExit);
+            pnlSideBar.Controls.Add(label30);
+            pnlSideBar.Controls.Add(cmbFacilitator);
             pnlSideBar.Controls.Add(btnFacilitators);
             pnlSideBar.Controls.Add(btnSupplies);
             pnlSideBar.Controls.Add(btnTransactions);
             pnlSideBar.Controls.Add(btnDashboard);
-            pnlSideBar.Controls.Add(btnFacilDropDown);
             pnlSideBar.Controls.Add(pictureBox2);
             pnlSideBar.Controls.Add(lblFacilitatorID);
-            pnlSideBar.Controls.Add(lblFacilitatorName);
             pnlSideBar.Controls.Add(label1);
             pnlSideBar.Controls.Add(label5);
             pnlSideBar.Controls.Add(label4);
@@ -569,12 +575,44 @@
             pnlSideBar.Size = new Size(219, 751);
             pnlSideBar.TabIndex = 2;
             // 
+            // btnExit
+            // 
+            btnExit.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExit.ForeColor = Color.White;
+            btnExit.Location = new Point(78, 701);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(107, 18);
+            btnExit.TabIndex = 43;
+            btnExit.Text = "CLOSE";
+            btnExit.Click += btnExit_Click_1;
+            // 
+            // label30
+            // 
+            label30.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label30.ForeColor = Color.White;
+            label30.Location = new Point(49, 696);
+            label30.Name = "label30";
+            label30.Size = new Size(31, 29);
+            label30.TabIndex = 41;
+            label30.Text = "<";
+            label30.Click += label30_Click;
+            // 
+            // cmbFacilitator
+            // 
+            cmbFacilitator.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbFacilitator.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbFacilitator.FormattingEnabled = true;
+            cmbFacilitator.Location = new Point(91, 237);
+            cmbFacilitator.Name = "cmbFacilitator";
+            cmbFacilitator.Size = new Size(114, 26);
+            cmbFacilitator.TabIndex = 39;
+            // 
             // btnFacilitators
             // 
             btnFacilitators.BackColor = Color.Orange;
             btnFacilitators.Controls.Add(pictureBox8);
             btnFacilitators.Controls.Add(label9);
-            btnFacilitators.Location = new Point(52, 445);
+            btnFacilitators.Location = new Point(55, 458);
             btnFacilitators.Name = "btnFacilitators";
             btnFacilitators.Size = new Size(146, 39);
             btnFacilitators.TabIndex = 15;
@@ -582,7 +620,7 @@
             // 
             // pictureBox8
             // 
-            pictureBox8.Image = Properties.Resources.dashboard;
+            pictureBox8.Image = Properties.Resources.setting;
             pictureBox8.InitialImage = null;
             pictureBox8.Location = new Point(9, 7);
             pictureBox8.Name = "pictureBox8";
@@ -590,6 +628,7 @@
             pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox8.TabIndex = 13;
             pictureBox8.TabStop = false;
+            pictureBox8.Click += pictureBox8_Click;
             // 
             // label9
             // 
@@ -608,9 +647,9 @@
             btnSupplies.BackColor = Color.Orange;
             btnSupplies.Controls.Add(pictureBox7);
             btnSupplies.Controls.Add(label8);
-            btnSupplies.Location = new Point(52, 400);
+            btnSupplies.Location = new Point(55, 413);
             btnSupplies.Name = "btnSupplies";
-            btnSupplies.Size = new Size(146, 39);
+            btnSupplies.Size = new Size(147, 39);
             btnSupplies.TabIndex = 14;
             btnSupplies.Click += btnSupplies_Click;
             // 
@@ -624,6 +663,7 @@
             pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox7.TabIndex = 13;
             pictureBox7.TabStop = false;
+            pictureBox7.Click += pictureBox7_Click;
             // 
             // label8
             // 
@@ -642,15 +682,15 @@
             btnTransactions.BackColor = Color.Orange;
             btnTransactions.Controls.Add(pictureBox4);
             btnTransactions.Controls.Add(label3);
-            btnTransactions.Location = new Point(52, 355);
+            btnTransactions.Location = new Point(55, 368);
             btnTransactions.Name = "btnTransactions";
-            btnTransactions.Size = new Size(146, 39);
+            btnTransactions.Size = new Size(147, 39);
             btnTransactions.TabIndex = 11;
             btnTransactions.Click += btnTransactions_Click;
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = Properties.Resources.Borrow;
+            pictureBox4.Image = Properties.Resources.list;
             pictureBox4.InitialImage = null;
             pictureBox4.Location = new Point(9, 7);
             pictureBox4.Name = "pictureBox4";
@@ -669,7 +709,7 @@
             label3.Name = "label3";
             label3.Size = new Size(94, 20);
             label3.TabIndex = 12;
-            label3.Text = "Transactions";
+            label3.Text = "Record";
             label3.Click += label3_Click;
             // 
             // btnDashboard
@@ -677,9 +717,9 @@
             btnDashboard.BackColor = Color.Orange;
             btnDashboard.Controls.Add(pictureBox3);
             btnDashboard.Controls.Add(label2);
-            btnDashboard.Location = new Point(53, 310);
+            btnDashboard.Location = new Point(55, 323);
             btnDashboard.Name = "btnDashboard";
-            btnDashboard.Size = new Size(145, 39);
+            btnDashboard.Size = new Size(146, 39);
             btnDashboard.TabIndex = 2;
             btnDashboard.Click += btnDashboard_Click;
             // 
@@ -707,24 +747,13 @@
             label2.Text = "Dashboard";
             label2.Click += label2_Click;
             // 
-            // btnFacilDropDown
-            // 
-            btnFacilDropDown.Image = Properties.Resources.ArrowDown;
-            btnFacilDropDown.InitialImage = null;
-            btnFacilDropDown.Location = new Point(173, 247);
-            btnFacilDropDown.Name = "btnFacilDropDown";
-            btnFacilDropDown.Size = new Size(25, 25);
-            btnFacilDropDown.SizeMode = PictureBoxSizeMode.StretchImage;
-            btnFacilDropDown.TabIndex = 10;
-            btnFacilDropDown.TabStop = false;
-            // 
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.user;
             pictureBox2.InitialImage = null;
-            pictureBox2.Location = new Point(52, 237);
+            pictureBox2.Location = new Point(49, 237);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(35, 35);
+            pictureBox2.Size = new Size(36, 35);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 9;
             pictureBox2.TabStop = false;
@@ -733,25 +762,15 @@
             // 
             lblFacilitatorID.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblFacilitatorID.ForeColor = Color.White;
-            lblFacilitatorID.Location = new Point(93, 256);
+            lblFacilitatorID.Location = new Point(91, 266);
             lblFacilitatorID.Name = "lblFacilitatorID";
-            lblFacilitatorID.Size = new Size(148, 29);
+            lblFacilitatorID.Size = new Size(159, 29);
             lblFacilitatorID.TabIndex = 8;
             lblFacilitatorID.Text = "FACI-0001";
             // 
-            // lblFacilitatorName
-            // 
-            lblFacilitatorName.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblFacilitatorName.ForeColor = Color.White;
-            lblFacilitatorName.Location = new Point(93, 234);
-            lblFacilitatorName.Name = "lblFacilitatorName";
-            lblFacilitatorName.Size = new Size(148, 29);
-            lblFacilitatorName.TabIndex = 7;
-            lblFacilitatorName.Text = "John Doe";
-            // 
             // label1
             // 
-            label1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
             label1.Location = new Point(49, 204);
             label1.Name = "label1";
@@ -860,7 +879,7 @@
             cmbBorrowStatus.FormattingEnabled = true;
             cmbBorrowStatus.Location = new Point(366, 109);
             cmbBorrowStatus.Name = "cmbBorrowStatus";
-            cmbBorrowStatus.Size = new Size(107, 24);
+            cmbBorrowStatus.Size = new Size(107, 28);
             cmbBorrowStatus.TabIndex = 38;
             // 
             // cmbBorrowDate
@@ -870,7 +889,7 @@
             cmbBorrowDate.FormattingEnabled = true;
             cmbBorrowDate.Location = new Point(253, 109);
             cmbBorrowDate.Name = "cmbBorrowDate";
-            cmbBorrowDate.Size = new Size(107, 24);
+            cmbBorrowDate.Size = new Size(107, 28);
             cmbBorrowDate.TabIndex = 37;
             // 
             // txtSearchBorrow
@@ -878,7 +897,7 @@
             txtSearchBorrow.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSearchBorrow.Location = new Point(20, 111);
             txtSearchBorrow.Name = "txtSearchBorrow";
-            txtSearchBorrow.Size = new Size(227, 23);
+            txtSearchBorrow.Size = new Size(227, 26);
             txtSearchBorrow.TabIndex = 35;
             // 
             // tblBorrowRecord
@@ -891,44 +910,44 @@
             tblBorrowRecord.BackgroundColor = SystemColors.Control;
             tblBorrowRecord.BorderStyle = BorderStyle.None;
             tblBorrowRecord.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.Maroon;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.Maroon;
-            dataGridViewCellStyle3.SelectionForeColor = Color.White;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            tblBorrowRecord.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = Color.Maroon;
+            dataGridViewCellStyle15.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle15.ForeColor = Color.White;
+            dataGridViewCellStyle15.SelectionBackColor = Color.Maroon;
+            dataGridViewCellStyle15.SelectionForeColor = Color.White;
+            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.True;
+            tblBorrowRecord.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             tblBorrowRecord.ColumnHeadersHeight = 40;
             tblBorrowRecord.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.Moccasin;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            tblBorrowRecord.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = SystemColors.Window;
+            dataGridViewCellStyle16.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle16.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle16.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle16.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.False;
+            tblBorrowRecord.DefaultCellStyle = dataGridViewCellStyle16;
             tblBorrowRecord.EnableHeadersVisualStyles = false;
             tblBorrowRecord.GridColor = Color.DimGray;
             tblBorrowRecord.Location = new Point(20, 151);
             tblBorrowRecord.MultiSelect = false;
             tblBorrowRecord.Name = "tblBorrowRecord";
             tblBorrowRecord.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.Control;
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = Color.Maroon;
-            dataGridViewCellStyle5.SelectionForeColor = Color.White;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            tblBorrowRecord.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = SystemColors.Control;
+            dataGridViewCellStyle17.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle17.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = Color.Maroon;
+            dataGridViewCellStyle17.SelectionForeColor = Color.White;
+            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.True;
+            tblBorrowRecord.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
             tblBorrowRecord.RowHeadersVisible = false;
             tblBorrowRecord.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.BackColor = SystemColors.Control;
-            dataGridViewCellStyle6.SelectionBackColor = Color.Moccasin;
-            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
-            tblBorrowRecord.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle18.BackColor = SystemColors.Control;
+            dataGridViewCellStyle18.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle18.SelectionForeColor = Color.Black;
+            tblBorrowRecord.RowsDefaultCellStyle = dataGridViewCellStyle18;
             tblBorrowRecord.RowTemplate.Height = 40;
             tblBorrowRecord.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             tblBorrowRecord.Size = new Size(878, 586);
@@ -960,6 +979,7 @@
             dataGridViewTextBoxColumn1.MinimumWidth = 6;
             dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.Width = 125;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -967,6 +987,7 @@
             dataGridViewTextBoxColumn3.MinimumWidth = 6;
             dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             dataGridViewTextBoxColumn3.ReadOnly = true;
+            dataGridViewTextBoxColumn3.Width = 125;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -974,6 +995,7 @@
             dataGridViewTextBoxColumn4.MinimumWidth = 6;
             dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             dataGridViewTextBoxColumn4.ReadOnly = true;
+            dataGridViewTextBoxColumn4.Width = 125;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -981,6 +1003,7 @@
             dataGridViewTextBoxColumn5.MinimumWidth = 6;
             dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             dataGridViewTextBoxColumn5.ReadOnly = true;
+            dataGridViewTextBoxColumn5.Width = 125;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -988,6 +1011,7 @@
             dataGridViewTextBoxColumn7.MinimumWidth = 6;
             dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             dataGridViewTextBoxColumn7.ReadOnly = true;
+            dataGridViewTextBoxColumn7.Width = 125;
             // 
             // DateCompleted
             // 
@@ -995,6 +1019,7 @@
             DateCompleted.MinimumWidth = 6;
             DateCompleted.Name = "DateCompleted";
             DateCompleted.ReadOnly = true;
+            DateCompleted.Width = 125;
             // 
             // pnlSupplies
             // 
@@ -1113,7 +1138,7 @@
             cmbCategory.FormattingEnabled = true;
             cmbCategory.Location = new Point(253, 109);
             cmbCategory.Name = "cmbCategory";
-            cmbCategory.Size = new Size(107, 24);
+            cmbCategory.Size = new Size(107, 28);
             cmbCategory.TabIndex = 37;
             // 
             // txtSearchSupply
@@ -1121,7 +1146,7 @@
             txtSearchSupply.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSearchSupply.Location = new Point(20, 111);
             txtSearchSupply.Name = "txtSearchSupply";
-            txtSearchSupply.Size = new Size(227, 23);
+            txtSearchSupply.Size = new Size(227, 26);
             txtSearchSupply.TabIndex = 35;
             // 
             // tblSupplies
@@ -1134,25 +1159,25 @@
             tblSupplies.BackgroundColor = SystemColors.Control;
             tblSupplies.BorderStyle = BorderStyle.None;
             tblSupplies.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.Maroon;
-            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = Color.Maroon;
-            dataGridViewCellStyle7.SelectionForeColor = Color.White;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            tblSupplies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle19.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = Color.Maroon;
+            dataGridViewCellStyle19.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle19.ForeColor = Color.White;
+            dataGridViewCellStyle19.SelectionBackColor = Color.Maroon;
+            dataGridViewCellStyle19.SelectionForeColor = Color.White;
+            dataGridViewCellStyle19.WrapMode = DataGridViewTriState.True;
+            tblSupplies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             tblSupplies.ColumnHeadersHeight = 40;
             tblSupplies.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             tblSupplies.Columns.AddRange(new DataGridViewColumn[] { SupplyID, Category, SupplyName, Quantity });
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = SystemColors.Window;
-            dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = Color.Moccasin;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            tblSupplies.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = SystemColors.Window;
+            dataGridViewCellStyle20.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle20.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle20.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle20.WrapMode = DataGridViewTriState.False;
+            tblSupplies.DefaultCellStyle = dataGridViewCellStyle20;
             tblSupplies.EnableHeadersVisualStyles = false;
             tblSupplies.GridColor = Color.DimGray;
             tblSupplies.Location = new Point(20, 151);
@@ -1161,10 +1186,10 @@
             tblSupplies.ReadOnly = true;
             tblSupplies.RowHeadersVisible = false;
             tblSupplies.RowHeadersWidth = 51;
-            dataGridViewCellStyle9.BackColor = SystemColors.Control;
-            dataGridViewCellStyle9.SelectionBackColor = Color.Moccasin;
-            dataGridViewCellStyle9.SelectionForeColor = Color.Black;
-            tblSupplies.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle21.BackColor = SystemColors.Control;
+            dataGridViewCellStyle21.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle21.SelectionForeColor = Color.Black;
+            tblSupplies.RowsDefaultCellStyle = dataGridViewCellStyle21;
             tblSupplies.RowTemplate.Height = 40;
             tblSupplies.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             tblSupplies.Size = new Size(878, 586);
@@ -1243,7 +1268,7 @@
             cmbActive.FormattingEnabled = true;
             cmbActive.Location = new Point(366, 109);
             cmbActive.Name = "cmbActive";
-            cmbActive.Size = new Size(107, 24);
+            cmbActive.Size = new Size(107, 28);
             cmbActive.TabIndex = 42;
             // 
             // btnAddFaci
@@ -1322,7 +1347,7 @@
             cmbPosition.FormattingEnabled = true;
             cmbPosition.Location = new Point(253, 109);
             cmbPosition.Name = "cmbPosition";
-            cmbPosition.Size = new Size(107, 24);
+            cmbPosition.Size = new Size(107, 28);
             cmbPosition.TabIndex = 37;
             // 
             // txtSearchFacilitator
@@ -1330,7 +1355,7 @@
             txtSearchFacilitator.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSearchFacilitator.Location = new Point(20, 111);
             txtSearchFacilitator.Name = "txtSearchFacilitator";
-            txtSearchFacilitator.Size = new Size(227, 23);
+            txtSearchFacilitator.Size = new Size(227, 26);
             txtSearchFacilitator.TabIndex = 35;
             // 
             // tblFacilitators
@@ -1343,25 +1368,25 @@
             tblFacilitators.BackgroundColor = SystemColors.Control;
             tblFacilitators.BorderStyle = BorderStyle.None;
             tblFacilitators.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = Color.Maroon;
-            dataGridViewCellStyle10.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle10.ForeColor = Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = Color.Maroon;
-            dataGridViewCellStyle10.SelectionForeColor = Color.White;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            tblFacilitators.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle22.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = Color.Maroon;
+            dataGridViewCellStyle22.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle22.ForeColor = Color.White;
+            dataGridViewCellStyle22.SelectionBackColor = Color.Maroon;
+            dataGridViewCellStyle22.SelectionForeColor = Color.White;
+            dataGridViewCellStyle22.WrapMode = DataGridViewTriState.True;
+            tblFacilitators.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             tblFacilitators.ColumnHeadersHeight = 40;
             tblFacilitators.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             tblFacilitators.Columns.AddRange(new DataGridViewColumn[] { FacilitatorID, FirstName, LastName, Position, isActive });
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = SystemColors.Window;
-            dataGridViewCellStyle11.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = Color.Moccasin;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
-            tblFacilitators.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle23.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = SystemColors.Window;
+            dataGridViewCellStyle23.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle23.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle23.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle23.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle23.WrapMode = DataGridViewTriState.False;
+            tblFacilitators.DefaultCellStyle = dataGridViewCellStyle23;
             tblFacilitators.EnableHeadersVisualStyles = false;
             tblFacilitators.GridColor = Color.DimGray;
             tblFacilitators.Location = new Point(20, 151);
@@ -1370,10 +1395,10 @@
             tblFacilitators.ReadOnly = true;
             tblFacilitators.RowHeadersVisible = false;
             tblFacilitators.RowHeadersWidth = 51;
-            dataGridViewCellStyle12.BackColor = SystemColors.Control;
-            dataGridViewCellStyle12.SelectionBackColor = Color.Moccasin;
-            dataGridViewCellStyle12.SelectionForeColor = Color.Black;
-            tblFacilitators.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle24.BackColor = SystemColors.Control;
+            dataGridViewCellStyle24.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle24.SelectionForeColor = Color.Black;
+            tblFacilitators.RowsDefaultCellStyle = dataGridViewCellStyle24;
             tblFacilitators.RowTemplate.Height = 40;
             tblFacilitators.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             tblFacilitators.Size = new Size(878, 586);
@@ -1468,7 +1493,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             btnDashboard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnFacilDropDown).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlBorrowRecord.ResumeLayout(false);
@@ -1490,7 +1514,6 @@
             btnRemoveFaci.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)tblFacilitators).EndInit();
             ResumeLayout(false);
-
         }
 
         #endregion
@@ -1499,10 +1522,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblFacilitatorID;
-        private System.Windows.Forms.Label lblFacilitatorName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox btnFacilDropDown;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private RoundedPanel btnDashboard;
@@ -1600,6 +1621,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Position;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isActive;
         private System.Windows.Forms.ComboBox cmbActive;
+        private ComboBox cmbFacilitator;
+        private Label btnExit;
+        private Label label30;
     }
 }
 

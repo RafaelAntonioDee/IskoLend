@@ -114,7 +114,7 @@ namespace IskoLendDataManagement
         }
         public DataTable GetCategories()
         {
-            var statement = $"Select CategoryName from Category;";
+            var statement = $"Select CategoryName from Category ORDER BY CategoryID;";
             SqlDataAdapter adapter = new SqlDataAdapter(statement, _connection);
 
             DataTable dataTable = new DataTable();

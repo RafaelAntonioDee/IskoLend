@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
@@ -21,11 +22,13 @@ namespace IskoLendInventory
 
         public AddItem(BorrowingRecordDataService dsBR, DataTable dt)
         {
-            
+
             InitializeComponent();
             _dsBR = dsBR;
             InitItemComboPlaceholder();
+            InitCategoryComboPlaceholder();
             cmbItem.DropDown += cmbItem_DropDown;
+            cmbCategory.DropDown += cmbCategory_DropDown;
             _borrowItems = dt;
         }
         private void cmbItem_DropDown(object sender, EventArgs e)
@@ -33,49 +36,50 @@ namespace IskoLendInventory
             LoadItemsToCombo();
         }
         private void LoadItemsToCombo()
-        {   //
-            //if(cmbCategory.SelectedIndex == 0)
+        {
             var dt = _dsBR.GetItems();
 
-            //else {
-            //      var dt = _dsBR.getItems(cmbCategory.SelectedIndex)
-            //}
+            if (cmbCategory.SelectedIndex > 0)
+
+            {
+                dt = _dsBR.GetItemsByCategory(cmbCategory.SelectedIndex);
+            }
 
             var row = dt.NewRow();
             row["ItemName"] = "Select Item";
             dt.Rows.InsertAt(row, 0);
 
-            cmbItem.DataSource = null;          
+            cmbItem.DataSource = null;
             cmbItem.DisplayMember = "ItemName";
-            cmbItem.ValueMember = "ItemName";   
+            cmbItem.ValueMember = "ItemName";
             cmbItem.DataSource = dt;
 
             cmbItem.SelectedIndex = 0;
         }
-        //private void cmbCategory_DropDown(object sender, EventArgs e)
-        //{
-        //    LoadCategoriesToCombo();
-        //}
-        //private void LoadCategoriesToCombo()
-        //{  
-        //    var dt = _dsBR.getCategories();
+        private void cmbCategory_DropDown(object sender, EventArgs e)
+        {
+            loadcategoriestocombo();
+        }
 
-        //    
+        private void loadcategoriestocombo()
+        {
+            var dt = _dsBR.GetCategories();
 
-        //    var row = dt.NewRow();
-        //    row["CategoryName"] = "Select Category";
-        //    dt.Rows.InsertAt(row, 0);
 
-        //    cmbCategory.DataSource = null;
-        //    cmbCategory.DisplayMember = "CategoryName";
-        //    cmbCategory.ValueMember = "CategoryName";
-        //    cmbCategory.DataSource = dt;
 
-        //    cmbCategory.SelectedIndex = 0;
-        //}
+            var row = dt.NewRow();
+            row["CategoryName"] = "Select Category";
+            dt.Rows.InsertAt(row, 0);
+
+            cmbCategory.DataSource = null;
+            cmbCategory.DisplayMember = "CategoryName";
+            cmbCategory.ValueMember = "CategoryName";
+            cmbCategory.DataSource = dt;
+
+            cmbCategory.SelectedIndex = 0;
+        }
         private void InitItemComboPlaceholder()
         {
-            //Gawa ka rin neto sa Category Dee
             var dt = new DataTable();
             dt.Columns.Add("ItemName", typeof(string));
             dt.Rows.Add("Select Item");
@@ -85,6 +89,18 @@ namespace IskoLendInventory
             cmbItem.DataSource = dt;
 
             cmbItem.SelectedIndex = 0;
+        }
+        private void InitCategoryComboPlaceholder()
+        {
+            var dt = new DataTable();
+            dt.Columns.Add("CategoryName", typeof(string));
+            dt.Rows.Add("Select Category");
+
+            cmbCategory.DisplayMember = "CategoryName";
+            cmbCategory.ValueMember = "CategoryName";
+            cmbCategory.DataSource = dt;
+
+            cmbCategory.SelectedIndex = 0;
         }
         private void btnAddItem_Click(object sender, EventArgs e)
         {
@@ -128,5 +144,7 @@ namespace IskoLendInventory
         {
             MaximizeBox = false;
         }
+
+
     }
 }

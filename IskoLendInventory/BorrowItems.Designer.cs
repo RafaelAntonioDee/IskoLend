@@ -39,15 +39,14 @@
             label1 = new Label();
             roundedPanel21 = new RoundedPanel2();
             roundedPanel22 = new RoundedPanel2();
-            label6 = new Label();
             label5 = new Label();
-            cmbDate = new DateTimePicker();
             label4 = new Label();
             label19 = new Label();
             txtStudentID = new TextBox();
             label24 = new Label();
             btnSave = new RoundedPanel();
             label3 = new Label();
+            textBox1 = new TextBox();
             roundedPanel23.SuspendLayout();
             roundedPanel24.SuspendLayout();
             btnAddItem.SuspendLayout();
@@ -168,9 +167,8 @@
             // roundedPanel22
             // 
             roundedPanel22.BackColor = SystemColors.Control;
-            roundedPanel22.Controls.Add(label6);
+            roundedPanel22.Controls.Add(textBox1);
             roundedPanel22.Controls.Add(label5);
-            roundedPanel22.Controls.Add(cmbDate);
             roundedPanel22.Controls.Add(label4);
             roundedPanel22.Controls.Add(label19);
             roundedPanel22.Controls.Add(txtStudentID);
@@ -179,16 +177,6 @@
             roundedPanel22.Name = "roundedPanel22";
             roundedPanel22.Size = new Size(496, 144);
             roundedPanel22.TabIndex = 55;
-            // 
-            // label6
-            // 
-            label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Maroon;
-            label6.Location = new Point(65, 93);
-            label6.Name = "label6";
-            label6.Size = new Size(22, 23);
-            label6.TabIndex = 59;
-            label6.Text = "*";
             // 
             // label5
             // 
@@ -199,16 +187,6 @@
             label5.Size = new Size(22, 23);
             label5.TabIndex = 58;
             label5.Text = "*";
-            // 
-            // cmbDate
-            // 
-            cmbDate.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbDate.Location = new Point(143, 93);
-            cmbDate.MaxDate = new DateTime(2039, 12, 31, 0, 0, 0, 0);
-            cmbDate.MinDate = new DateTime(2026, 5, 24, 0, 0, 0, 0);
-            cmbDate.Name = "cmbDate";
-            cmbDate.Size = new Size(335, 23);
-            cmbDate.TabIndex = 57;
             // 
             // label4
             // 
@@ -235,7 +213,7 @@
             txtStudentID.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtStudentID.Location = new Point(143, 49);
             txtStudentID.Name = "txtStudentID";
-            txtStudentID.Size = new Size(335, 23);
+            txtStudentID.Size = new Size(335, 26);
             txtStudentID.TabIndex = 54;
             // 
             // label24
@@ -271,6 +249,15 @@
             label3.TextAlign = ContentAlignment.TopCenter;
             label3.Click += label3_Click;
             // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(143, 92);
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.Size = new Size(335, 26);
+            textBox1.TabIndex = 59;
+            // 
             // BorrowItems
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -292,7 +279,6 @@
             roundedPanel22.PerformLayout();
             btnSave.ResumeLayout(false);
             ResumeLayout(false);
-
         }
 
         #endregion
@@ -311,8 +297,7 @@
         private System.Windows.Forms.TextBox txtStudentID;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker cmbDate;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
+        private TextBox textBox1;
     }
 }

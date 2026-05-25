@@ -28,129 +28,152 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label22 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.btnAddItem = new IskoLendInventory.RoundedPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtQty = new System.Windows.Forms.TextBox();
-            this.cmbItem = new System.Windows.Forms.ComboBox();
-            this.btnAddItem.SuspendLayout();
-            this.SuspendLayout();
+            label22 = new Label();
+            label5 = new Label();
+            label19 = new Label();
+            btnAddItem = new RoundedPanel();
+            label2 = new Label();
+            label1 = new Label();
+            label3 = new Label();
+            txtQty = new TextBox();
+            cmbItem = new ComboBox();
+            cmbCategory = new ComboBox();
+            label6 = new Label();
+            btnAddItem.SuspendLayout();
+            SuspendLayout();
             // 
             // label22
             // 
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Maroon;
-            this.label22.Location = new System.Drawing.Point(12, 9);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(269, 47);
-            this.label22.TabIndex = 59;
-            this.label22.Text = "Add Item";
+            label22.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label22.ForeColor = Color.Maroon;
+            label22.Location = new Point(12, 9);
+            label22.Name = "label22";
+            label22.Size = new Size(269, 47);
+            label22.TabIndex = 59;
+            label22.Text = "Add Item";
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Maroon;
-            this.label5.Location = new System.Drawing.Point(86, 59);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(22, 23);
-            this.label5.TabIndex = 63;
-            this.label5.Text = "*";
+            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Maroon;
+            label5.Location = new Point(85, 87);
+            label5.Name = "label5";
+            label5.Size = new Size(22, 23);
+            label5.TabIndex = 63;
+            label5.Text = "*";
             // 
             // label19
             // 
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(13, 62);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(95, 24);
-            this.label19.TabIndex = 61;
-            this.label19.Text = "Item";
+            label19.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label19.ForeColor = Color.Black;
+            label19.Location = new Point(12, 90);
+            label19.Name = "label19";
+            label19.Size = new Size(95, 24);
+            label19.TabIndex = 61;
+            label19.Text = "Item";
             // 
             // btnAddItem
             // 
-            this.btnAddItem.BackColor = System.Drawing.Color.Orange;
-            this.btnAddItem.Controls.Add(this.label2);
-            this.btnAddItem.Location = new System.Drawing.Point(190, 135);
-            this.btnAddItem.Name = "btnAddItem";
-            this.btnAddItem.Size = new System.Drawing.Size(91, 32);
-            this.btnAddItem.TabIndex = 62;
-            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
+            btnAddItem.BackColor = Color.Orange;
+            btnAddItem.Controls.Add(label2);
+            btnAddItem.Location = new Point(212, 158);
+            btnAddItem.Name = "btnAddItem";
+            btnAddItem.Size = new Size(91, 32);
+            btnAddItem.TabIndex = 62;
+            btnAddItem.Click += btnAddItem_Click;
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 22);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Add";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(3, 6);
+            label2.Name = "label2";
+            label2.Size = new Size(85, 22);
+            label2.TabIndex = 12;
+            label2.Text = "Add";
+            label2.TextAlign = ContentAlignment.TopCenter;
+            label2.Click += label2_Click;
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(86, 91);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(22, 23);
-            this.label1.TabIndex = 66;
-            this.label1.Text = "*";
+            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Maroon;
+            label1.Location = new Point(85, 116);
+            label1.Name = "label1";
+            label1.Size = new Size(22, 23);
+            label1.TabIndex = 66;
+            label1.Text = "*";
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(13, 94);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 24);
-            this.label3.TabIndex = 65;
-            this.label3.Text = "Quantity";
+            label3.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(12, 119);
+            label3.Name = "label3";
+            label3.Size = new Size(95, 24);
+            label3.TabIndex = 65;
+            label3.Text = "Quantity";
             // 
             // txtQty
             // 
-            this.txtQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQty.Location = new System.Drawing.Point(114, 91);
-            this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(167, 26);
-            this.txtQty.TabIndex = 64;
+            txtQty.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtQty.Location = new Point(136, 116);
+            txtQty.Name = "txtQty";
+            txtQty.Size = new Size(167, 26);
+            txtQty.TabIndex = 64;
             // 
             // cmbItem
             // 
-            this.cmbItem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbItem.FormattingEnabled = true;
-            this.cmbItem.Location = new System.Drawing.Point(114, 54);
-            this.cmbItem.Name = "cmbItem";
-            this.cmbItem.Size = new System.Drawing.Size(164, 28);
-            this.cmbItem.TabIndex = 67;
+            cmbItem.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbItem.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbItem.FormattingEnabled = true;
+            cmbItem.Location = new Point(136, 82);
+            cmbItem.Name = "cmbItem";
+            cmbItem.Size = new Size(168, 28);
+            cmbItem.TabIndex = 67;
+            // 
+            // cmbCategory
+            // 
+            cmbCategory.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCategory.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbCategory.FormattingEnabled = true;
+            cmbCategory.Location = new Point(136, 48);
+            cmbCategory.Name = "cmbCategory";
+            cmbCategory.Size = new Size(168, 28);
+            cmbCategory.TabIndex = 70;
+            // 
+            // label6
+            // 
+            label6.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(12, 56);
+            label6.Name = "label6";
+            label6.Size = new Size(95, 24);
+            label6.TabIndex = 68;
+            label6.Text = "Category";
             // 
             // AddItem
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(293, 179);
-            this.Controls.Add(this.cmbItem);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtQty);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.btnAddItem);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "AddItem";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.AddItem_Load);
-            this.btnAddItem.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleMode = AutoScaleMode.None;
+            ClientSize = new Size(316, 207);
+            Controls.Add(cmbCategory);
+            Controls.Add(label6);
+            Controls.Add(cmbItem);
+            Controls.Add(label1);
+            Controls.Add(label3);
+            Controls.Add(txtQty);
+            Controls.Add(label22);
+            Controls.Add(label5);
+            Controls.Add(label19);
+            Controls.Add(btnAddItem);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Name = "AddItem";
+            StartPosition = FormStartPosition.CenterScreen;
+            Load += AddItem_Load;
+            btnAddItem.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -164,5 +187,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtQty;
         private System.Windows.Forms.ComboBox cmbItem;
+        private ComboBox cmbCategory;
+        private Label label6;
     }
 }
