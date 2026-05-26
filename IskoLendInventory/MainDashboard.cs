@@ -10,26 +10,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace IskoLendInventory
 {
     public partial class MainDashboard : Form
     {
+        public string currFaci;
         DashboardDataService dsDB = new DashboardDataService();
         BorrowingRecordDataService dsBR = new BorrowingRecordDataService();
         public MainDashboard()
         {
 
             InitializeComponent();
-
+            InitCategoryComboPlaceholder();
+            cmbFacilitator.DropDown += cmbFacilitator_DropDown;
             this.AutoScaleMode = AutoScaleMode.None;
             this.DoubleBuffered = true;
 
-
-
-            tblBorrowSummary.DataSource = dsDB.GetAllSummary();
-
-            tblBorrowRecord.DataSource = dsBR.GetAllBorrowingRecord();
+            LoadBorrowingRecords();
+            LoadBorrowSummary();
 
             tblSupplies.Rows.Add("test", "test", "test", "test", "test", "test");
             tblSupplies.Rows.Add("test", "test", "test", "test", "test", "test");
@@ -65,7 +65,7 @@ namespace IskoLendInventory
                 DataGridViewRow row = tblBorrowRecord.SelectedRows[0];
                 string? BorrowID = Convert.ToString(row.Cells[0].Value);
                 tblBorrowRecord.ClearSelection();
-                BorrowDetails form = new BorrowDetails(dsBR, BorrowID);
+                BorrowDetails form = new BorrowDetails(dsBR, BorrowID, currFaci);
                 form.ShowDialog();
             }
             else
@@ -78,15 +78,64 @@ namespace IskoLendInventory
         {
             btnBorrowDetails_Click(sender, e);
         }
+        private void cmbFacilitator_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            currFaci = lblFacilitatorID.Text;
+            dsDB.FacilitatorOff(currFaci);
+            lblFacilitatorID.Text = dsDB.GetFacilitatorID(cmbFacilitator.Text);
+            currFaci = lblFacilitatorID.Text;
+            dsDB.FacilitatorOn(currFaci);
+        }
+        
+        private void InitCategoryComboPlaceholder()
+        {
+            var faci = new DataTable();
+            faci.Columns.Add("FacilitatorName", typeof(string));
+            faci.Rows.Add("Facilitators");
 
+            cmbFacilitator.DisplayMember = "FacilitatorName";
+            cmbFacilitator.ValueMember = "FacilitatorName";
+            cmbFacilitator.DataSource = faci;
+
+            cmbFacilitator.SelectedIndex = 0;
+        }
+        private void LoadFacilitatorsToCombo()
+        {
+            var faci = dsDB.GetFacilitators();
+
+            var row = faci.NewRow();
+            row["FacilitatorName"] = "Facilitators";
+            faci.Rows.InsertAt(row, 0);
+
+            cmbFacilitator.DataSource = null;
+            cmbFacilitator.DisplayMember = "FacilitatorName";
+            cmbFacilitator.ValueMember = "FacilitatorName";
+            cmbFacilitator.DataSource = faci;
+
+            cmbFacilitator.SelectedIndex = 0;
+        }
+
+
+        private void cmbFacilitator_DropDown(object sender, EventArgs e)
+        {
+            LoadFacilitatorsToCombo();
+        }
+        private void LoadBorrowingRecords()
+        {
+            tblBorrowRecord.DataSource = dsBR.GetAllBorrowingRecord();
+        }
         private void btnBorrow_Click(object sender, EventArgs e)
         {
-            BorrowItems form = new BorrowItems(dsBR);
-            form.ShowDialog();
+            BorrowItems form = new BorrowItems(dsBR,currFaci);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                LoadBorrowingRecords();
+            }
         }
 
         private void CloseAllPanels()
         {
+
             pnlBorrowRecord.Visible = false;
             pnlDashboard.Visible = false;
             pnlSupplies.Visible = false;
@@ -98,13 +147,16 @@ namespace IskoLendInventory
             btnBorrow_Click(sender, e);
         }
 
-
+        private void LoadBorrowSummary()
+        {
+            tblBorrowSummary.DataSource = dsDB.GetAllSummary();
+        }
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             CloseAllPanels();
 
             pnlDashboard.Visible = true;
-
+            LoadBorrowSummary();
             tblBorrowSummary.ClearSelection();
 
         }
@@ -246,7 +298,7 @@ namespace IskoLendInventory
 
         private void btnAddFaci_Click(object sender, EventArgs e)
         {
-            
+
 
             AddFacilitator form = new AddFacilitator();
             form.ShowDialog();
@@ -317,7 +369,7 @@ namespace IskoLendInventory
 
         private void btnFacilitators_Click(object sender, EventArgs e)
         {
-            
+
 
             CloseAllPanels();
             pnlFacilitators.Visible = true;
@@ -336,12 +388,16 @@ namespace IskoLendInventory
 
         private void label30_Click(object sender, EventArgs e)
         {
-            btnExit_Click_1(sender,e);
+            btnExit_Click_1(sender, e);
         }
 
         private void btnExit_Click_1(object sender, EventArgs e)
         {
+            currFaci = lblFacilitatorID.Text;
+            dsDB.FacilitatorOff(currFaci);
             Dispose();
         }
+
+        
     }
 }

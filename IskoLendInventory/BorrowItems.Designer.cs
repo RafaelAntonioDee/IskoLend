@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             label22 = new Label();
             roundedPanel23 = new RoundedPanel2();
             roundedPanel24 = new RoundedPanel2();
@@ -39,6 +40,7 @@
             label1 = new Label();
             roundedPanel21 = new RoundedPanel2();
             roundedPanel22 = new RoundedPanel2();
+            txtDateTime = new TextBox();
             label5 = new Label();
             label4 = new Label();
             label19 = new Label();
@@ -46,7 +48,7 @@
             label24 = new Label();
             btnSave = new RoundedPanel();
             label3 = new Label();
-            textBox1 = new TextBox();
+            timer1 = new System.Windows.Forms.Timer(components);
             roundedPanel23.SuspendLayout();
             roundedPanel24.SuspendLayout();
             btnAddItem.SuspendLayout();
@@ -118,14 +120,14 @@
             tblItems.BackgroundColor = SystemColors.Control;
             tblItems.BorderStyle = BorderStyle.None;
             tblItems.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.Maroon;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.Maroon;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            tblItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.Maroon;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Maroon;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            tblItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             tblItems.ColumnHeadersHeight = 40;
             tblItems.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             tblItems.EnableHeadersVisualStyles = false;
@@ -135,11 +137,11 @@
             tblItems.ReadOnly = true;
             tblItems.RowHeadersVisible = false;
             tblItems.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.Moccasin;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
-            tblItems.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.ControlText;
+            tblItems.RowsDefaultCellStyle = dataGridViewCellStyle4;
             tblItems.RowTemplate.Height = 40;
             tblItems.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             tblItems.Size = new Size(461, 156);
@@ -167,7 +169,7 @@
             // roundedPanel22
             // 
             roundedPanel22.BackColor = SystemColors.Control;
-            roundedPanel22.Controls.Add(textBox1);
+            roundedPanel22.Controls.Add(txtDateTime);
             roundedPanel22.Controls.Add(label5);
             roundedPanel22.Controls.Add(label4);
             roundedPanel22.Controls.Add(label19);
@@ -177,6 +179,15 @@
             roundedPanel22.Name = "roundedPanel22";
             roundedPanel22.Size = new Size(496, 144);
             roundedPanel22.TabIndex = 55;
+            // 
+            // txtDateTime
+            // 
+            txtDateTime.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtDateTime.Location = new Point(143, 92);
+            txtDateTime.Name = "txtDateTime";
+            txtDateTime.ReadOnly = true;
+            txtDateTime.Size = new Size(335, 23);
+            txtDateTime.TabIndex = 59;
             // 
             // label5
             // 
@@ -194,9 +205,9 @@
             label4.ForeColor = Color.Black;
             label4.Location = new Point(13, 95);
             label4.Name = "label4";
-            label4.Size = new Size(95, 24);
+            label4.Size = new Size(113, 24);
             label4.TabIndex = 56;
-            label4.Text = "Date";
+            label4.Text = "Date / Time";
             // 
             // label19
             // 
@@ -213,7 +224,7 @@
             txtStudentID.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtStudentID.Location = new Point(143, 49);
             txtStudentID.Name = "txtStudentID";
-            txtStudentID.Size = new Size(335, 26);
+            txtStudentID.Size = new Size(335, 23);
             txtStudentID.TabIndex = 54;
             // 
             // label24
@@ -248,15 +259,6 @@
             label3.Text = "Save Borrow";
             label3.TextAlign = ContentAlignment.TopCenter;
             label3.Click += label3_Click;
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(143, 92);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(335, 26);
-            textBox1.TabIndex = 59;
             // 
             // BorrowItems
             // 
@@ -298,6 +300,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private TextBox textBox1;
+        private TextBox txtDateTime;
+        private System.Windows.Forms.Timer timer1;
     }
 }

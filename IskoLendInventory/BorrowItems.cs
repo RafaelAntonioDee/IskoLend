@@ -15,12 +15,20 @@ namespace IskoLendInventory
     public partial class BorrowItems : Form
     {
         private readonly BorrowingRecordDataService _dsBR;
+        private readonly string _currFaci;
         private DataTable dt;
-        public BorrowItems(BorrowingRecordDataService dsBR)
+        public BorrowItems(BorrowingRecordDataService dsBR, string currFaci)
+        
         {
+            _currFaci = currFaci;
             _dsBR = dsBR;
             InitializeComponent();
-            
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
+            timer1.Start();
+
+
+            txtDateTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         }
 
         private void BorrowItems_Load(object sender, EventArgs e)
@@ -35,7 +43,10 @@ namespace IskoLendInventory
 
             tblItems.DataSource = dt;
         }
-        
+        private void timer1_Tick(object? sender, EventArgs e)
+        {
+            txtDateTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        }
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
@@ -62,18 +73,28 @@ namespace IskoLendInventory
             {
                     if (tblItems.Rows.Count > 0)
                     {
-                        //record = new BorrowingRecord
-                        //{
-                        //    StudentID = StudentID,
-                        //    FacilitatorID = "F001",//FOR EDIT LATER
-                        //    StatusID = "S001",
-                        //    DateCompleted = null,
-                        //    BorrowID = _dsBR.GenerateBorrowID()
-
-                        //};
-                        DateTime BorrowDate = DateTime.Now;
-
+                    if(!string.IsNullOrEmpty(_currFaci))
+                    {
+                        DataTable supplies = (DataTable)tblItems.DataSource;
+                        record = new BorrowingRecord
+                        {
+                            StudentID = StudentID,
+                            FacilitatorID = _currFaci,
+                            StatusID = "S001",
+                            DateCompleted = null,
+                            BorrowID = _dsBR.GenerateBorrowID(),
+                            BorrowedDate = DateTime.Now
+                        };
+                        _dsBR.AddBorrowingRecord(record);
+                        _dsBR.SaveBorrowItems(supplies, record.BorrowID);
                         this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please Select Your Facilitator ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    
                     }
                     else
                     {

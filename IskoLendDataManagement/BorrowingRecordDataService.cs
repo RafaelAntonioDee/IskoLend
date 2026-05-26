@@ -81,14 +81,93 @@ namespace IskoLendDataManagement
 
             return "B" + (next < 1000 ? next.ToString("D3") : next.ToString());
         }
-        //public void AddBorrowingRecord(BorrowingRecord record)
-        //{
-        //    var statement = $"INSERT INTO BorrowingRecord (B_FaciID, StudentID, BorrowDate, StatusID) VALUES ('{record.FacilitatorID}', '{record.StudentID}', '{record.BorrowDate}', '{record.StatusID}');";
-        //    SqlCommand command = new SqlCommand(statement, _connection);
-        //    _connection.Open();
-        //    command.ExecuteNonQuery();
-        //    _connection.Close();
-        //}
+        public void AddBorrowingRecord(BorrowingRecord record)
+        {
+            const string sql = @" INSERT INTO BorrowingRecord (BorrowID, B_FaciID, StudentID, BorrowDate, StatusID, DateCompleted) VALUES (@BorrowID, @FaciID, @StudentID, @BorrowDate, @StatusID, NULL);";
+
+            using var cmd = new SqlCommand(sql, _connection);
+
+            cmd.Parameters.Add("@BorrowID", SqlDbType.VarChar).Value = record.BorrowID;
+            cmd.Parameters.Add("@FaciID", SqlDbType.VarChar).Value = record.FacilitatorID;
+            cmd.Parameters.Add("@StudentID", SqlDbType.VarChar).Value = record.StudentID;
+            cmd.Parameters.Add("@BorrowDate", SqlDbType.DateTime).Value = record.BorrowedDate;
+            cmd.Parameters.Add("@StatusID", SqlDbType.VarChar).Value = record.StatusID;
+            _connection.Open();
+            cmd.ExecuteNonQuery();
+            _connection.Close();
+        }
+        public void SaveBorrowItems(DataTable dt, string borrowID)
+        {
+            _connection.Open();
+            using var tx = _connection.BeginTransaction();
+
+            try
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    string supplyId = row["SupplyID"].ToString();
+                    int qty = Convert.ToInt32(row["Qty"]);
+
+                    using (var insertCmd = new SqlCommand(@"INSERT INTO BorrowingDetails (BorrowID, SupplyID, BorrowedQty, ItemStatusID) VALUES (@BorrowID, @SupplyID, @Qty, 'S001');", _connection, tx))
+                    {
+                        insertCmd.Parameters.AddWithValue("@BorrowID", borrowID);
+                        insertCmd.Parameters.AddWithValue("@SupplyID", supplyId);
+                        insertCmd.Parameters.AddWithValue("@Qty", qty);
+                        insertCmd.ExecuteNonQuery();
+                    }
+
+                    UpdateQuantityBorrow(row, tx);
+                }
+
+                tx.Commit();
+            }
+            catch
+            {
+                tx.Rollback();
+                throw;
+            }
+            finally
+            {
+                _connection.Close();
+            }
+        }
+
+        private void UpdateQuantityBorrow(DataRow row, SqlTransaction tx)
+        {
+            string supplyId = row["SupplyID"].ToString();
+            int qty = Convert.ToInt32(row["Qty"]);
+
+            const string sql = @"UPDATE SupplyInventory SET Quantity = Quantity - @qty WHERE SupplyID = @supplyId;";
+
+            using var cmd = new SqlCommand(sql, _connection, tx);
+            cmd.Parameters.AddWithValue("@qty", qty);
+            cmd.Parameters.AddWithValue("@supplyId", supplyId);
+            cmd.ExecuteNonQuery();
+        }
+
+        public DataTable GetItemsAvailable()
+        {
+            var statement = $"Select ItemName from SupplyInventory where Quantity>0;";
+            SqlDataAdapter adapter = new SqlDataAdapter(statement, _connection);
+
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+
+            return dataTable;
+
+        }
+        public DataTable GetItemsAvailableByCategory(string CategoryName)
+        {
+            var statement = $"Select ItemName from SupplyInventory as SI join Category as C on SI.CategoryID = C.CategoryID  Where CategoryName = '{CategoryName}' AND Quantity>0;";
+            SqlDataAdapter adapter = new SqlDataAdapter(statement, _connection);
+            
+
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+
+            return dataTable;
+
+        }
         public DataTable GetItems()
         {
             var statement = $"Select ItemName from SupplyInventory;";
@@ -100,11 +179,11 @@ namespace IskoLendDataManagement
             return dataTable;
 
         }
-        public DataTable GetItemsByCategory(int Category)
+        public DataTable GetItemsByCategory(string CategoryName)
         {
-            string CategoryID = "C00" + Category;
-            var statement = $"Select ItemName from SupplyInventory Where CategoryID = '{CategoryID}';";
+            var statement = $"Select ItemName from SupplyInventory as SI join Category as C on SI.CategoryID = C.CategoryID  Where CategoryName = '{CategoryName}';";
             SqlDataAdapter adapter = new SqlDataAdapter(statement, _connection);
+
 
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);

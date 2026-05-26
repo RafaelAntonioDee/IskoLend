@@ -37,15 +37,19 @@ namespace IskoLendInventory
         }
         private void LoadItemsToCombo()
         {
-            var dt = _dsBR.GetItems();
+            var dt = new DataTable();
 
             if (cmbCategory.SelectedIndex > 0)
 
             {
-                dt = _dsBR.GetItemsByCategory(cmbCategory.SelectedIndex);
+                dt = _dsBR.GetItemsAvailableByCategory(cmbCategory.Text.Trim());
+            }
+            else
+            {
+                dt = _dsBR.GetItemsAvailable();
             }
 
-            var row = dt.NewRow();
+                var row = dt.NewRow();
             row["ItemName"] = "Select Item";
             dt.Rows.InsertAt(row, 0);
 
@@ -128,7 +132,7 @@ namespace IskoLendInventory
                     if (addedRow == null)
                     {
                         MessageBox.Show("Not enough stock for that quantity.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return; // don't close
+                        return;
                     }
                     this.Close();
                 }

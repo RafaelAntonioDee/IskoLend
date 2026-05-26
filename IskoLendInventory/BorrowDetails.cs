@@ -15,11 +15,13 @@ namespace IskoLendInventory
     {
         private readonly string _borrowID;
         private readonly BorrowingRecordDataService _dsBR;
-        public BorrowDetails(BorrowingRecordDataService dbBR, string BorrowID)
+        private readonly string _currFaci;
+        public BorrowDetails(BorrowingRecordDataService dbBR, string BorrowID, string currFaci)
         {
             InitializeComponent();
             _borrowID = BorrowID;
             _dsBR = dbBR;
+            _currFaci = currFaci;
             tblBorrowDetail.DataSource = dbBR.GetSelectedBorrowDetail(BorrowID);
         }
 
