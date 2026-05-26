@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace IskoLendDataManagement
 {
@@ -59,7 +60,7 @@ namespace IskoLendDataManagement
             _connection.Close();
             return result != null;
         }
-        
+
         public string GetLastBorrowID()
         {
             var statement = "SELECT TOP 1 BorrowID FROM BorrowingRecord ORDER BY BorrowID DESC;";
@@ -80,6 +81,28 @@ namespace IskoLendDataManagement
             int next = numericPart + 1;
 
             return "B" + (next < 1000 ? next.ToString("D3") : next.ToString());
+        }
+
+        public string GetLastReturnID()
+        {
+            var statement = "SELECT TOP 1 ReturnDetailID FROM ReturnDetails ORDER BY ReturnDetailID DESC;";
+            SqlCommand command = new SqlCommand(statement, _connection);
+            _connection.Open();
+            var result = command.ExecuteScalar();
+            _connection.Close();
+            return result?.ToString() ?? string.Empty;
+        }
+        public string GenerateReturnID()
+        {
+            string? lastID = GetLastReturnID();
+
+            if (string.IsNullOrWhiteSpace(lastID))
+                return "R001";
+
+            int numericPart = int.Parse(lastID[1..]);
+            int next = numericPart + 1;
+
+            return "R" + (next < 1000 ? next.ToString("D3") : next.ToString());
         }
         public void AddBorrowingRecord(BorrowingRecord record)
         {
@@ -160,7 +183,7 @@ namespace IskoLendDataManagement
         {
             var statement = $"Select ItemName from SupplyInventory as SI join Category as C on SI.CategoryID = C.CategoryID  Where CategoryName = '{CategoryName}' AND Quantity>0;";
             SqlDataAdapter adapter = new SqlDataAdapter(statement, _connection);
-            
+
 
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
@@ -214,7 +237,7 @@ namespace IskoLendDataManagement
             r["Item"] = itemName;
             r["Qty"] = qty;
 
-            dt.Rows.Add(r);          
+            dt.Rows.Add(r);
             return r;
         }
 
@@ -245,5 +268,159 @@ namespace IskoLendDataManagement
 
             return (result == null || result == DBNull.Value) ? null : result.ToString();
         }
+        public string? GetSupplyName(string ID)
+        {
+            const string sql = "SELECT ItemName FROM SupplyInventory WHERE SupplyID = @id;";
+
+            using var cmd = new SqlCommand(sql, _connection);
+            cmd.Parameters.AddWithValue("@id", ID);
+
+            _connection.Open();
+            object result = cmd.ExecuteScalar();
+            _connection.Close();
+
+            return (result == null || result == DBNull.Value) ? null : result.ToString();
+        }
+        public int GetRemaining(string BorrowID, string SupplyID)
+        {
+            const string sql = @"SELECT BD.BorrowedQty - COALESCE(RD.TotalReturned, 0) AS Remaining FROM BorrowingDetails BD
+                                LEFT JOIN ( SELECT R_BorrowID, R_SupplyID, SUM(ReturnedQty) AS TotalReturned
+                                FROM ReturnDetails GROUP BY R_BorrowID, R_SupplyID ) RD ON RD.R_BorrowID = BD.BorrowID
+                                AND RD.R_SupplyID = BD.SupplyID WHERE BD.BorrowID = @BorrowID AND BD.SupplyID = @SupplyID;";
+
+            using var query = new SqlCommand(sql, _connection);
+            query.Parameters.AddWithValue("@BorrowID", BorrowID);
+            query.Parameters.AddWithValue("@SupplyID", SupplyID);
+            _connection.Open();
+            object result = query.ExecuteScalar();
+            _connection.Close();
+
+            int itemQty = Convert.ToInt32(result);
+            return itemQty;
+        }
+        public int GetRemaining(string borrowID, string supplyID, SqlTransaction tx)
+        {
+            const string sql = @"SELECT BD.BorrowedQty - COALESCE(RD.TotalReturned, 0) AS Remaining FROM BorrowingDetails BD
+                                LEFT JOIN ( SELECT R_BorrowID, R_SupplyID, SUM(ReturnedQty) AS TotalReturned
+                                FROM ReturnDetails GROUP BY R_BorrowID, R_SupplyID ) RD ON RD.R_BorrowID = BD.BorrowID
+                                AND RD.R_SupplyID = BD.SupplyID WHERE BD.BorrowID = @BorrowID AND BD.SupplyID = @SupplyID;";
+
+            using var cmd = new SqlCommand(sql, _connection, tx);
+            cmd.Parameters.AddWithValue("@BorrowID", borrowID);
+            cmd.Parameters.AddWithValue("@SupplyID", supplyID);
+
+            return Convert.ToInt32(cmd.ExecuteScalar());
+        }
+        public void AddReturnDetail(ReturnDetail returnDetail)
+        {
+            const string insertSql = @"
+                INSERT INTO ReturnDetails (ReturnDetailID, R_BorrowID, R_SupplyID, R_FaciID, ReturnedQty, ReturnDate)
+                VALUES (@ReturnID, @BorrowID, @SupplyID, @FaciID, @ReturnedQty, @ReturnDate);";
+
+            _connection.Open();
+            using var tx = _connection.BeginTransaction();
+            int remaining = GetRemaining(returnDetail.R_BorrowID, returnDetail.R_SupplyID, tx);
+
+            try
+            {
+                using (var cmd = new SqlCommand(insertSql, _connection, tx))
+                {
+                    cmd.Parameters.Add("@ReturnID", SqlDbType.VarChar).Value = returnDetail.ReturnDetailID;
+                    cmd.Parameters.Add("@BorrowID", SqlDbType.VarChar).Value = returnDetail.R_BorrowID;
+                    cmd.Parameters.Add("@SupplyID", SqlDbType.VarChar).Value = returnDetail.R_SupplyID;
+                    cmd.Parameters.Add("@FaciID", SqlDbType.VarChar).Value = returnDetail.R_FaciID;
+                    cmd.Parameters.Add("@ReturnedQty", SqlDbType.Int).Value = returnDetail.ReturnedQty;
+                    cmd.Parameters.Add("@ReturnDate", SqlDbType.DateTime).Value = returnDetail.ReturnDate;
+                    cmd.ExecuteNonQuery();
+                }
+
+                UpdateQuantityReturn(returnDetail, tx);
+                //UpdateRemainingBorrowed(returnDetail, tx);
+                UpdateBorrowDetailStatus(returnDetail, tx);
+                UpdateBorrowStatus(returnDetail, tx);
+                UpdateDateCompleted(returnDetail, tx);
+                tx.Commit();
+            }
+            catch
+            {
+                tx.Rollback();
+                throw;
+            }
+            finally
+            {
+                _connection.Close();
+            }
+        }
+        private void UpdateQuantityReturn(ReturnDetail returnDetail, SqlTransaction tx)
+        {
+            const string sql = @"UPDATE SupplyInventory
+                         SET Quantity = Quantity + @qty
+                         WHERE SupplyID = @supplyId;";
+
+            using var cmd = new SqlCommand(sql, _connection, tx);
+            cmd.Parameters.AddWithValue("@qty", returnDetail.ReturnedQty);
+            cmd.Parameters.AddWithValue("@supplyId", returnDetail.R_SupplyID);
+            cmd.ExecuteNonQuery();
+        }
+        //private void UpdateRemainingBorrowed(ReturnDetail returnDetail, SqlTransaction tx)
+        //{
+        //    const string sql = @"UPDATE BorrowingDetail
+        //                 SET BorrowedQty = BorrowedQty - @qty
+        //                 WHERE SupplyID = @supplyId;";
+
+        //    using var cmd = new SqlCommand(sql, _connection, tx);
+        //    cmd.Parameters.AddWithValue("@qty", returnDetail.ReturnedQty);
+        //    cmd.Parameters.AddWithValue("@supplyId", returnDetail.R_SupplyID);
+        //    cmd.ExecuteNonQuery();
+        //}
+        public void UpdateBorrowDetailStatus(ReturnDetail ret, SqlTransaction tx)
+        {
+            int remaining = GetRemaining(ret.R_BorrowID, ret.R_SupplyID, tx);
+
+            string? status = remaining == 0 ? "S003"
+                           : remaining > 0 ? "S002"
+                           : null;
+
+            if (status == null)
+                throw new InvalidOperationException($"Remaining is negative for BorrowID={ret.R_BorrowID}, SupplyID={ret.R_SupplyID}.");
+
+            using var cmd = new SqlCommand(@"UPDATE BorrowingDetails
+                                            SET ItemStatusID = @Status
+                                            WHERE BorrowID = @BorrowID AND SupplyID = @SupplyID;", _connection, tx);
+
+            cmd.Parameters.AddWithValue("@Status", status);
+            cmd.Parameters.AddWithValue("@BorrowID", ret.R_BorrowID);
+            cmd.Parameters.AddWithValue("@SupplyID", ret.R_SupplyID);
+            cmd.ExecuteNonQuery();
+        }
+
+        private void UpdateBorrowStatus(ReturnDetail ret, SqlTransaction tx)
+        {
+            const string sql = @"UPDATE br SET br.StatusID = CASE WHEN EXISTS (
+                    SELECT 1 FROM BorrowingDetails bd
+                    WHERE bd.BorrowID = br.BorrowID
+                    AND bd.ItemStatusID NOT IN ('S003', 'S004')) 
+                    THEN 'S002'
+                    ELSE 'S003' 
+                    END
+                    FROM BorrowingRecord br
+                    WHERE br.BorrowID = @BorrowID;";
+            using var cmd = new SqlCommand(sql, _connection, tx);
+            cmd.Parameters.AddWithValue("@BorrowID", ret.R_BorrowID);
+            cmd.ExecuteNonQuery();
+        }
+        private void UpdateDateCompleted(ReturnDetail ret, SqlTransaction tx)
+        {
+            using var cmd = new SqlCommand(@"UPDATE BorrowingRecord
+                                            SET DateCompleted = @DateCompleted
+                                            WHERE BorrowID = @BorrowID
+                                              AND StatusID = 'S003'
+                                              AND DateCompleted IS NULL;", _connection, tx);
+
+            cmd.Parameters.AddWithValue("@DateCompleted", DateTime.Now);
+            cmd.Parameters.AddWithValue("@BorrowID", ret.R_BorrowID);
+            cmd.ExecuteNonQuery();
+        }
+        
     }
 }

@@ -87,6 +87,7 @@ namespace IskoLendInventory
                         };
                         _dsBR.AddBorrowingRecord(record);
                         _dsBR.SaveBorrowItems(supplies, record.BorrowID);
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                     else

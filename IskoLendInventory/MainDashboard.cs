@@ -1,4 +1,5 @@
 ﻿using IskoLendDataManagement;
+using IskoLendModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,11 +63,23 @@ namespace IskoLendInventory
         {
             if (tblBorrowRecord.SelectedRows.Count > 0)
             {
-                DataGridViewRow row = tblBorrowRecord.SelectedRows[0];
-                string? BorrowID = Convert.ToString(row.Cells[0].Value);
-                tblBorrowRecord.ClearSelection();
-                BorrowDetails form = new BorrowDetails(dsBR, BorrowID, currFaci);
-                form.ShowDialog();
+                currFaci = lblFacilitatorID.Text;
+                if (!string.IsNullOrEmpty(currFaci))
+                {
+                    DataGridViewRow row = tblBorrowRecord.SelectedRows[0];
+                    string? BorrowID = Convert.ToString(row.Cells[0].Value);
+                    tblBorrowRecord.ClearSelection();
+                    BorrowDetails form = new BorrowDetails(dsBR, BorrowID, currFaci);
+                    form.ShowDialog();
+                        LoadBorrowingRecords();
+                        LoadBorrowSummary();
+                }
+                else
+                {
+                    MessageBox.Show("Please Select Your Facilitator ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                
             }
             else
             {
@@ -126,11 +139,23 @@ namespace IskoLendInventory
         }
         private void btnBorrow_Click(object sender, EventArgs e)
         {
-            BorrowItems form = new BorrowItems(dsBR,currFaci);
-            if (form.ShowDialog() == DialogResult.OK)
+            currFaci = lblFacilitatorID.Text;
+            if (!string.IsNullOrEmpty(currFaci))
             {
-                LoadBorrowingRecords();
+                BorrowItems form = new BorrowItems(dsBR, currFaci);
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    LoadBorrowingRecords();
+                    LoadBorrowSummary();
+                }
             }
+            else
+            {
+                MessageBox.Show("Please Select Your Facilitator ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            
         }
 
         private void CloseAllPanels()

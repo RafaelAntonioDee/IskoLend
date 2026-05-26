@@ -23,9 +23,12 @@ namespace IskoLendInventory
             _dsBR = dsBR;
             _borrowID = BorrowID;
             _itemName = ItemName;
-            tblReturnDetails.DataSource = dsBR.GetSelectedReturnDetail(BorrowID, ItemName);
+            LoadTblReturnDetails();
         }
-
+        public void LoadTblReturnDetails()
+        {
+            tblReturnDetails.DataSource = _dsBR.GetSelectedReturnDetail(_borrowID, _itemName);
+        }
         private void ReturnDetails_Load(object sender, EventArgs e)
         {
             cmbReturnDate.Items.Add("Today");

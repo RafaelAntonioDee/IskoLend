@@ -28,92 +28,119 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label5 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtReturnQty = new System.Windows.Forms.TextBox();
-            this.btnAddItem = new IskoLendInventory.RoundedPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblItemToReturn = new System.Windows.Forms.Label();
-            this.btnAddItem.SuspendLayout();
-            this.SuspendLayout();
+            label5 = new Label();
+            label19 = new Label();
+            txtReturnQty = new TextBox();
+            btnAddItem = new RoundedPanel();
+            label2 = new Label();
+            lblItemToReturn = new Label();
+            btnLost = new RoundedPanel();
+            label1 = new Label();
+            btnAddItem.SuspendLayout();
+            btnLost.SuspendLayout();
+            SuspendLayout();
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Maroon;
-            this.label5.Location = new System.Drawing.Point(154, 59);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(22, 23);
-            this.label5.TabIndex = 62;
-            this.label5.Text = "*";
+            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Maroon;
+            label5.Location = new Point(154, 59);
+            label5.Name = "label5";
+            label5.Size = new Size(22, 23);
+            label5.TabIndex = 62;
+            label5.Text = "*";
             // 
             // label19
             // 
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(15, 63);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(159, 24);
-            this.label19.TabIndex = 60;
-            this.label19.Text = "Return Quantity";
+            label19.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label19.ForeColor = Color.Black;
+            label19.Location = new Point(15, 63);
+            label19.Name = "label19";
+            label19.Size = new Size(159, 24);
+            label19.TabIndex = 60;
+            label19.Text = "Return Quantity";
             // 
             // txtReturnQty
             // 
-            this.txtReturnQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReturnQty.Location = new System.Drawing.Point(193, 60);
-            this.txtReturnQty.Name = "txtReturnQty";
-            this.txtReturnQty.Size = new System.Drawing.Size(181, 26);
-            this.txtReturnQty.TabIndex = 59;
+            txtReturnQty.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtReturnQty.Location = new Point(193, 60);
+            txtReturnQty.Name = "txtReturnQty";
+            txtReturnQty.Size = new Size(181, 23);
+            txtReturnQty.TabIndex = 59;
             // 
             // btnAddItem
             // 
-            this.btnAddItem.BackColor = System.Drawing.Color.Orange;
-            this.btnAddItem.Controls.Add(this.label2);
-            this.btnAddItem.Location = new System.Drawing.Point(253, 98);
-            this.btnAddItem.Name = "btnAddItem";
-            this.btnAddItem.Size = new System.Drawing.Size(121, 32);
-            this.btnAddItem.TabIndex = 61;
-            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
+            btnAddItem.BackColor = Color.Orange;
+            btnAddItem.Controls.Add(label2);
+            btnAddItem.Location = new Point(253, 98);
+            btnAddItem.Name = "btnAddItem";
+            btnAddItem.Size = new Size(121, 32);
+            btnAddItem.TabIndex = 61;
+            btnAddItem.Click += btnAddItem_Click;
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 22);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Return";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(3, 6);
+            label2.Name = "label2";
+            label2.Size = new Size(115, 22);
+            label2.TabIndex = 12;
+            label2.Text = "Return";
+            label2.TextAlign = ContentAlignment.TopCenter;
+            label2.Click += label2_Click;
             // 
             // lblItemToReturn
             // 
-            this.lblItemToReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemToReturn.ForeColor = System.Drawing.Color.Maroon;
-            this.lblItemToReturn.Location = new System.Drawing.Point(14, 16);
-            this.lblItemToReturn.Name = "lblItemToReturn";
-            this.lblItemToReturn.Size = new System.Drawing.Size(307, 47);
-            this.lblItemToReturn.TabIndex = 63;
-            this.lblItemToReturn.Text = "Return _____";
+            lblItemToReturn.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblItemToReturn.ForeColor = Color.Maroon;
+            lblItemToReturn.Location = new Point(14, 16);
+            lblItemToReturn.Name = "lblItemToReturn";
+            lblItemToReturn.Size = new Size(307, 47);
+            lblItemToReturn.TabIndex = 63;
+            lblItemToReturn.Text = "Return _____";
+            // 
+            // btnLost
+            // 
+            btnLost.BackColor = Color.Orange;
+            btnLost.Controls.Add(label1);
+            btnLost.Location = new Point(113, 99);
+            btnLost.Name = "btnLost";
+            btnLost.Size = new Size(121, 32);
+            btnLost.TabIndex = 64;
+            btnLost.Click += btnLost_Click;
+            // 
+            // label1
+            // 
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(3, 6);
+            label1.Name = "label1";
+            label1.Size = new Size(115, 22);
+            label1.TabIndex = 12;
+            label1.Text = "Lost";
+            label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // ReturnItems
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(386, 142);
-            this.Controls.Add(this.lblItemToReturn);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.txtReturnQty);
-            this.Controls.Add(this.btnAddItem);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "ReturnItems";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.ReturnItems_Load);
-            this.btnAddItem.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleMode = AutoScaleMode.None;
+            ClientSize = new Size(386, 142);
+            Controls.Add(lblItemToReturn);
+            Controls.Add(label5);
+            Controls.Add(label19);
+            Controls.Add(txtReturnQty);
+            Controls.Add(btnLost);
+            Controls.Add(btnAddItem);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Name = "ReturnItems";
+            StartPosition = FormStartPosition.CenterScreen;
+            Load += ReturnItems_Load;
+            btnAddItem.ResumeLayout(false);
+            btnLost.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
@@ -125,5 +152,7 @@
         private RoundedPanel btnAddItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblItemToReturn;
+        private RoundedPanel btnLost;
+        private Label label1;
     }
 }

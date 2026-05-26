@@ -134,6 +134,7 @@ namespace IskoLendInventory
                         MessageBox.Show("Not enough stock for that quantity.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
             }
