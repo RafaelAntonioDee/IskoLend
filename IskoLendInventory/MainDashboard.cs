@@ -20,6 +20,10 @@ namespace IskoLendInventory
         public string currFaci;
         DashboardDataService dsDB = new DashboardDataService();
         BorrowingRecordDataService dsBR = new BorrowingRecordDataService();
+        FacilitatorsDataService dsFaci = new FacilitatorsDataService();
+        SupplyDataService dsSup = new SupplyDataService();
+
+
         public MainDashboard()
         {
 
@@ -29,18 +33,12 @@ namespace IskoLendInventory
             this.AutoScaleMode = AutoScaleMode.None;
             this.DoubleBuffered = true;
 
+            LoadFacilitatorRecords();
             LoadBorrowingRecords();
             LoadBorrowSummary();
+            LoadSupplies();
 
-            tblSupplies.Rows.Add("test", "test", "test", "test", "test", "test");
-            tblSupplies.Rows.Add("test", "test", "test", "test", "test", "test");
-            tblSupplies.Rows.Add("test", "test", "test", "test", "test", "test");
-            tblSupplies.Rows.Add("test", "test", "test", "test", "test", "test");
 
-            tblFacilitators.Rows.Add("test", "test", "test", "test", true);
-            tblFacilitators.Rows.Add("test", "test", "test", "test", true);
-            tblFacilitators.Rows.Add("test", "test", "test", "test", false);
-            tblFacilitators.Rows.Add("test", "test", "test", "test", false);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -71,15 +69,15 @@ namespace IskoLendInventory
                     tblBorrowRecord.ClearSelection();
                     BorrowDetails form = new BorrowDetails(dsBR, BorrowID, currFaci);
                     form.ShowDialog();
-                        LoadBorrowingRecords();
-                        LoadBorrowSummary();
+                    LoadBorrowingRecords();
+                    LoadBorrowSummary();
                 }
                 else
                 {
                     MessageBox.Show("Please Select Your Facilitator ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                
+
             }
             else
             {
@@ -99,7 +97,7 @@ namespace IskoLendInventory
             currFaci = lblFacilitatorID.Text;
             dsDB.FacilitatorOn(currFaci);
         }
-        
+
         private void InitCategoryComboPlaceholder()
         {
             var faci = new DataTable();
@@ -114,7 +112,7 @@ namespace IskoLendInventory
         }
         private void LoadFacilitatorsToCombo()
         {
-            var faci = dsDB.GetFacilitators();
+            var faci = dsFaci.GetActiveFacilitators();
 
             var row = faci.NewRow();
             row["FacilitatorName"] = "Facilitators";
@@ -137,6 +135,15 @@ namespace IskoLendInventory
         {
             tblBorrowRecord.DataSource = dsBR.GetAllBorrowingRecord();
         }
+        private void LoadSupplies()
+        {
+            tblSupplies.DataSource = dsSup.GetAllSupplies();
+        }
+        private void LoadFacilitatorRecords()
+        {
+            tblFacilitators.DataSource = dsFaci.GetAllFacilitatorRecord();
+            tblFacilitators.Columns["Position"].FillWeight = 200;
+        }
         private void btnBorrow_Click(object sender, EventArgs e)
         {
             currFaci = lblFacilitatorID.Text;
@@ -155,7 +162,7 @@ namespace IskoLendInventory
                 return;
             }
 
-            
+
         }
 
         private void CloseAllPanels()
@@ -256,21 +263,43 @@ namespace IskoLendInventory
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            currFaci = lblFacilitatorID.Text;
+            if (!string.IsNullOrEmpty(currFaci))
+            {
+                AddSupply form = new AddSupply(dsSup, currFaci);
+                form.ShowDialog();
 
-            AddSupply form = new AddSupply();
-            form.ShowDialog();
-
-            tblSupplies.ClearSelection();
-
+                tblSupplies.ClearSelection();
+                LoadSupplies();
+            }
+            else
+            {
+                MessageBox.Show("Please Select Your Facilitator ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (tblSupplies.SelectedRows.Count > 0)
             {
-                tblSupplies.ClearSelection();
-                EditSupply form = new EditSupply();
-                form.ShowDialog();
+                currFaci = lblFacilitatorID.Text;
+                if (!string.IsNullOrEmpty(currFaci))
+                {
+                    DataGridViewRow row = tblSupplies.SelectedRows[0];
+                    string? SupplyID = Convert.ToString(row.Cells[0].Value);
+                    EditSupply form = new EditSupply(dsSup, SupplyID);
+                    form.ShowDialog();
+                    LoadSupplies();
+                    tblSupplies.ClearSelection();
+                }
+                else
+                {
+                    MessageBox.Show("Please Select Your Facilitator ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                
             }
             else
             {
@@ -280,20 +309,34 @@ namespace IskoLendInventory
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
+
             if (tblSupplies.SelectedRows.Count > 0)
             {
-                tblSupplies.ClearSelection();
-
-                DialogResult result = MessageBox.Show("Are you sure you want to remove this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (result == DialogResult.Yes)
+                currFaci = lblFacilitatorID.Text;
+                if (!string.IsNullOrEmpty(currFaci))
                 {
-                    // proceed
+                    DialogResult result = MessageBox.Show("Are you sure you want to remove this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        DataGridViewRow row = tblSupplies.SelectedRows[0];
+                        string? SupplyID = Convert.ToString(row.Cells[0].Value);
+                        dsSup.RemoveSupply(SupplyID);
+                        LoadSupplies();
+                        tblSupplies.ClearSelection();
+                    }
+                    else
+                    {
+                        // cancelled
+                    }
                 }
                 else
                 {
-                    // cancelled
+                    MessageBox.Show("Please Select Your Facilitator ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
+
+                
             }
             else
             {
@@ -325,10 +368,12 @@ namespace IskoLendInventory
         {
 
 
-            AddFacilitator form = new AddFacilitator();
+            AddFacilitator form = new AddFacilitator(dsFaci);
             form.ShowDialog();
 
             tblFacilitators.ClearSelection();
+            LoadFacilitatorRecords();
+
         }
 
         private void btnEditFaci_Click(object sender, EventArgs e)
@@ -336,10 +381,13 @@ namespace IskoLendInventory
 
             if (tblFacilitators.SelectedRows.Count > 0)
             {
+                DataGridViewRow row = tblFacilitators.SelectedRows[0];
+                string? FacilitatorID = Convert.ToString(row.Cells[0].Value);
+                EditFacilitator form = new EditFacilitator(dsFaci, FacilitatorID);
+                form.ShowDialog();
+                LoadFacilitatorRecords();
                 tblFacilitators.ClearSelection();
 
-                EditFacilitator form = new EditFacilitator();
-                form.ShowDialog();
             }
             else
             {
@@ -353,13 +401,16 @@ namespace IskoLendInventory
             if (tblFacilitators.SelectedRows.Count > 0)
             {
 
-                tblFacilitators.ClearSelection();
 
                 DialogResult result = MessageBox.Show("Are you sure you want to remove this facilitator?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (result == DialogResult.Yes)
                 {
-                    // proceed
+                    DataGridViewRow row = tblFacilitators.SelectedRows[0];
+                    string? FacilitatorID = Convert.ToString(row.Cells[0].Value);
+                    dsFaci.RemoveFacilitator(FacilitatorID);
+                    LoadFacilitatorRecords();
+                    tblFacilitators.ClearSelection();
                 }
                 else
                 {
@@ -418,11 +469,17 @@ namespace IskoLendInventory
 
         private void btnExit_Click_1(object sender, EventArgs e)
         {
-            currFaci = lblFacilitatorID.Text;
-            dsDB.FacilitatorOff(currFaci);
-            Dispose();
+            DialogResult result = MessageBox.Show("Are you sure you want to exit the system", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                currFaci = lblFacilitatorID.Text;
+                dsDB.FacilitatorOff(currFaci);
+                Dispose();
+            }
+                
         }
 
-        
+
     }
 }

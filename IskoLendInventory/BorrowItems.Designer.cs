@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label22 = new Label();
             roundedPanel23 = new RoundedPanel2();
             roundedPanel24 = new RoundedPanel2();
@@ -120,14 +120,14 @@
             tblItems.BackgroundColor = SystemColors.Control;
             tblItems.BorderStyle = BorderStyle.None;
             tblItems.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.Maroon;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.Maroon;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            tblItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.Maroon;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Maroon;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            tblItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             tblItems.ColumnHeadersHeight = 40;
             tblItems.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             tblItems.EnableHeadersVisualStyles = false;
@@ -137,11 +137,11 @@
             tblItems.ReadOnly = true;
             tblItems.RowHeadersVisible = false;
             tblItems.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.Moccasin;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.ControlText;
-            tblItems.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
+            tblItems.RowsDefaultCellStyle = dataGridViewCellStyle2;
             tblItems.RowTemplate.Height = 40;
             tblItems.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             tblItems.Size = new Size(461, 156);
@@ -186,7 +186,7 @@
             txtDateTime.Location = new Point(143, 92);
             txtDateTime.Name = "txtDateTime";
             txtDateTime.ReadOnly = true;
-            txtDateTime.Size = new Size(335, 23);
+            txtDateTime.Size = new Size(335, 26);
             txtDateTime.TabIndex = 59;
             // 
             // label5
@@ -224,7 +224,7 @@
             txtStudentID.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtStudentID.Location = new Point(143, 49);
             txtStudentID.Name = "txtStudentID";
-            txtStudentID.Size = new Size(335, 23);
+            txtStudentID.Size = new Size(335, 26);
             txtStudentID.TabIndex = 54;
             // 
             // label24

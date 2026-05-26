@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IskoLendDataManagement;
+using IskoLendModel;
 
 namespace IskoLendInventory
 {
@@ -16,20 +18,42 @@ namespace IskoLendInventory
         private string Category;
         private string Item;
 
-        public EditSupply()
+        private readonly SupplyDataService _dsSup;
+        private readonly string _SupID;
+
+        public EditSupply(SupplyDataService dsSup, string SupplyID)
         {
             InitializeComponent();
+            _dsSup = dsSup;
+            _SupID = SupplyID;
         }
 
         private void EditSupply_Load(object sender, EventArgs e)
         {
             MaximizeBox = false;
 
-        }
+            Supply sup = _dsSup.getSupplyByID(_SupID);
 
+            LoadCategoriesToCombo();
+
+            cmbCategory.SelectedIndex = cmbCategory.FindStringExact(_dsSup.getCategory(sup.CategoryID));
+            txtItemName.Text = sup.SupplyName;
+            txtQty.Text = sup.Quantity.ToString();
+        }
+        private void LoadCategoriesToCombo()
+        {
+            var dt = _dsSup.GetAllCategories();
+
+            cmbCategory.DataSource = null;
+            cmbCategory.DisplayMember = "CategoryName";
+            cmbCategory.ValueMember = "CategoryID";
+            cmbCategory.DataSource = dt;
+
+            cmbCategory.SelectedIndex = 0;
+        }
         private void btnEditItem_Click(object sender, EventArgs e)
         {
-            if (cmbCategory.SelectedIndex == 0)
+            if (cmbCategory.Text == "")
             {
                 MessageBox.Show("Please enter item category.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -45,8 +69,19 @@ namespace IskoLendInventory
                 }
                 else
                 {
-                    Item = txtItemName.Text;
-                    Category = cmbCategory.Text;
+                    Supply sup = new Supply
+                    {
+                        SupplyID = _SupID,
+                        CategoryID = _dsSup.getCategoryID(cmbCategory.Text),
+                        SupplyName = txtItemName.Text,
+                        Quantity = int.Parse(txtQty.Text)
+                    };
+
+                    _dsSup.UpdateSupply(sup);
+
+                    this.DialogResult = DialogResult.OK;
+
+
                     this.Close();
                 }
             }

@@ -40,6 +40,8 @@
             DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
             label10 = new Label();
             pnlDashboard = new Panel();
             btnViewBorrows = new RoundedPanel();
@@ -112,6 +114,7 @@
             dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
             DateCompleted = new DataGridViewTextBoxColumn();
             pnlSupplies = new Panel();
+            tblSupplies = new DataGridView();
             btnAdd = new RoundedPanel();
             label29 = new Label();
             btnEdit = new RoundedPanel();
@@ -122,14 +125,10 @@
             lbl29 = new Label();
             cmbCategory = new ComboBox();
             txtSearchSupply = new TextBox();
-            tblSupplies = new DataGridView();
-            SupplyID = new DataGridViewTextBoxColumn();
-            Category = new DataGridViewTextBoxColumn();
-            SupplyName = new DataGridViewTextBoxColumn();
-            Quantity = new DataGridViewTextBoxColumn();
             label25 = new Label();
             label27 = new Label();
             pnlFacilitators = new Panel();
+            tblFacilitators = new DataGridView();
             cmbActive = new ComboBox();
             btnAddFaci = new RoundedPanel();
             label16 = new Label();
@@ -139,12 +138,6 @@
             label31 = new Label();
             cmbPosition = new ComboBox();
             txtSearchFacilitator = new TextBox();
-            tblFacilitators = new DataGridView();
-            FacilitatorID = new DataGridViewTextBoxColumn();
-            FirstName = new DataGridViewTextBoxColumn();
-            LastName = new DataGridViewTextBoxColumn();
-            Position = new DataGridViewTextBoxColumn();
-            isActive = new DataGridViewCheckBoxColumn();
             label32 = new Label();
             label33 = new Label();
             pnlDashboard.SuspendLayout();
@@ -174,16 +167,16 @@
             btnBorrow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tblBorrowRecord).BeginInit();
             pnlSupplies.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tblSupplies).BeginInit();
             btnAdd.SuspendLayout();
             btnEdit.SuspendLayout();
             btnViewLogs.SuspendLayout();
             btnRemove.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)tblSupplies).BeginInit();
             pnlFacilitators.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tblFacilitators).BeginInit();
             btnAddFaci.SuspendLayout();
             btnEditFaci.SuspendLayout();
             btnRemoveFaci.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)tblFacilitators).BeginInit();
             SuspendLayout();
             // 
             // label10
@@ -581,9 +574,9 @@
             btnExit.ForeColor = Color.White;
             btnExit.Location = new Point(78, 701);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(107, 18);
+            btnExit.Size = new Size(123, 24);
             btnExit.TabIndex = 43;
-            btnExit.Text = "CLOSE";
+            btnExit.Text = "EXIT SYSTEM";
             btnExit.Click += btnExit_Click_1;
             // 
             // label30
@@ -604,7 +597,7 @@
             cmbFacilitator.FormattingEnabled = true;
             cmbFacilitator.Location = new Point(91, 237);
             cmbFacilitator.Name = "cmbFacilitator";
-            cmbFacilitator.Size = new Size(114, 23);
+            cmbFacilitator.Size = new Size(114, 26);
             cmbFacilitator.TabIndex = 39;
             cmbFacilitator.SelectedIndexChanged += cmbFacilitator_SelectedIndexChanged;
             // 
@@ -880,7 +873,7 @@
             cmbBorrowStatus.FormattingEnabled = true;
             cmbBorrowStatus.Location = new Point(366, 109);
             cmbBorrowStatus.Name = "cmbBorrowStatus";
-            cmbBorrowStatus.Size = new Size(107, 24);
+            cmbBorrowStatus.Size = new Size(107, 28);
             cmbBorrowStatus.TabIndex = 38;
             // 
             // cmbBorrowDate
@@ -890,7 +883,7 @@
             cmbBorrowDate.FormattingEnabled = true;
             cmbBorrowDate.Location = new Point(253, 109);
             cmbBorrowDate.Name = "cmbBorrowDate";
-            cmbBorrowDate.Size = new Size(107, 24);
+            cmbBorrowDate.Size = new Size(107, 28);
             cmbBorrowDate.TabIndex = 37;
             // 
             // txtSearchBorrow
@@ -898,7 +891,7 @@
             txtSearchBorrow.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSearchBorrow.Location = new Point(20, 111);
             txtSearchBorrow.Name = "txtSearchBorrow";
-            txtSearchBorrow.Size = new Size(227, 23);
+            txtSearchBorrow.Size = new Size(227, 26);
             txtSearchBorrow.TabIndex = 35;
             // 
             // tblBorrowRecord
@@ -1025,13 +1018,13 @@
             // pnlSupplies
             // 
             pnlSupplies.BackColor = SystemColors.Control;
+            pnlSupplies.Controls.Add(tblSupplies);
             pnlSupplies.Controls.Add(btnAdd);
             pnlSupplies.Controls.Add(btnEdit);
             pnlSupplies.Controls.Add(btnViewLogs);
             pnlSupplies.Controls.Add(btnRemove);
             pnlSupplies.Controls.Add(cmbCategory);
             pnlSupplies.Controls.Add(txtSearchSupply);
-            pnlSupplies.Controls.Add(tblSupplies);
             pnlSupplies.Controls.Add(label25);
             pnlSupplies.Controls.Add(label27);
             pnlSupplies.Location = new Point(184, 1);
@@ -1039,6 +1032,59 @@
             pnlSupplies.Size = new Size(918, 753);
             pnlSupplies.TabIndex = 40;
             pnlSupplies.Visible = false;
+            // 
+            // tblSupplies
+            // 
+            tblSupplies.AllowUserToAddRows = false;
+            tblSupplies.AllowUserToDeleteRows = false;
+            tblSupplies.AllowUserToResizeColumns = false;
+            tblSupplies.AllowUserToResizeRows = false;
+            tblSupplies.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            tblSupplies.BackgroundColor = SystemColors.Control;
+            tblSupplies.BorderStyle = BorderStyle.None;
+            tblSupplies.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.Maroon;
+            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = Color.Maroon;
+            dataGridViewCellStyle7.SelectionForeColor = Color.White;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            tblSupplies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            tblSupplies.ColumnHeadersHeight = 40;
+            tblSupplies.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = SystemColors.Window;
+            dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            tblSupplies.DefaultCellStyle = dataGridViewCellStyle8;
+            tblSupplies.EnableHeadersVisualStyles = false;
+            tblSupplies.GridColor = Color.DimGray;
+            tblSupplies.Location = new Point(20, 151);
+            tblSupplies.MultiSelect = false;
+            tblSupplies.Name = "tblSupplies";
+            tblSupplies.ReadOnly = true;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = SystemColors.Control;
+            dataGridViewCellStyle9.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = Color.Maroon;
+            dataGridViewCellStyle9.SelectionForeColor = Color.White;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            tblSupplies.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            tblSupplies.RowHeadersVisible = false;
+            tblSupplies.RowHeadersWidth = 51;
+            dataGridViewCellStyle10.BackColor = SystemColors.Control;
+            dataGridViewCellStyle10.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle10.SelectionForeColor = Color.Black;
+            tblSupplies.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            tblSupplies.RowTemplate.Height = 40;
+            tblSupplies.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            tblSupplies.Size = new Size(878, 586);
+            tblSupplies.TabIndex = 42;
             // 
             // btnAdd
             // 
@@ -1139,7 +1185,7 @@
             cmbCategory.FormattingEnabled = true;
             cmbCategory.Location = new Point(253, 109);
             cmbCategory.Name = "cmbCategory";
-            cmbCategory.Size = new Size(107, 24);
+            cmbCategory.Size = new Size(107, 28);
             cmbCategory.TabIndex = 37;
             // 
             // txtSearchSupply
@@ -1147,82 +1193,8 @@
             txtSearchSupply.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSearchSupply.Location = new Point(20, 111);
             txtSearchSupply.Name = "txtSearchSupply";
-            txtSearchSupply.Size = new Size(227, 23);
+            txtSearchSupply.Size = new Size(227, 26);
             txtSearchSupply.TabIndex = 35;
-            // 
-            // tblSupplies
-            // 
-            tblSupplies.AllowUserToAddRows = false;
-            tblSupplies.AllowUserToDeleteRows = false;
-            tblSupplies.AllowUserToResizeColumns = false;
-            tblSupplies.AllowUserToResizeRows = false;
-            tblSupplies.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            tblSupplies.BackgroundColor = SystemColors.Control;
-            tblSupplies.BorderStyle = BorderStyle.None;
-            tblSupplies.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.Maroon;
-            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = Color.Maroon;
-            dataGridViewCellStyle7.SelectionForeColor = Color.White;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            tblSupplies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            tblSupplies.ColumnHeadersHeight = 40;
-            tblSupplies.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            tblSupplies.Columns.AddRange(new DataGridViewColumn[] { SupplyID, Category, SupplyName, Quantity });
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = SystemColors.Window;
-            dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = Color.Moccasin;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            tblSupplies.DefaultCellStyle = dataGridViewCellStyle8;
-            tblSupplies.EnableHeadersVisualStyles = false;
-            tblSupplies.GridColor = Color.DimGray;
-            tblSupplies.Location = new Point(20, 151);
-            tblSupplies.MultiSelect = false;
-            tblSupplies.Name = "tblSupplies";
-            tblSupplies.ReadOnly = true;
-            tblSupplies.RowHeadersVisible = false;
-            tblSupplies.RowHeadersWidth = 51;
-            dataGridViewCellStyle9.BackColor = SystemColors.Control;
-            dataGridViewCellStyle9.SelectionBackColor = Color.Moccasin;
-            dataGridViewCellStyle9.SelectionForeColor = Color.Black;
-            tblSupplies.RowsDefaultCellStyle = dataGridViewCellStyle9;
-            tblSupplies.RowTemplate.Height = 40;
-            tblSupplies.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            tblSupplies.Size = new Size(878, 586);
-            tblSupplies.TabIndex = 32;
-            // 
-            // SupplyID
-            // 
-            SupplyID.HeaderText = "SupplyID";
-            SupplyID.MinimumWidth = 6;
-            SupplyID.Name = "SupplyID";
-            SupplyID.ReadOnly = true;
-            // 
-            // Category
-            // 
-            Category.HeaderText = "Category";
-            Category.MinimumWidth = 6;
-            Category.Name = "Category";
-            Category.ReadOnly = true;
-            // 
-            // SupplyName
-            // 
-            SupplyName.HeaderText = "Name";
-            SupplyName.MinimumWidth = 6;
-            SupplyName.Name = "SupplyName";
-            SupplyName.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            Quantity.HeaderText = "Quantity";
-            Quantity.MinimumWidth = 6;
-            Quantity.Name = "Quantity";
-            Quantity.ReadOnly = true;
             // 
             // label25
             // 
@@ -1247,13 +1219,13 @@
             // pnlFacilitators
             // 
             pnlFacilitators.BackColor = SystemColors.Control;
+            pnlFacilitators.Controls.Add(tblFacilitators);
             pnlFacilitators.Controls.Add(cmbActive);
             pnlFacilitators.Controls.Add(btnAddFaci);
             pnlFacilitators.Controls.Add(btnEditFaci);
             pnlFacilitators.Controls.Add(btnRemoveFaci);
             pnlFacilitators.Controls.Add(cmbPosition);
             pnlFacilitators.Controls.Add(txtSearchFacilitator);
-            pnlFacilitators.Controls.Add(tblFacilitators);
             pnlFacilitators.Controls.Add(label32);
             pnlFacilitators.Controls.Add(label33);
             pnlFacilitators.Location = new Point(184, 1);
@@ -1262,6 +1234,59 @@
             pnlFacilitators.TabIndex = 42;
             pnlFacilitators.Visible = false;
             // 
+            // tblFacilitators
+            // 
+            tblFacilitators.AllowUserToAddRows = false;
+            tblFacilitators.AllowUserToDeleteRows = false;
+            tblFacilitators.AllowUserToResizeColumns = false;
+            tblFacilitators.AllowUserToResizeRows = false;
+            tblFacilitators.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            tblFacilitators.BackgroundColor = SystemColors.Control;
+            tblFacilitators.BorderStyle = BorderStyle.None;
+            tblFacilitators.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = Color.Maroon;
+            dataGridViewCellStyle11.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle11.ForeColor = Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = Color.Maroon;
+            dataGridViewCellStyle11.SelectionForeColor = Color.White;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            tblFacilitators.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            tblFacilitators.ColumnHeadersHeight = 40;
+            tblFacilitators.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = SystemColors.Window;
+            dataGridViewCellStyle12.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle12.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle12.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.False;
+            tblFacilitators.DefaultCellStyle = dataGridViewCellStyle12;
+            tblFacilitators.EnableHeadersVisualStyles = false;
+            tblFacilitators.GridColor = Color.DimGray;
+            tblFacilitators.Location = new Point(20, 151);
+            tblFacilitators.MultiSelect = false;
+            tblFacilitators.Name = "tblFacilitators";
+            tblFacilitators.ReadOnly = true;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = SystemColors.Control;
+            dataGridViewCellStyle13.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle13.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = Color.Maroon;
+            dataGridViewCellStyle13.SelectionForeColor = Color.White;
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
+            tblFacilitators.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            tblFacilitators.RowHeadersVisible = false;
+            tblFacilitators.RowHeadersWidth = 51;
+            dataGridViewCellStyle14.BackColor = SystemColors.Control;
+            dataGridViewCellStyle14.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle14.SelectionForeColor = Color.Black;
+            tblFacilitators.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            tblFacilitators.RowTemplate.Height = 40;
+            tblFacilitators.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            tblFacilitators.Size = new Size(878, 586);
+            tblFacilitators.TabIndex = 43;
+            // 
             // cmbActive
             // 
             cmbActive.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -1269,7 +1294,7 @@
             cmbActive.FormattingEnabled = true;
             cmbActive.Location = new Point(366, 109);
             cmbActive.Name = "cmbActive";
-            cmbActive.Size = new Size(107, 24);
+            cmbActive.Size = new Size(107, 28);
             cmbActive.TabIndex = 42;
             // 
             // btnAddFaci
@@ -1348,7 +1373,7 @@
             cmbPosition.FormattingEnabled = true;
             cmbPosition.Location = new Point(253, 109);
             cmbPosition.Name = "cmbPosition";
-            cmbPosition.Size = new Size(107, 24);
+            cmbPosition.Size = new Size(107, 28);
             cmbPosition.TabIndex = 37;
             // 
             // txtSearchFacilitator
@@ -1356,89 +1381,8 @@
             txtSearchFacilitator.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSearchFacilitator.Location = new Point(20, 111);
             txtSearchFacilitator.Name = "txtSearchFacilitator";
-            txtSearchFacilitator.Size = new Size(227, 23);
+            txtSearchFacilitator.Size = new Size(227, 26);
             txtSearchFacilitator.TabIndex = 35;
-            // 
-            // tblFacilitators
-            // 
-            tblFacilitators.AllowUserToAddRows = false;
-            tblFacilitators.AllowUserToDeleteRows = false;
-            tblFacilitators.AllowUserToResizeColumns = false;
-            tblFacilitators.AllowUserToResizeRows = false;
-            tblFacilitators.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            tblFacilitators.BackgroundColor = SystemColors.Control;
-            tblFacilitators.BorderStyle = BorderStyle.None;
-            tblFacilitators.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = Color.Maroon;
-            dataGridViewCellStyle10.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle10.ForeColor = Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = Color.Maroon;
-            dataGridViewCellStyle10.SelectionForeColor = Color.White;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            tblFacilitators.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            tblFacilitators.ColumnHeadersHeight = 40;
-            tblFacilitators.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            tblFacilitators.Columns.AddRange(new DataGridViewColumn[] { FacilitatorID, FirstName, LastName, Position, isActive });
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = SystemColors.Window;
-            dataGridViewCellStyle11.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = Color.Moccasin;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
-            tblFacilitators.DefaultCellStyle = dataGridViewCellStyle11;
-            tblFacilitators.EnableHeadersVisualStyles = false;
-            tblFacilitators.GridColor = Color.DimGray;
-            tblFacilitators.Location = new Point(20, 151);
-            tblFacilitators.MultiSelect = false;
-            tblFacilitators.Name = "tblFacilitators";
-            tblFacilitators.ReadOnly = true;
-            tblFacilitators.RowHeadersVisible = false;
-            tblFacilitators.RowHeadersWidth = 51;
-            dataGridViewCellStyle12.BackColor = SystemColors.Control;
-            dataGridViewCellStyle12.SelectionBackColor = Color.Moccasin;
-            dataGridViewCellStyle12.SelectionForeColor = Color.Black;
-            tblFacilitators.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            tblFacilitators.RowTemplate.Height = 40;
-            tblFacilitators.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            tblFacilitators.Size = new Size(878, 586);
-            tblFacilitators.TabIndex = 32;
-            // 
-            // FacilitatorID
-            // 
-            FacilitatorID.HeaderText = "FacilitatorID";
-            FacilitatorID.MinimumWidth = 6;
-            FacilitatorID.Name = "FacilitatorID";
-            FacilitatorID.ReadOnly = true;
-            // 
-            // FirstName
-            // 
-            FirstName.HeaderText = "First Name";
-            FirstName.MinimumWidth = 6;
-            FirstName.Name = "FirstName";
-            FirstName.ReadOnly = true;
-            // 
-            // LastName
-            // 
-            LastName.HeaderText = "Last Name";
-            LastName.MinimumWidth = 6;
-            LastName.Name = "LastName";
-            LastName.ReadOnly = true;
-            // 
-            // Position
-            // 
-            Position.HeaderText = "Position";
-            Position.MinimumWidth = 6;
-            Position.Name = "Position";
-            Position.ReadOnly = true;
-            // 
-            // isActive
-            // 
-            isActive.HeaderText = "isActive";
-            isActive.MinimumWidth = 6;
-            isActive.Name = "isActive";
-            isActive.ReadOnly = true;
             // 
             // label32
             // 
@@ -1466,10 +1410,10 @@
             BackColor = SystemColors.Control;
             ClientSize = new Size(1100, 750);
             Controls.Add(pnlSideBar);
-            Controls.Add(pnlBorrowRecord);
-            Controls.Add(pnlDashboard);
-            Controls.Add(pnlFacilitators);
             Controls.Add(pnlSupplies);
+            Controls.Add(pnlBorrowRecord);
+            Controls.Add(pnlFacilitators);
+            Controls.Add(pnlDashboard);
             FormBorderStyle = FormBorderStyle.None;
             Name = "MainDashboard";
             StartPosition = FormStartPosition.CenterScreen;
@@ -1503,17 +1447,17 @@
             ((System.ComponentModel.ISupportInitialize)tblBorrowRecord).EndInit();
             pnlSupplies.ResumeLayout(false);
             pnlSupplies.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)tblSupplies).EndInit();
             btnAdd.ResumeLayout(false);
             btnEdit.ResumeLayout(false);
             btnViewLogs.ResumeLayout(false);
             btnRemove.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)tblSupplies).EndInit();
             pnlFacilitators.ResumeLayout(false);
             pnlFacilitators.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)tblFacilitators).EndInit();
             btnAddFaci.ResumeLayout(false);
             btnEditFaci.ResumeLayout(false);
             btnRemoveFaci.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)tblFacilitators).EndInit();
             ResumeLayout(false);
         }
 
@@ -1588,13 +1532,8 @@
         private System.Windows.Forms.Label lbl29;
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.TextBox txtSearchSupply;
-        private System.Windows.Forms.DataGridView tblSupplies;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SupplyID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SupplyName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private RoundedPanel btnAdd;
         private System.Windows.Forms.Label label29;
         private RoundedPanel btnEdit;
@@ -1613,18 +1552,14 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.ComboBox cmbPosition;
         private System.Windows.Forms.TextBox txtSearchFacilitator;
-        private System.Windows.Forms.DataGridView tblFacilitators;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FacilitatorID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Position;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isActive;
         private System.Windows.Forms.ComboBox cmbActive;
         private ComboBox cmbFacilitator;
         private Label btnExit;
         private Label label30;
+        private DataGridView tblFacilitators;
+        private DataGridView tblSupplies;
     }
 }
 

@@ -28,161 +28,162 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.btnAddFaci = new IskoLendInventory.RoundedPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtPosition = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtLastName = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.btnAddFaci.SuspendLayout();
-            this.SuspendLayout();
+            txtFirstName = new TextBox();
+            btnAddFaci = new RoundedPanel();
+            label6 = new Label();
+            label2 = new Label();
+            label4 = new Label();
+            label1 = new Label();
+            label3 = new Label();
+            txtLastName = new TextBox();
+            label5 = new Label();
+            label19 = new Label();
+            label22 = new Label();
+            cmbPosition = new ComboBox();
+            btnAddFaci.SuspendLayout();
+            SuspendLayout();
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstName.Location = new System.Drawing.Point(133, 50);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(170, 26);
-            this.txtFirstName.TabIndex = 118;
+            txtFirstName.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtFirstName.Location = new Point(133, 50);
+            txtFirstName.Name = "txtFirstName";
+            txtFirstName.Size = new Size(170, 26);
+            txtFirstName.TabIndex = 118;
             // 
             // btnAddFaci
             // 
-            this.btnAddFaci.BackColor = System.Drawing.Color.Orange;
-            this.btnAddFaci.Controls.Add(this.label6);
-            this.btnAddFaci.Location = new System.Drawing.Point(212, 158);
-            this.btnAddFaci.Name = "btnAddFaci";
-            this.btnAddFaci.Size = new System.Drawing.Size(91, 32);
-            this.btnAddFaci.TabIndex = 114;
-            this.btnAddFaci.Click += new System.EventHandler(this.btnAddFaci_Click);
+            btnAddFaci.BackColor = Color.Orange;
+            btnAddFaci.Controls.Add(label6);
+            btnAddFaci.Location = new Point(212, 158);
+            btnAddFaci.Name = "btnAddFaci";
+            btnAddFaci.Size = new Size(91, 32);
+            btnAddFaci.TabIndex = 114;
+            btnAddFaci.Click += btnAddFaci_Click;
             // 
             // label6
             // 
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(3, 6);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 22);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Add";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(3, 6);
+            label6.Name = "label6";
+            label6.Size = new Size(85, 22);
+            label6.TabIndex = 12;
+            label6.Text = "Add";
+            label6.TextAlign = ContentAlignment.TopCenter;
+            label6.Click += label6_Click;
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(89, 114);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(22, 23);
-            this.label2.TabIndex = 113;
-            this.label2.Text = "*";
+            label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Maroon;
+            label2.Location = new Point(89, 114);
+            label2.Name = "label2";
+            label2.Size = new Size(22, 23);
+            label2.TabIndex = 113;
+            label2.Text = "*";
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(13, 117);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 24);
-            this.label4.TabIndex = 112;
-            this.label4.Text = "Position";
-            // 
-            // txtPosition
-            // 
-            this.txtPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPosition.Location = new System.Drawing.Point(133, 114);
-            this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(170, 26);
-            this.txtPosition.TabIndex = 111;
+            label4.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(13, 117);
+            label4.Name = "label4";
+            label4.Size = new Size(95, 24);
+            label4.TabIndex = 112;
+            label4.Text = "Position";
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(105, 82);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(22, 23);
-            this.label1.TabIndex = 110;
-            this.label1.Text = "*";
+            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Maroon;
+            label1.Location = new Point(105, 82);
+            label1.Name = "label1";
+            label1.Size = new Size(22, 23);
+            label1.TabIndex = 110;
+            label1.Text = "*";
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(13, 85);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 24);
-            this.label3.TabIndex = 109;
-            this.label3.Text = "LastName";
+            label3.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(13, 85);
+            label3.Name = "label3";
+            label3.Size = new Size(95, 24);
+            label3.TabIndex = 109;
+            label3.Text = "LastName";
             // 
             // txtLastName
             // 
-            this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastName.Location = new System.Drawing.Point(133, 82);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(170, 26);
-            this.txtLastName.TabIndex = 108;
+            txtLastName.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtLastName.Location = new Point(133, 82);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new Size(170, 26);
+            txtLastName.TabIndex = 108;
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Maroon;
-            this.label5.Location = new System.Drawing.Point(105, 52);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(22, 23);
-            this.label5.TabIndex = 107;
-            this.label5.Text = "*";
+            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Maroon;
+            label5.Location = new Point(105, 52);
+            label5.Name = "label5";
+            label5.Size = new Size(22, 23);
+            label5.TabIndex = 107;
+            label5.Text = "*";
             // 
             // label19
             // 
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(13, 56);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(98, 24);
-            this.label19.TabIndex = 106;
-            this.label19.Text = "FirstName";
+            label19.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label19.ForeColor = Color.Black;
+            label19.Location = new Point(13, 56);
+            label19.Name = "label19";
+            label19.Size = new Size(98, 24);
+            label19.TabIndex = 106;
+            label19.Text = "FirstName";
             // 
             // label22
             // 
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Maroon;
-            this.label22.Location = new System.Drawing.Point(12, 9);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(307, 47);
-            this.label22.TabIndex = 105;
-            this.label22.Text = "Add Facilitator";
+            label22.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label22.ForeColor = Color.Maroon;
+            label22.Location = new Point(12, 9);
+            label22.Name = "label22";
+            label22.Size = new Size(307, 47);
+            label22.TabIndex = 105;
+            label22.Text = "Add Facilitator";
+            // 
+            // cmbPosition
+            // 
+            cmbPosition.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbPosition.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbPosition.FormattingEnabled = true;
+            cmbPosition.Location = new Point(133, 114);
+            cmbPosition.Name = "cmbPosition";
+            cmbPosition.Size = new Size(170, 28);
+            cmbPosition.TabIndex = 119;
             // 
             // AddFacilitator
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(315, 202);
-            this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(this.btnAddFaci);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtPosition);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtLastName);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label22);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "AddFacilitator";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.AddFacilitator_Load);
-            this.btnAddFaci.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleMode = AutoScaleMode.None;
+            ClientSize = new Size(315, 202);
+            Controls.Add(cmbPosition);
+            Controls.Add(txtFirstName);
+            Controls.Add(btnAddFaci);
+            Controls.Add(label2);
+            Controls.Add(label4);
+            Controls.Add(label1);
+            Controls.Add(label3);
+            Controls.Add(txtLastName);
+            Controls.Add(label5);
+            Controls.Add(label19);
+            Controls.Add(label22);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Name = "AddFacilitator";
+            StartPosition = FormStartPosition.CenterScreen;
+            Load += AddFacilitator_Load;
+            btnAddFaci.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -192,12 +193,12 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtPosition;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label22;
+        private ComboBox cmbPosition;
     }
 }

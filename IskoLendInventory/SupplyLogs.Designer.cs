@@ -28,163 +28,157 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.cmbActionType = new System.Windows.Forms.ComboBox();
-            this.txtSearchLog = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.tblSupplyLogs = new System.Windows.Forms.DataGridView();
-            this.Supply = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Facilitator = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActionType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QtyStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmbDate = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.tblSupplyLogs)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            cmbActionType = new ComboBox();
+            txtSearchLog = new TextBox();
+            label19 = new Label();
+            label22 = new Label();
+            tblSupplyLogs = new DataGridView();
+            Supply = new DataGridViewTextBoxColumn();
+            Facilitator = new DataGridViewTextBoxColumn();
+            ActionType = new DataGridViewTextBoxColumn();
+            QtyStatus = new DataGridViewTextBoxColumn();
+            Date = new DataGridViewTextBoxColumn();
+            cmbDate = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)tblSupplyLogs).BeginInit();
+            SuspendLayout();
             // 
             // cmbActionType
             // 
-            this.cmbActionType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbActionType.FormattingEnabled = true;
-            this.cmbActionType.Location = new System.Drawing.Point(376, 88);
-            this.cmbActionType.Name = "cmbActionType";
-            this.cmbActionType.Size = new System.Drawing.Size(121, 28);
-            this.cmbActionType.TabIndex = 50;
+            cmbActionType.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbActionType.FormattingEnabled = true;
+            cmbActionType.Location = new Point(376, 88);
+            cmbActionType.Name = "cmbActionType";
+            cmbActionType.Size = new Size(121, 28);
+            cmbActionType.TabIndex = 50;
             // 
             // txtSearchLog
             // 
-            this.txtSearchLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchLog.Location = new System.Drawing.Point(12, 88);
-            this.txtSearchLog.Name = "txtSearchLog";
-            this.txtSearchLog.Size = new System.Drawing.Size(358, 26);
-            this.txtSearchLog.TabIndex = 49;
+            txtSearchLog.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtSearchLog.Location = new Point(12, 88);
+            txtSearchLog.Name = "txtSearchLog";
+            txtSearchLog.Size = new Size(358, 26);
+            txtSearchLog.TabIndex = 49;
             // 
             // label19
             // 
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(13, 47);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(436, 47);
-            this.label19.TabIndex = 48;
-            this.label19.Text = "Track facilitator changes on supplies.";
+            label19.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label19.ForeColor = Color.Black;
+            label19.Location = new Point(13, 47);
+            label19.Name = "label19";
+            label19.Size = new Size(436, 47);
+            label19.TabIndex = 48;
+            label19.Text = "Track facilitator changes on supplies.";
             // 
             // label22
             // 
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Maroon;
-            this.label22.Location = new System.Drawing.Point(12, 11);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(307, 47);
-            this.label22.TabIndex = 47;
-            this.label22.Text = "Supply Logs";
+            label22.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label22.ForeColor = Color.Maroon;
+            label22.Location = new Point(12, 11);
+            label22.Name = "label22";
+            label22.Size = new Size(307, 47);
+            label22.TabIndex = 47;
+            label22.Text = "Supply Logs";
             // 
             // tblSupplyLogs
             // 
-            this.tblSupplyLogs.AllowUserToAddRows = false;
-            this.tblSupplyLogs.AllowUserToDeleteRows = false;
-            this.tblSupplyLogs.AllowUserToResizeColumns = false;
-            this.tblSupplyLogs.AllowUserToResizeRows = false;
-            this.tblSupplyLogs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tblSupplyLogs.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.tblSupplyLogs.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tblSupplyLogs.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblSupplyLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.tblSupplyLogs.ColumnHeadersHeight = 40;
-            this.tblSupplyLogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.tblSupplyLogs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Supply,
-            this.Facilitator,
-            this.ActionType,
-            this.QtyStatus,
-            this.Date});
-            this.tblSupplyLogs.Enabled = false;
-            this.tblSupplyLogs.EnableHeadersVisualStyles = false;
-            this.tblSupplyLogs.GridColor = System.Drawing.Color.DimGray;
-            this.tblSupplyLogs.Location = new System.Drawing.Point(12, 126);
-            this.tblSupplyLogs.Name = "tblSupplyLogs";
-            this.tblSupplyLogs.ReadOnly = true;
-            this.tblSupplyLogs.RowHeadersVisible = false;
-            this.tblSupplyLogs.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            this.tblSupplyLogs.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.tblSupplyLogs.RowTemplate.Height = 40;
-            this.tblSupplyLogs.Size = new System.Drawing.Size(746, 323);
-            this.tblSupplyLogs.TabIndex = 46;
+            tblSupplyLogs.AllowUserToAddRows = false;
+            tblSupplyLogs.AllowUserToDeleteRows = false;
+            tblSupplyLogs.AllowUserToResizeColumns = false;
+            tblSupplyLogs.AllowUserToResizeRows = false;
+            tblSupplyLogs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            tblSupplyLogs.BackgroundColor = SystemColors.Control;
+            tblSupplyLogs.BorderStyle = BorderStyle.None;
+            tblSupplyLogs.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.Maroon;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            tblSupplyLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            tblSupplyLogs.ColumnHeadersHeight = 40;
+            tblSupplyLogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            tblSupplyLogs.Columns.AddRange(new DataGridViewColumn[] { Supply, Facilitator, ActionType, QtyStatus, Date });
+            tblSupplyLogs.Enabled = false;
+            tblSupplyLogs.EnableHeadersVisualStyles = false;
+            tblSupplyLogs.GridColor = Color.DimGray;
+            tblSupplyLogs.Location = new Point(12, 126);
+            tblSupplyLogs.Name = "tblSupplyLogs";
+            tblSupplyLogs.ReadOnly = true;
+            tblSupplyLogs.RowHeadersVisible = false;
+            tblSupplyLogs.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            tblSupplyLogs.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            tblSupplyLogs.RowTemplate.Height = 40;
+            tblSupplyLogs.Size = new Size(746, 323);
+            tblSupplyLogs.TabIndex = 46;
             // 
             // Supply
             // 
-            this.Supply.HeaderText = "Supply";
-            this.Supply.MinimumWidth = 6;
-            this.Supply.Name = "Supply";
-            this.Supply.ReadOnly = true;
+            Supply.HeaderText = "Supply";
+            Supply.MinimumWidth = 6;
+            Supply.Name = "Supply";
+            Supply.ReadOnly = true;
             // 
             // Facilitator
             // 
-            this.Facilitator.FillWeight = 102F;
-            this.Facilitator.HeaderText = "Facilitator";
-            this.Facilitator.MinimumWidth = 6;
-            this.Facilitator.Name = "Facilitator";
-            this.Facilitator.ReadOnly = true;
+            Facilitator.FillWeight = 102F;
+            Facilitator.HeaderText = "Facilitator";
+            Facilitator.MinimumWidth = 6;
+            Facilitator.Name = "Facilitator";
+            Facilitator.ReadOnly = true;
             // 
             // ActionType
             // 
-            this.ActionType.FillWeight = 105F;
-            this.ActionType.HeaderText = "Action Type";
-            this.ActionType.MinimumWidth = 6;
-            this.ActionType.Name = "ActionType";
-            this.ActionType.ReadOnly = true;
+            ActionType.FillWeight = 105F;
+            ActionType.HeaderText = "Action Type";
+            ActionType.MinimumWidth = 6;
+            ActionType.Name = "ActionType";
+            ActionType.ReadOnly = true;
             // 
             // QtyStatus
             // 
-            this.QtyStatus.HeaderText = "Quantity Status";
-            this.QtyStatus.MinimumWidth = 6;
-            this.QtyStatus.Name = "QtyStatus";
-            this.QtyStatus.ReadOnly = true;
+            QtyStatus.HeaderText = "Quantity Status";
+            QtyStatus.MinimumWidth = 6;
+            QtyStatus.Name = "QtyStatus";
+            QtyStatus.ReadOnly = true;
             // 
             // Date
             // 
-            this.Date.HeaderText = "Date";
-            this.Date.MinimumWidth = 6;
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
+            Date.HeaderText = "Date";
+            Date.MinimumWidth = 6;
+            Date.Name = "Date";
+            Date.ReadOnly = true;
             // 
             // cmbDate
             // 
-            this.cmbDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbDate.FormattingEnabled = true;
-            this.cmbDate.Location = new System.Drawing.Point(503, 88);
-            this.cmbDate.Name = "cmbDate";
-            this.cmbDate.Size = new System.Drawing.Size(121, 28);
-            this.cmbDate.TabIndex = 51;
+            cmbDate.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbDate.FormattingEnabled = true;
+            cmbDate.Location = new Point(503, 88);
+            cmbDate.Name = "cmbDate";
+            cmbDate.Size = new Size(121, 28);
+            cmbDate.TabIndex = 51;
             // 
             // SupplyLogs
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(770, 461);
-            this.Controls.Add(this.cmbDate);
-            this.Controls.Add(this.cmbActionType);
-            this.Controls.Add(this.txtSearchLog);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.tblSupplyLogs);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "SupplyLogs";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.SupplyLogs_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tblSupplyLogs)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleMode = AutoScaleMode.None;
+            ClientSize = new Size(770, 461);
+            Controls.Add(cmbDate);
+            Controls.Add(cmbActionType);
+            Controls.Add(txtSearchLog);
+            Controls.Add(label19);
+            Controls.Add(label22);
+            Controls.Add(tblSupplyLogs);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Name = "SupplyLogs";
+            StartPosition = FormStartPosition.CenterScreen;
+            Load += SupplyLogs_Load;
+            ((System.ComponentModel.ISupportInitialize)tblSupplyLogs).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

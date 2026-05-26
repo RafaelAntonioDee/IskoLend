@@ -28,164 +28,163 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label22 = new System.Windows.Forms.Label();
-            this.cmbCategory = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtItemName = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtQty = new System.Windows.Forms.TextBox();
-            this.btnAddItem = new IskoLendInventory.RoundedPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnAddItem.SuspendLayout();
-            this.SuspendLayout();
+            label22 = new Label();
+            cmbCategory = new ComboBox();
+            label1 = new Label();
+            label3 = new Label();
+            txtItemName = new TextBox();
+            label5 = new Label();
+            label19 = new Label();
+            label2 = new Label();
+            label4 = new Label();
+            txtQty = new TextBox();
+            btnAddItem = new RoundedPanel();
+            label6 = new Label();
+            btnAddItem.SuspendLayout();
+            SuspendLayout();
             // 
             // label22
             // 
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Maroon;
-            this.label22.Location = new System.Drawing.Point(12, 9);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(307, 47);
-            this.label22.TabIndex = 51;
-            this.label22.Text = "Add Supply";
+            label22.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label22.ForeColor = Color.Maroon;
+            label22.Location = new Point(12, 9);
+            label22.Name = "label22";
+            label22.Size = new Size(307, 47);
+            label22.TabIndex = 51;
+            label22.Text = "Add Supply";
             // 
             // cmbCategory
             // 
-            this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(133, 48);
-            this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(170, 28);
-            this.cmbCategory.TabIndex = 73;
+            cmbCategory.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCategory.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbCategory.FormattingEnabled = true;
+            cmbCategory.Location = new Point(133, 48);
+            cmbCategory.Name = "cmbCategory";
+            cmbCategory.Size = new Size(170, 28);
+            cmbCategory.TabIndex = 73;
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(54, 82);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(22, 23);
-            this.label1.TabIndex = 72;
-            this.label1.Text = "*";
+            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Maroon;
+            label1.Location = new Point(54, 82);
+            label1.Name = "label1";
+            label1.Size = new Size(22, 23);
+            label1.TabIndex = 72;
+            label1.Text = "*";
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(13, 85);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 24);
-            this.label3.TabIndex = 71;
-            this.label3.Text = "Item";
+            label3.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(13, 85);
+            label3.Name = "label3";
+            label3.Size = new Size(95, 24);
+            label3.TabIndex = 71;
+            label3.Text = "Item";
             // 
             // txtItemName
             // 
-            this.txtItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtItemName.Location = new System.Drawing.Point(133, 82);
-            this.txtItemName.Name = "txtItemName";
-            this.txtItemName.Size = new System.Drawing.Size(170, 26);
-            this.txtItemName.TabIndex = 70;
+            txtItemName.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtItemName.Location = new Point(133, 82);
+            txtItemName.Name = "txtItemName";
+            txtItemName.Size = new Size(170, 26);
+            txtItemName.TabIndex = 70;
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Maroon;
-            this.label5.Location = new System.Drawing.Point(96, 52);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(22, 23);
-            this.label5.TabIndex = 69;
-            this.label5.Text = "*";
+            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Maroon;
+            label5.Location = new Point(96, 52);
+            label5.Name = "label5";
+            label5.Size = new Size(22, 23);
+            label5.TabIndex = 69;
+            label5.Text = "*";
             // 
             // label19
             // 
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(13, 56);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(95, 24);
-            this.label19.TabIndex = 68;
-            this.label19.Text = "Category";
+            label19.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label19.ForeColor = Color.Black;
+            label19.Location = new Point(13, 56);
+            label19.Name = "label19";
+            label19.Size = new Size(95, 24);
+            label19.TabIndex = 68;
+            label19.Text = "Category";
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(89, 114);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(22, 23);
-            this.label2.TabIndex = 76;
-            this.label2.Text = "*";
+            label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Maroon;
+            label2.Location = new Point(89, 114);
+            label2.Name = "label2";
+            label2.Size = new Size(22, 23);
+            label2.TabIndex = 76;
+            label2.Text = "*";
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(13, 117);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 24);
-            this.label4.TabIndex = 75;
-            this.label4.Text = "Quantity";
+            label4.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(13, 117);
+            label4.Name = "label4";
+            label4.Size = new Size(95, 24);
+            label4.TabIndex = 75;
+            label4.Text = "Quantity";
             // 
             // txtQty
             // 
-            this.txtQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQty.Location = new System.Drawing.Point(133, 114);
-            this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(170, 26);
-            this.txtQty.TabIndex = 74;
+            txtQty.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtQty.Location = new Point(133, 114);
+            txtQty.Name = "txtQty";
+            txtQty.Size = new Size(170, 26);
+            txtQty.TabIndex = 74;
             // 
             // btnAddItem
             // 
-            this.btnAddItem.BackColor = System.Drawing.Color.Orange;
-            this.btnAddItem.Controls.Add(this.label6);
-            this.btnAddItem.Location = new System.Drawing.Point(212, 147);
-            this.btnAddItem.Name = "btnAddItem";
-            this.btnAddItem.Size = new System.Drawing.Size(91, 32);
-            this.btnAddItem.TabIndex = 77;
-            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
+            btnAddItem.BackColor = Color.Orange;
+            btnAddItem.Controls.Add(label6);
+            btnAddItem.Location = new Point(212, 147);
+            btnAddItem.Name = "btnAddItem";
+            btnAddItem.Size = new Size(91, 32);
+            btnAddItem.TabIndex = 77;
+            btnAddItem.Click += btnAddItem_Click;
+            btnAddItem.Paint += btnAddItem_Paint;
             // 
             // label6
             // 
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(3, 6);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 22);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Add";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(3, 6);
+            label6.Name = "label6";
+            label6.Size = new Size(85, 22);
+            label6.TabIndex = 12;
+            label6.Text = "Add";
+            label6.TextAlign = ContentAlignment.TopCenter;
+            label6.Click += label6_Click;
             // 
             // AddSupply
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(315, 191);
-            this.Controls.Add(this.btnAddItem);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtQty);
-            this.Controls.Add(this.cmbCategory);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtItemName);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label22);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "AddSupply";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.AddSupply_Load);
-            this.btnAddItem.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleMode = AutoScaleMode.None;
+            ClientSize = new Size(315, 191);
+            Controls.Add(btnAddItem);
+            Controls.Add(label2);
+            Controls.Add(label4);
+            Controls.Add(txtQty);
+            Controls.Add(cmbCategory);
+            Controls.Add(label1);
+            Controls.Add(label3);
+            Controls.Add(txtItemName);
+            Controls.Add(label5);
+            Controls.Add(label19);
+            Controls.Add(label22);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Name = "AddSupply";
+            StartPosition = FormStartPosition.CenterScreen;
+            Load += AddSupply_Load;
+            btnAddItem.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

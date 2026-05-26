@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IskoLendModel       
 {
-    public class SupplyLogs
+    public class Logs
     {
         required public string LogID { get; set; }
         required public string SupplyID { get; set; }

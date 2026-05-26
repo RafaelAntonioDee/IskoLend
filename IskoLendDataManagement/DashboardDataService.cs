@@ -30,16 +30,6 @@ namespace IskoLendDataManagement
             return dataTable;
         }
 
-        public DataTable GetFacilitators()
-        {
-            var statement = "Select CONCAT (FirstName,' ',LastName)as FacilitatorName from Facilitator;";
-            SqlDataAdapter adapter = new SqlDataAdapter(statement, _connection);
-            _connection.Open();
-            DataTable dataTable = new DataTable();
-            adapter.Fill(dataTable);
-            _connection.Close();
-            return dataTable;
-        }
         public string GetFacilitatorID(string FacilitatorName)
         {
             var statement = $"Select FacilitatorID from Facilitator where CONCAT(FirstName,' ',LastName) = '{FacilitatorName}';";

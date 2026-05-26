@@ -18,7 +18,7 @@ namespace IskoLendInventory
         private readonly string _currFaci;
         private DataTable dt;
         public BorrowItems(BorrowingRecordDataService dsBR, string currFaci)
-        
+
         {
             _currFaci = currFaci;
             _dsBR = dsBR;
@@ -33,7 +33,7 @@ namespace IskoLendInventory
 
         private void BorrowItems_Load(object sender, EventArgs e)
         {
-           
+
             MaximizeBox = false;
             tblItems.ClearSelection();
             dt = new DataTable();
@@ -51,7 +51,7 @@ namespace IskoLendInventory
         private void btnAddItem_Click(object sender, EventArgs e)
         {
 
-            
+
             AddItem form = new AddItem(_dsBR, dt);
             form.ShowDialog();
 
@@ -69,11 +69,11 @@ namespace IskoLendInventory
             List<BorrowingDetails> details = new List<BorrowingDetails>();
             BorrowingRecord record;
             string StudentID = txtStudentID.Text;
-            if (!(string.IsNullOrEmpty(StudentID))&& _dsBR.isStudent(StudentID))
+            if (!(string.IsNullOrEmpty(StudentID)) && _dsBR.isStudent(StudentID))
             {
-                    if (tblItems.Rows.Count > 0)
-                    {
-                    if(!string.IsNullOrEmpty(_currFaci))
+                if (tblItems.Rows.Count > 0)
+                {
+                    if (!string.IsNullOrEmpty(_currFaci))
                     {
                         DataTable supplies = (DataTable)tblItems.DataSource;
                         record = new BorrowingRecord
@@ -95,12 +95,12 @@ namespace IskoLendInventory
                         MessageBox.Show("Please Select Your Facilitator ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-                    
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please add atleast 1 item.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Please add atleast 1 item.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
 
             }
             else
@@ -114,5 +114,7 @@ namespace IskoLendInventory
         {
             btnSave_Click(sender, e);
         }
+
+
     }
 }

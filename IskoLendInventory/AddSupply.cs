@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IskoLendDataManagement;
+using IskoLendModel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace IskoLendInventory
@@ -17,15 +19,35 @@ namespace IskoLendInventory
         private string Category;
         private string Item;
 
-        public AddSupply()
+        private readonly SupplyDataService _dsSup;
+        private readonly string _currFaci;
+
+        public AddSupply(SupplyDataService dsSup, string faciID)
         {
             InitializeComponent();
+            _dsSup = dsSup;
+            _currFaci = faciID;
         }
 
         private void AddSupply_Load(object sender, EventArgs e)
         {
             MaximizeBox = false;
+            LoadFacilitatorsToCombo();
+        }
+        private void LoadFacilitatorsToCombo()
+        {
+            var sup = _dsSup.GetAllCategories();
 
+            var row = sup.NewRow();
+            row["CategoryName"] = "Categories";
+            sup.Rows.InsertAt(row, 0);
+
+            cmbCategory.DataSource = null;
+            cmbCategory.DisplayMember = "CategoryName";
+            cmbCategory.ValueMember = "CategoryName";
+            cmbCategory.DataSource = sup;
+
+            cmbCategory.SelectedIndex = 0;
         }
 
         private void btnAddItem_Click(object sender, EventArgs e)
@@ -46,9 +68,34 @@ namespace IskoLendInventory
                 }
                 else
                 {
-                    Item = txtItemName.Text;
-                    Category = cmbCategory.Text;
+
+                    Supply newSupply = new Supply
+                    {
+                        SupplyID = _dsSup.GenerateSupplyID(),
+                        CategoryID = _dsSup.getCategoryID(cmbCategory.Text),
+                        SupplyName = txtItemName.Text,
+                        Quantity = int.Parse(txtQty.Text)
+                    };
+                    _dsSup.AddSupply(newSupply);
+
+
+                    //Logs newLog = new Logs
+                    //{
+                    //    LogID = _dsSup.GenerateLogID(),
+                    //    SupplyID = newSupply.SupplyID,
+                    //    FacilitatorID = _currFaci,
+                    //    Action = "Add",
+                    //    QuantityStatus = "+ "+ newSupply.Quantity,
+                    //    ActionDate = DateTime.Parse( DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+                    //};
+                  
+                    //_dsSup.AddSupLog(newLog);
+
+
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
+
+
                 }
             }
         }
@@ -56,6 +103,11 @@ namespace IskoLendInventory
         private void label6_Click(object sender, EventArgs e)
         {
             btnAddItem_Click(sender, e);
+        }
+
+        private void btnAddItem_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,14 +44,164 @@ namespace IskoLendDataManagement
             _connection.Close();
             return supplies;
         }
-        public Supply? GetSupplyByID(string supplyID)
+        public Supply getSupplyByID(string supID)
         {
-            return supplies.FirstOrDefault(s => s.SupplyID == supplyID);
+            const string sql = "SELECT * FROM SupplyInventory  WHERE SupplyID = @SupplyID;";
+
+            using var cmd = new SqlCommand(sql, _connection);
+            cmd.Parameters.AddWithValue("@SupplyID", supID);
+
+            _connection.Open();
+
+            using var reader = cmd.ExecuteReader();
+
+            Supply sup = null;
+
+            if (reader.Read())
+            {
+                sup = new Supply
+                {
+                    SupplyID = reader["SupplyID"].ToString(),
+                    CategoryID = reader["CategoryID"].ToString(),
+                    SupplyName = reader["ItemName"].ToString(),
+                    Quantity = int.Parse(reader["Quantity"].ToString())
+                };
+            }
+
+            _connection.Close();
+
+            return sup;
         }
         public List<Supply> GetSuppliesByCategory(string categoryID)
         {
             return supplies.Where(s => s.CategoryID == categoryID).ToList();
         }
 
+        public DataTable GetAllSupplies()
+        {
+            var statement = "Select SupplyID ,C.CategoryName AS Category,ItemName ,Quantity From SupplyInventory AS SI JOIN Category AS C ON C.CategoryID = SI.CategoryID;";
+            SqlDataAdapter adapter = new SqlDataAdapter(statement, _connection);
+            _connection.Open();
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            _connection.Close();
+            return dataTable;
+        }
+        public DataTable GetAllCategories()
+        {
+            var statement = "SELECT * FROM Category;";
+            SqlDataAdapter adapter = new SqlDataAdapter(statement, _connection);
+
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+
+            return dataTable;
+        }
+        public string GenerateSupplyID()
+        {
+            string? lastID = GetLastSupplyID();
+
+            if (string.IsNullOrWhiteSpace(lastID))
+                return "SUP001";
+
+            int numericPart = int.Parse(lastID[3..]);
+            int next = numericPart + 1;
+
+            return "SUP" + (next < 1000 ? next.ToString("D3") : next.ToString());
+        }
+        public string GetLastSupplyID()
+        {
+            var statement = "SELECT TOP 1 SupplyID FROM SupplyInventory ORDER BY SupplyID DESC;";
+            SqlCommand command = new SqlCommand(statement, _connection);
+            _connection.Open();
+            var result = command.ExecuteScalar();
+            _connection.Close();
+            return result?.ToString() ?? string.Empty;
+        }
+
+        public void AddSupply(Supply sup)
+        {
+            const string sql = @" INSERT INTO SupplyInventory (SupplyID, CategoryID, ItemName, Quantity) VALUES (@SupID, @CatID, @ItemName, @Quantity);";
+
+            using var cmd = new SqlCommand(sql, _connection);
+
+            cmd.Parameters.Add("@SupID", SqlDbType.VarChar).Value = sup.SupplyID;
+            cmd.Parameters.Add("@CatID", SqlDbType.VarChar).Value = sup.CategoryID;
+            cmd.Parameters.Add("@ItemName", SqlDbType.VarChar).Value = sup.SupplyName;
+            cmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = sup.Quantity;
+            _connection.Open();
+            cmd.ExecuteNonQuery();
+            _connection.Close();
+        }
+        public string getCategoryID(string category)
+        {
+            const string sql = "SELECT CategoryID FROM Category WHERE CategoryName = @CategoryName;";
+
+            using var cmd = new SqlCommand(sql, _connection);
+            cmd.Parameters.AddWithValue("@CategoryName", category);
+
+            _connection.Open();
+            object result = cmd.ExecuteScalar();
+            _connection.Close();
+
+            return result?.ToString();
+        }
+
+        public void UpdateSupply(Supply sup)
+        {
+            var statement = @"UPDATE SupplyInventory SET CategoryID = @CategoryID, ItemName = @ItemName, Quantity = @Quantity WHERE SupplyID = @SupplyID";
+
+            SqlCommand cmd = new SqlCommand(statement, _connection);
+
+            cmd.Parameters.AddWithValue("@SupplyID", sup.SupplyID);
+            cmd.Parameters.AddWithValue("@CategoryID", sup.CategoryID);
+            cmd.Parameters.AddWithValue("@ItemName", sup.SupplyName);
+            cmd.Parameters.AddWithValue("@Quantity",sup.Quantity);
+
+            _connection.Open();
+            cmd.ExecuteNonQuery();
+            _connection.Close();
+        }
+
+        public string getCategory(string catID)
+        {
+            const string sql = "SELECT CategoryName FROM Category WHERE CategoryID = @CategoryID;";
+
+            using var cmd = new SqlCommand(sql, _connection);
+            cmd.Parameters.AddWithValue("@CategoryID", catID);
+
+            _connection.Open();
+            object result = cmd.ExecuteScalar();
+            _connection.Close();
+
+            return result?.ToString();
+        }
+        public void RemoveSupply(string supID)
+        {
+            var statement = $"DELETE FROM SupplyInventory WHERE SupplyID = '{supID}';";
+
+            SqlCommand cmd = new SqlCommand(statement, _connection);
+
+            _connection.Open();
+            cmd.ExecuteNonQuery();
+            _connection.Close();
+        }
+
+        public void AddSupLog(Logs log)
+        {
+            const string sql = @" INSERT INTO SupplyLogs (LogID, SupplyID, FacilitatorID, ActionType,QuantityStatus,Date) VALUES (@LogID, @SupplyID, @FacilitatorID, @ActionType, @QuantityStatus, @Date);";
+
+            using var cmd = new SqlCommand(sql, _connection);
+
+            cmd.Parameters.Add("@LogID", SqlDbType.VarChar).Value = log.LogID;
+            cmd.Parameters.Add("@SupplyID", SqlDbType.VarChar).Value = log.SupplyID;
+            cmd.Parameters.Add("@FacilitatorID", SqlDbType.VarChar).Value = log.FacilitatorID;
+            cmd.Parameters.Add("@ActionType", SqlDbType.Int).Value = log.Action;
+            cmd.Parameters.Add("@QuantityStatus", SqlDbType.VarChar).Value = log.QuantityStatus;
+            cmd.Parameters.Add("@Date", SqlDbType.Int).Value = log.ActionDate;
+            _connection.Open();
+            cmd.ExecuteNonQuery();
+            _connection.Close();
+        }
     }
 }
