@@ -29,7 +29,7 @@ namespace IskoLendInventory
         {
             tblBorrowDetail.DataSource = _dsBR.GetSelectedBorrowDetail(_borrowID);
         }
-        
+
         private void btnReturnDetails_Click(object sender, EventArgs e)
         {
             if (tblBorrowDetail.SelectedRows.Count > 0)
@@ -37,7 +37,7 @@ namespace IskoLendInventory
                 DataGridViewRow row = tblBorrowDetail.SelectedRows[0];
                 string? ItemName = row.Cells[0].Value.ToString();
                 tblBorrowDetail.ClearSelection();
-                ReturnDetails form = new ReturnDetails(_dsBR,_borrowID, ItemName);
+                ReturnDetails form = new ReturnDetails(_dsBR, _borrowID, ItemName);
                 form.ShowDialog();
                 LoadTblBorrowDetail();
 
@@ -58,14 +58,14 @@ namespace IskoLendInventory
             ReturnDetail returnDetail;
             if (tblBorrowDetail.SelectedRows.Count > 0)
             {
-                
+
                 DataGridViewRow row = tblBorrowDetail.SelectedRows[0];
 
                 string? ItemName = row.Cells[0].Value.ToString();
                 string? ItemID = _dsBR.GetSupplyID(ItemName);
                 int? BorrowedQty = Convert.ToInt32(row.Cells[1].Value);
                 string? ReturnStatus = row.Cells[2].Value.ToString();
-                if (ReturnStatus == "Completed"|| ReturnStatus == "Lost")
+                if (ReturnStatus == "Completed" || ReturnStatus == "Lost")
                 {
                     MessageBox.Show("This transaction is already Completed.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
@@ -103,6 +103,11 @@ namespace IskoLendInventory
         }
 
         private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BorrowDetails_Load(object sender, EventArgs e)
         {
 
         }

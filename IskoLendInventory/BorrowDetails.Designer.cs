@@ -177,11 +177,11 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "BorrowDetails";
             StartPosition = FormStartPosition.CenterScreen;
+            Load += BorrowDetails_Load;
             ((System.ComponentModel.ISupportInitialize)tblBorrowDetail).EndInit();
             btnReturnDetails.ResumeLayout(false);
             btnReturn.ResumeLayout(false);
             ResumeLayout(false);
-
         }
 
         #endregion

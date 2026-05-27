@@ -207,8 +207,9 @@ namespace IskoLendInventory
             CloseAllPanels();
 
             pnlDashboard.Visible = true;
-            LoadBorrowSummary();
             tblBorrowSummary.ClearSelection();
+
+            LoadBorrowSummary();
 
         }
 
@@ -219,6 +220,7 @@ namespace IskoLendInventory
             pnlBorrowRecord.Visible = true;
 
             tblBorrowRecord.ClearSelection();
+            LoadBorrowingRecords();
 
         }
 
@@ -262,6 +264,7 @@ namespace IskoLendInventory
             pnlSupplies.Visible = true;
 
             tblSupplies.ClearSelection();
+            LoadSupplies();
 
         }
 
@@ -273,7 +276,7 @@ namespace IskoLendInventory
         private void btnViewLogs_Click(object sender, EventArgs e)
         {
 
-            SupplyLogs form = new SupplyLogs();
+            SupplyLogs form = new SupplyLogs(dsSup);
             form.ShowDialog();
 
             tblSupplies.ClearSelection();
@@ -308,7 +311,7 @@ namespace IskoLendInventory
                 {
                     DataGridViewRow row = tblSupplies.SelectedRows[0];
                     string? SupplyID = Convert.ToString(row.Cells[0].Value);
-                    EditSupply form = new EditSupply(dsSup, SupplyID);
+                    EditSupply form = new EditSupply(dsSup, SupplyID, currFaci);
                     form.ShowDialog();
                     LoadSupplies();
                     tblSupplies.ClearSelection();
@@ -340,7 +343,7 @@ namespace IskoLendInventory
                     {
                         DataGridViewRow row = tblSupplies.SelectedRows[0];
                         string? SupplyID = Convert.ToString(row.Cells[0].Value);
-                        dsSup.RemoveSupply(SupplyID);
+                        dsSup.RemoveSupply(SupplyID, currFaci);
                         LoadSupplies();
                         tblSupplies.ClearSelection();
                     }
@@ -469,6 +472,7 @@ namespace IskoLendInventory
             CloseAllPanels();
             pnlFacilitators.Visible = true;
             tblFacilitators.ClearSelection();
+            LoadFacilitatorRecords();
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)

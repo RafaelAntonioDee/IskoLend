@@ -30,17 +30,14 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             cmbActionType = new ComboBox();
             txtSearchLog = new TextBox();
             label19 = new Label();
             label22 = new Label();
-            tblSupplyLogs = new DataGridView();
-            Supply = new DataGridViewTextBoxColumn();
-            Facilitator = new DataGridViewTextBoxColumn();
-            ActionType = new DataGridViewTextBoxColumn();
-            QtyStatus = new DataGridViewTextBoxColumn();
-            Date = new DataGridViewTextBoxColumn();
             cmbDate = new ComboBox();
+            tblSupplyLogs = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)tblSupplyLogs).BeginInit();
             SuspendLayout();
             // 
@@ -81,6 +78,15 @@
             label22.TabIndex = 47;
             label22.Text = "Supply Logs";
             // 
+            // cmbDate
+            // 
+            cmbDate.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbDate.FormattingEnabled = true;
+            cmbDate.Location = new Point(503, 88);
+            cmbDate.Name = "cmbDate";
+            cmbDate.Size = new Size(121, 28);
+            cmbDate.TabIndex = 51;
+            // 
             // tblSupplyLogs
             // 
             tblSupplyLogs.AllowUserToAddRows = false;
@@ -95,83 +101,56 @@
             dataGridViewCellStyle1.BackColor = Color.Maroon;
             dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Maroon;
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             tblSupplyLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             tblSupplyLogs.ColumnHeadersHeight = 40;
             tblSupplyLogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            tblSupplyLogs.Columns.AddRange(new DataGridViewColumn[] { Supply, Facilitator, ActionType, QtyStatus, Date });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            tblSupplyLogs.DefaultCellStyle = dataGridViewCellStyle2;
             tblSupplyLogs.Enabled = false;
             tblSupplyLogs.EnableHeadersVisualStyles = false;
             tblSupplyLogs.GridColor = Color.DimGray;
-            tblSupplyLogs.Location = new Point(12, 126);
+            tblSupplyLogs.Location = new Point(13, 122);
+            tblSupplyLogs.MultiSelect = false;
             tblSupplyLogs.Name = "tblSupplyLogs";
             tblSupplyLogs.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Maroon;
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            tblSupplyLogs.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             tblSupplyLogs.RowHeadersVisible = false;
             tblSupplyLogs.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            tblSupplyLogs.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            tblSupplyLogs.RowsDefaultCellStyle = dataGridViewCellStyle4;
             tblSupplyLogs.RowTemplate.Height = 40;
-            tblSupplyLogs.Size = new Size(746, 323);
-            tblSupplyLogs.TabIndex = 46;
-            // 
-            // Supply
-            // 
-            Supply.HeaderText = "Supply";
-            Supply.MinimumWidth = 6;
-            Supply.Name = "Supply";
-            Supply.ReadOnly = true;
-            // 
-            // Facilitator
-            // 
-            Facilitator.FillWeight = 102F;
-            Facilitator.HeaderText = "Facilitator";
-            Facilitator.MinimumWidth = 6;
-            Facilitator.Name = "Facilitator";
-            Facilitator.ReadOnly = true;
-            // 
-            // ActionType
-            // 
-            ActionType.FillWeight = 105F;
-            ActionType.HeaderText = "Action Type";
-            ActionType.MinimumWidth = 6;
-            ActionType.Name = "ActionType";
-            ActionType.ReadOnly = true;
-            // 
-            // QtyStatus
-            // 
-            QtyStatus.HeaderText = "Quantity Status";
-            QtyStatus.MinimumWidth = 6;
-            QtyStatus.Name = "QtyStatus";
-            QtyStatus.ReadOnly = true;
-            // 
-            // Date
-            // 
-            Date.HeaderText = "Date";
-            Date.MinimumWidth = 6;
-            Date.Name = "Date";
-            Date.ReadOnly = true;
-            // 
-            // cmbDate
-            // 
-            cmbDate.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbDate.FormattingEnabled = true;
-            cmbDate.Location = new Point(503, 88);
-            cmbDate.Name = "cmbDate";
-            cmbDate.Size = new Size(121, 28);
-            cmbDate.TabIndex = 51;
+            tblSupplyLogs.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            tblSupplyLogs.Size = new Size(962, 415);
+            tblSupplyLogs.TabIndex = 52;
             // 
             // SupplyLogs
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(770, 461);
+            ClientSize = new Size(987, 549);
+            Controls.Add(tblSupplyLogs);
             Controls.Add(cmbDate);
             Controls.Add(cmbActionType);
             Controls.Add(txtSearchLog);
             Controls.Add(label19);
             Controls.Add(label22);
-            Controls.Add(tblSupplyLogs);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "SupplyLogs";
             StartPosition = FormStartPosition.CenterScreen;
@@ -187,12 +166,7 @@
         private System.Windows.Forms.TextBox txtSearchLog;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.DataGridView tblSupplyLogs;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Supply;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Facilitator;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ActionType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QtyStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.ComboBox cmbDate;
+        private DataGridView tblSupplyLogs;
     }
 }

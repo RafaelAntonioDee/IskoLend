@@ -76,7 +76,7 @@ namespace IskoLendInventory
                         SupplyName = txtItemName.Text,
                         Quantity = int.Parse(txtQty.Text)
                     };
-                    _dsSup.AddSupply(newSupply);
+                    _dsSup.AddSupply(newSupply, _currFaci);
 
 
                     //Logs newLog = new Logs

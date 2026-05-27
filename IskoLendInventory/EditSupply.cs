@@ -20,9 +20,11 @@ namespace IskoLendInventory
 
         private readonly SupplyDataService _dsSup;
         private readonly string _SupID;
+        private readonly string _currFaci;
 
-        public EditSupply(SupplyDataService dsSup, string SupplyID)
+        public EditSupply(SupplyDataService dsSup, string SupplyID, string currFaci)
         {
+            _currFaci = currFaci;
             InitializeComponent();
             _dsSup = dsSup;
             _SupID = SupplyID;
@@ -77,7 +79,7 @@ namespace IskoLendInventory
                         Quantity = int.Parse(txtQty.Text)
                     };
 
-                    _dsSup.UpdateSupply(sup);
+                    _dsSup.UpdateSupply(sup, _currFaci);
 
                     this.DialogResult = DialogResult.OK;
 

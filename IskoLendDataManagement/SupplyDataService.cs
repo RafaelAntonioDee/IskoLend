@@ -104,7 +104,17 @@ namespace IskoLendDataManagement
         {
             return supplies.Where(s => s.CategoryID == categoryID).ToList();
         }
-
+        
+        public DataTable GetSupplyLogs()
+        {
+            var statement = "Select LogID, S.ItemName As Supply, CONCAT(F.FirstName, ' ', F.LastName) As Facilitator, ActionType, ActionID, InitialQty, FinalQty As NewQty, LogDate As Date  From SupplyLogs AS SL JOIN SupplyInventory AS S ON S.SupplyID = SL.SupplyID JOIN Facilitator AS F ON F.FacilitatorID = SL.FacilitatorID;";
+            SqlDataAdapter adapter = new SqlDataAdapter(statement, _connection);
+            _connection.Open();
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            _connection.Close();
+            return dataTable;
+        }
         public DataTable GetAllSupplies()
         {
             var statement = "Select SupplyID ,C.CategoryName AS Category,ItemName ,Quantity From SupplyInventory AS SI JOIN Category AS C ON C.CategoryID = SI.CategoryID;";
@@ -147,7 +157,7 @@ namespace IskoLendDataManagement
             return result?.ToString() ?? string.Empty;
         }
 
-        public void AddSupply(Supply sup)
+        public void AddSupply(Supply sup, String faci)
         {
             const string sql = @" INSERT INTO SupplyInventory (SupplyID, CategoryID, ItemName, Quantity) VALUES (@SupID, @CatID, @ItemName, @Quantity);";
 
@@ -157,9 +167,31 @@ namespace IskoLendDataManagement
             cmd.Parameters.Add("@CatID", SqlDbType.VarChar).Value = sup.CategoryID;
             cmd.Parameters.Add("@ItemName", SqlDbType.VarChar).Value = sup.SupplyName;
             cmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = sup.Quantity;
+
+
             _connection.Open();
             cmd.ExecuteNonQuery();
+
+            using var tx = _connection.BeginTransaction();
+
+            Supply curr = getSupplyByID(sup.SupplyID, tx);
+            string newID = GenerateLogID(tx);
+            Logs log = new Logs
+            {
+                LogID = newID,
+                SupplyID = sup.SupplyID,
+                FacilitatorID = faci,
+                ActionType = "Add",
+                ActionID = newID,
+                InitialQty = curr.Quantity,
+                FinalQty = curr.Quantity,
+                LogDate = DateTime.Now
+            };
+            AddSupLog(log, tx);
+            tx.Commit();
+
             _connection.Close();
+
         }
         public string getCategoryID(string category)
         {
@@ -175,7 +207,7 @@ namespace IskoLendDataManagement
             return result?.ToString();
         }
 
-        public void UpdateSupply(Supply sup)
+        public void UpdateSupply(Supply sup, String faci)
         {
             var statement = @"UPDATE SupplyInventory SET CategoryID = @CategoryID, ItemName = @ItemName, Quantity = @Quantity WHERE SupplyID = @SupplyID";
 
@@ -188,6 +220,25 @@ namespace IskoLendDataManagement
 
             _connection.Open();
             cmd.ExecuteNonQuery();
+
+            using var tx = _connection.BeginTransaction();
+
+            Supply curr = getSupplyByID(sup.SupplyID, tx);
+            string newID = GenerateLogID(tx);
+            Logs log = new Logs
+            {
+                LogID = newID,
+                SupplyID = sup.SupplyID,
+                FacilitatorID = faci,
+                ActionType = "Edit",
+                ActionID = newID,
+                InitialQty = curr.Quantity,
+                FinalQty = sup.Quantity,
+                LogDate = DateTime.Now
+            };
+            AddSupLog(log, tx);
+            tx.Commit();
+
             _connection.Close();
         }
 
@@ -204,15 +255,40 @@ namespace IskoLendDataManagement
 
             return result?.ToString();
         }
-        public void RemoveSupply(string supID)
+        public void RemoveSupply(string supID, string faci)
         {
+            _connection.Open();
+
+            using var tx = _connection.BeginTransaction();
+
+            Supply curr = getSupplyByID(supID, tx);
+            string newID = GenerateLogID(tx);
+            Logs log = new Logs
+            {
+                LogID = newID,
+                SupplyID = supID,
+                FacilitatorID = faci,
+                ActionType = "Delete",
+                ActionID = newID,
+                InitialQty = curr.Quantity,
+                FinalQty = 0,
+                LogDate = DateTime.Now
+            };
+            AddSupLog(log, tx);
+            tx.Commit();
+
+            _connection.Close();
+
             var statement = $"DELETE FROM SupplyInventory WHERE SupplyID = '{supID}';";
 
             SqlCommand cmd = new SqlCommand(statement, _connection);
 
+
             _connection.Open();
             cmd.ExecuteNonQuery();
+
             _connection.Close();
+
         }
 
         public void AddSupLog(Logs log, SqlTransaction tx)
@@ -254,5 +330,6 @@ namespace IskoLendDataManagement
             
             return result?.ToString() ?? string.Empty;
         }
+
     }
 }
