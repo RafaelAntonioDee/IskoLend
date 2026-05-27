@@ -21,7 +21,7 @@ namespace IskoLendDataManagement
         }
         public DataTable GetAllFacilitatorRecord()
         {
-            var statement = "Select FacilitatorID ,D.Position ,FirstName ,LastName ,isActive From Facilitator AS F JOIN Designation AS D ON D.DesignationID = F.DesignationID;";
+            var statement = "Select FacilitatorID ,D.Position ,FirstName ,LastName ,isActive From Facilitator AS F JOIN Designation AS D ON D.DesignationID = F.DesignationID WHERE IsActive = 1;";
             SqlDataAdapter adapter = new SqlDataAdapter(statement, _connection);
             _connection.Open();
             DataTable dataTable = new DataTable();
@@ -29,7 +29,73 @@ namespace IskoLendDataManagement
             _connection.Close();
             return dataTable;
         }
+        public DataTable FilteredFacilitators(string search, string position)
+        {
+            // null = ALL
+            string posID = "";
 
+            if (string.Equals(position, "Position", StringComparison.OrdinalIgnoreCase))
+                position = null;
+            else
+            {
+                posID = getPositionID(position);
+
+            }
+
+            const string sql = @"
+SELECT 
+    FacilitatorID,
+    D.Position,
+    FirstName,
+    LastName,
+    IsActive
+FROM Facilitator AS F
+JOIN Designation AS D 
+    ON D.DesignationID = F.DesignationID
+WHERE
+(
+    @SearchBar IS NULL
+    OR FacilitatorID LIKE '%' + @SearchBar + '%'
+    OR FirstName LIKE '%' + @SearchBar + '%'
+    OR LastName LIKE '%' + @SearchBar + '%'
+)
+AND
+(
+    @position IS NULL
+    OR F.DesignationID = @position
+)
+AND F.IsActive = 1;";
+
+            using var cmd = new SqlCommand(sql, _connection);
+
+            cmd.Parameters.Add("@SearchBar", SqlDbType.VarChar).Value =
+                string.IsNullOrWhiteSpace(search) ? (object)DBNull.Value : search;
+
+            cmd.Parameters.Add("@position", SqlDbType.VarChar).Value =
+                string.IsNullOrWhiteSpace(posID) ? (object)DBNull.Value : posID;
+
+            using var adapter = new SqlDataAdapter(cmd);
+            var dt = new DataTable();
+
+            _connection.Open();
+            adapter.Fill(dt);
+            _connection.Close();
+
+            return dt;
+        }
+        public string getPositionID(string position)
+        {
+            const string sql = "SELECT DesignationID FROM Designation WHERE Position = @position;";
+
+            using var cmd = new SqlCommand(sql, _connection);
+            cmd.Parameters.AddWithValue("@position", position);
+
+            _connection.Open();
+            object result = cmd.ExecuteScalar();
+            _connection.Close();
+
+            return result?.ToString();
+        }
         public void UpdateFacilitator(Facilitator faci)
         {
             var statement = @"UPDATE Facilitator SET DesignationID = @DesignationID, FirstName = @FirstName, LastName = @LastName, IsActive = @IsActive WHERE FacilitatorID = @FacilitatorID";
@@ -154,11 +220,15 @@ namespace IskoLendDataManagement
             cmd.ExecuteNonQuery();
             _connection.Close();
         }
-        public void RemoveFacilitator(string facilitatorID)
+        public void RemoveFacilitator(string faci)
         {
-            var statement = $"DELETE FROM Facilitator WHERE FacilitatorID = '{facilitatorID}';";
+
+            var statement = @"UPDATE Facilitator SET IsActive = @IsActive WHERE FacilitatorID = @FacilitatorID";
 
             SqlCommand cmd = new SqlCommand(statement, _connection);
+
+            cmd.Parameters.Add("@IsActive", SqlDbType.Bit).Value = false;
+            cmd.Parameters.AddWithValue("@FacilitatorID", faci);
 
             _connection.Open();
             cmd.ExecuteNonQuery();

@@ -29,9 +29,6 @@ namespace IskoLendInventory
         {
             MaximizeBox = false;
 
-            cmbActive.Items.Add("True");
-            cmbActive.Items.Add("False");
-
             Facilitator faci = _dsFaci.getFacilitator(_FaciID);
 
             LoadPositionsToCombo();
@@ -39,7 +36,6 @@ namespace IskoLendInventory
             cmbPosition.SelectedIndex = cmbPosition.FindStringExact(_dsFaci.getDesignation(faci.DesignationID)); 
             txtFirstName.Text = faci.FirstName;
             txtLastName.Text = faci.LastName;
-            cmbActive.SelectedItem = faci.IsActive.ToString();
         }
 
         private void btnEditFaci_Click(object sender, EventArgs e)
@@ -62,19 +58,15 @@ namespace IskoLendInventory
                     }
                     else
                     {
-                        if (cmbActive.Text == "")
-                        {
-                            MessageBox.Show("Please state if the facilitator is active.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                        else
-                        {
+
+
                             Facilitator facilitator = new Facilitator
                             {
                                 FacilitatorID = _FaciID,
                                 DesignationID = _dsFaci.getDesignationID(cmbPosition.Text),
                                 FirstName = txtFirstName.Text,
                                 LastName = txtLastName.Text,
-                                IsActive = Boolean.Parse(cmbActive.Text)
+                                IsActive = true
                             };
 
                             _dsFaci.UpdateFacilitator(facilitator);
@@ -83,7 +75,7 @@ namespace IskoLendInventory
 
 
                             this.Close();
-                        }
+                        
                     }
                 }
             }

@@ -22,7 +22,7 @@ namespace IskoLendDataManagement
 
         public DataTable GetAllBorrowingRecord()
         {
-            var statement = "Select BorrowID\r\n      ,B_FaciID as FacilitatorID\r\n      ,StudentID\r\n      ,BorrowDate\r\n      ,StatusID\r\n      ,DateCompleted From BorrowingRecord;";
+            var statement = "Select BorrowID\r\n      ,CONCAT(F.FirstName, ' ', F.LastName) As Facilitator\r\n      ,StudentID\r\n      ,BorrowDate\r\n      ,S.StatusName AS Status\r\n      ,DateCompleted From BorrowingRecord AS BR JOIN Facilitator AS F ON F.FacilitatorID = BR.B_FaciID JOIN StatusCode AS S ON S.StatusID = BR.StatusID;";
             SqlDataAdapter adapter = new SqlDataAdapter(statement, _connection);
             _connection.Open();
             DataTable dataTable = new DataTable();
@@ -284,6 +284,19 @@ namespace IskoLendDataManagement
 
             return (result == null || result == DBNull.Value) ? null : result.ToString();
         }
+        public string? GetStatusID(string status)
+        {
+            const string sql = "SELECT StatusID FROM StatusCode WHERE StatusName = @StatusName;";
+
+            using var cmd = new SqlCommand(sql, _connection);
+            cmd.Parameters.AddWithValue("@StatusName", status);
+
+            _connection.Open();
+            object result = cmd.ExecuteScalar();
+            _connection.Close();
+
+            return (result == null || result == DBNull.Value) ? null : result.ToString();
+        }
         public string? GetSupplyName(string ID)
         {
             const string sql = "SELECT ItemName FROM SupplyInventory WHERE SupplyID = @id;";
@@ -453,7 +466,7 @@ namespace IskoLendDataManagement
             cmd.Parameters.AddWithValue("@BorrowID", ret.R_BorrowID);
             cmd.ExecuteNonQuery();
         }
-        public DataTable FilteredBorrowingRecord(string studentID, string cmbDate, string statusID)
+        public DataTable FilteredBorrowingRecord(string search, string cmbDate, string statusID)
         {
             // null = ALL
             if (string.Equals(cmbDate, "Date", StringComparison.OrdinalIgnoreCase))
@@ -487,15 +500,46 @@ namespace IskoLendDataManagement
             }
             // else: null => all dates
 
-            const string sql = @"SELECT BorrowID, B_FaciID AS FacilitatorID, StudentID, BorrowDate, StatusID, DateCompleted
-                                FROM BorrowingRecord WHERE (@student IS NULL OR StudentID LIKE '%' + @student + '%')
-                                AND (@status  IS NULL OR StatusID = @status) AND (@fromDate IS NULL OR BorrowDate >= @fromDate)
-                                AND (@toDate   IS NULL OR BorrowDate <  @toDate);";
+            const string sql = @"
+SELECT 
+    BorrowID,
+    CONCAT(F.FirstName, ' ', F.LastName) AS Facilitator,
+    StudentID,
+    BorrowDate,
+    S.StatusName AS Status,
+    DateCompleted
+FROM BorrowingRecord AS BR
+JOIN Facilitator AS F 
+    ON F.FacilitatorID = BR.B_FaciID
+JOIN StatusCode AS S 
+    ON S.StatusID = BR.StatusID
+WHERE
+(
+    @SearchBar IS NULL
+    OR StudentID LIKE '%' + @SearchBar + '%'
+    OR CONCAT(F.FirstName, ' ', F.LastName) LIKE '%' + @SearchBar + '%'
+    OR BorrowID LIKE '%' + @SearchBar + '%'
+)
+AND
+(
+    @status IS NULL 
+    OR BR.StatusID = @status
+)
+AND
+(
+    @fromDate IS NULL 
+    OR BorrowDate >= @fromDate
+)
+AND
+(
+    @toDate IS NULL 
+    OR BorrowDate <= @toDate
+);";
 
             using var cmd = new SqlCommand(sql, _connection);
 
-            cmd.Parameters.Add("@student", SqlDbType.VarChar).Value =
-                string.IsNullOrWhiteSpace(studentID) ? (object)DBNull.Value : studentID;
+            cmd.Parameters.Add("@SearchBar", SqlDbType.VarChar).Value =
+                string.IsNullOrWhiteSpace(search) ? (object)DBNull.Value : search;
 
             cmd.Parameters.Add("@status", SqlDbType.VarChar).Value =
                 string.IsNullOrWhiteSpace(statusID) ? (object)DBNull.Value : statusID;
@@ -516,9 +560,9 @@ namespace IskoLendDataManagement
             return dt;
         }
 
-        public DataTable GetAllStatusID()
+        public DataTable GetAllStatus()
         {
-            var statement = $"Select StatusID from StatusCode;";
+            var statement = $"Select StatusName from StatusCode;";
             SqlDataAdapter adapter = new SqlDataAdapter(statement, _connection);
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);

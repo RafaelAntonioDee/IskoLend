@@ -125,6 +125,64 @@ namespace IskoLendDataManagement
             _connection.Close();
             return dataTable;
         }
+
+        public DataTable FilteredSupplies(string search, string category)
+        {
+            // null = ALL
+
+            string catID = "";
+
+            if (string.Equals(category, "Categories", StringComparison.OrdinalIgnoreCase))
+                category = null;
+            else
+            {
+                catID = getCategoryID(category);
+
+            }
+
+            DateTime? fromDate = null;
+            DateTime? toDateExclusive = null;
+
+
+
+            const string sql = @"
+SELECT 
+    SupplyID,
+    C.CategoryName AS Category,
+    ItemName,
+    Quantity
+FROM SupplyInventory AS SI
+JOIN Category AS C 
+    ON C.CategoryID = SI.CategoryID
+WHERE
+    (
+        @SearchBar IS NULL 
+        OR SupplyID LIKE '%' + @SearchBar + '%'
+        OR ItemName LIKE '%' + @SearchBar + '%'
+    )
+    AND
+    (
+        @category IS NULL 
+        OR C.CategoryID = @category
+    );";
+
+            using var cmd = new SqlCommand(sql, _connection);
+
+            cmd.Parameters.Add("@SearchBar", SqlDbType.VarChar).Value =
+                string.IsNullOrWhiteSpace(search) ? (object)DBNull.Value : search;
+
+            cmd.Parameters.Add("@category", SqlDbType.VarChar).Value =
+                string.IsNullOrWhiteSpace(catID) ? (object)DBNull.Value : catID;
+
+            using var adapter = new SqlDataAdapter(cmd);
+            var dt = new DataTable();
+
+            _connection.Open();
+            adapter.Fill(dt);
+            _connection.Close();
+
+            return dt;
+        }
         public DataTable GetAllCategories()
         {
             var statement = "SELECT * FROM Category;";
@@ -209,17 +267,7 @@ namespace IskoLendDataManagement
 
         public void UpdateSupply(Supply sup, String faci)
         {
-            var statement = @"UPDATE SupplyInventory SET CategoryID = @CategoryID, ItemName = @ItemName, Quantity = @Quantity WHERE SupplyID = @SupplyID";
-
-            SqlCommand cmd = new SqlCommand(statement, _connection);
-
-            cmd.Parameters.AddWithValue("@SupplyID", sup.SupplyID);
-            cmd.Parameters.AddWithValue("@CategoryID", sup.CategoryID);
-            cmd.Parameters.AddWithValue("@ItemName", sup.SupplyName);
-            cmd.Parameters.AddWithValue("@Quantity", sup.Quantity);
-
             _connection.Open();
-            cmd.ExecuteNonQuery();
 
             using var tx = _connection.BeginTransaction();
 
@@ -238,6 +286,18 @@ namespace IskoLendDataManagement
             };
             AddSupLog(log, tx);
             tx.Commit();
+
+            var statement = @"UPDATE SupplyInventory SET CategoryID = @CategoryID, ItemName = @ItemName, Quantity = @Quantity WHERE SupplyID = @SupplyID";
+
+            SqlCommand cmd = new SqlCommand(statement, _connection);
+
+            cmd.Parameters.AddWithValue("@SupplyID", sup.SupplyID);
+            cmd.Parameters.AddWithValue("@CategoryID", sup.CategoryID);
+            cmd.Parameters.AddWithValue("@ItemName", sup.SupplyName);
+            cmd.Parameters.AddWithValue("@Quantity", sup.Quantity);
+            cmd.ExecuteNonQuery();
+
+            
 
             _connection.Close();
         }
@@ -330,6 +390,8 @@ namespace IskoLendDataManagement
             
             return result?.ToString() ?? string.Empty;
         }
+
+
 
     }
 }

@@ -32,9 +32,9 @@ namespace IskoLendInventory
         private void AddSupply_Load(object sender, EventArgs e)
         {
             MaximizeBox = false;
-            LoadFacilitatorsToCombo();
+            LoadCategoriesToCombo();
         }
-        private void LoadFacilitatorsToCombo()
+        private void LoadCategoriesToCombo()
         {
             var sup = _dsSup.GetAllCategories();
 

@@ -38,9 +38,6 @@
             label5 = new Label();
             label19 = new Label();
             label22 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            cmbActive = new ComboBox();
             txtFirstName = new TextBox();
             cmbPosition = new ComboBox();
             btnEditFaci.SuspendLayout();
@@ -50,7 +47,7 @@
             // 
             btnEditFaci.BackColor = Color.Orange;
             btnEditFaci.Controls.Add(label6);
-            btnEditFaci.Location = new Point(212, 188);
+            btnEditFaci.Location = new Point(212, 156);
             btnEditFaci.Name = "btnEditFaci";
             btnEditFaci.Size = new Size(91, 32);
             btnEditFaci.TabIndex = 99;
@@ -147,36 +144,6 @@
             label22.TabIndex = 89;
             label22.Text = "Edit Facilitator";
             // 
-            // label7
-            // 
-            label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.Maroon;
-            label7.Location = new Point(89, 146);
-            label7.Name = "label7";
-            label7.Size = new Size(22, 23);
-            label7.TabIndex = 102;
-            label7.Text = "*";
-            // 
-            // label8
-            // 
-            label8.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.Black;
-            label8.Location = new Point(13, 149);
-            label8.Name = "label8";
-            label8.Size = new Size(95, 24);
-            label8.TabIndex = 101;
-            label8.Text = "isActive";
-            // 
-            // cmbActive
-            // 
-            cmbActive.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbActive.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbActive.FormattingEnabled = true;
-            cmbActive.Location = new Point(133, 146);
-            cmbActive.Name = "cmbActive";
-            cmbActive.Size = new Size(170, 28);
-            cmbActive.TabIndex = 103;
-            // 
             // txtFirstName
             // 
             txtFirstName.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -198,12 +165,9 @@
             // EditFacilitator
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(315, 232);
+            ClientSize = new Size(315, 200);
             Controls.Add(cmbPosition);
             Controls.Add(txtFirstName);
-            Controls.Add(cmbActive);
-            Controls.Add(label7);
-            Controls.Add(label8);
             Controls.Add(btnEditFaci);
             Controls.Add(label2);
             Controls.Add(label4);
@@ -234,9 +198,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cmbActive;
         private System.Windows.Forms.TextBox txtFirstName;
         private ComboBox cmbPosition;
     }

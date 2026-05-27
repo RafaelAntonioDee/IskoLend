@@ -79,8 +79,8 @@
             dataGridViewCellStyle1.BackColor = Color.Maroon;
             dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = Color.Transparent;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Maroon;
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             tblBorrowDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             tblBorrowDetail.ColumnHeadersHeight = 40;

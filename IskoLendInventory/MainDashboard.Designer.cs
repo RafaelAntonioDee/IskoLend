@@ -122,15 +122,12 @@
             lbl28 = new Label();
             btnViewLogs = new RoundedPanel();
             label13 = new Label();
-            btnRemove = new RoundedPanel();
-            lbl29 = new Label();
             cmbCategory = new ComboBox();
             txtSearchSupply = new TextBox();
             label25 = new Label();
             label27 = new Label();
             pnlFacilitators = new Panel();
             tblFacilitators = new DataGridView();
-            cmbActive = new ComboBox();
             btnAddFaci = new RoundedPanel();
             label16 = new Label();
             btnEditFaci = new RoundedPanel();
@@ -172,7 +169,6 @@
             btnAdd.SuspendLayout();
             btnEdit.SuspendLayout();
             btnViewLogs.SuspendLayout();
-            btnRemove.SuspendLayout();
             pnlFacilitators.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tblFacilitators).BeginInit();
             btnAddFaci.SuspendLayout();
@@ -608,7 +604,7 @@
             cmbFacilitator.FormattingEnabled = true;
             cmbFacilitator.Location = new Point(91, 237);
             cmbFacilitator.Name = "cmbFacilitator";
-            cmbFacilitator.Size = new Size(114, 23);
+            cmbFacilitator.Size = new Size(114, 26);
             cmbFacilitator.TabIndex = 39;
             cmbFacilitator.SelectedIndexChanged += cmbFacilitator_SelectedIndexChanged;
             // 
@@ -727,6 +723,7 @@
             btnDashboard.Size = new Size(146, 39);
             btnDashboard.TabIndex = 2;
             btnDashboard.Click += btnDashboard_Click;
+            btnDashboard.Paint += btnDashboard_Paint;
             // 
             // pictureBox3
             // 
@@ -884,7 +881,7 @@
             cmbBorrowStatus.FormattingEnabled = true;
             cmbBorrowStatus.Location = new Point(366, 109);
             cmbBorrowStatus.Name = "cmbBorrowStatus";
-            cmbBorrowStatus.Size = new Size(107, 24);
+            cmbBorrowStatus.Size = new Size(107, 28);
             cmbBorrowStatus.TabIndex = 38;
             cmbBorrowStatus.DropDown += cmbBorrowStatus_DropDown;
             cmbBorrowStatus.SelectedIndexChanged += cmbBorrowStatus_SelectedIndexChanged;
@@ -896,7 +893,7 @@
             cmbBorrowDate.FormattingEnabled = true;
             cmbBorrowDate.Location = new Point(253, 109);
             cmbBorrowDate.Name = "cmbBorrowDate";
-            cmbBorrowDate.Size = new Size(107, 24);
+            cmbBorrowDate.Size = new Size(107, 28);
             cmbBorrowDate.TabIndex = 37;
             cmbBorrowDate.SelectedIndexChanged += cmbBorrowDate_SelectedIndexChanged;
             // 
@@ -905,7 +902,7 @@
             txtSearchBorrow.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSearchBorrow.Location = new Point(20, 111);
             txtSearchBorrow.Name = "txtSearchBorrow";
-            txtSearchBorrow.Size = new Size(227, 23);
+            txtSearchBorrow.Size = new Size(227, 26);
             txtSearchBorrow.TabIndex = 35;
             txtSearchBorrow.TextChanged += txtSearchBorrow_TextChanged;
             // 
@@ -1037,7 +1034,6 @@
             pnlSupplies.Controls.Add(btnAdd);
             pnlSupplies.Controls.Add(btnEdit);
             pnlSupplies.Controls.Add(btnViewLogs);
-            pnlSupplies.Controls.Add(btnRemove);
             pnlSupplies.Controls.Add(cmbCategory);
             pnlSupplies.Controls.Add(txtSearchSupply);
             pnlSupplies.Controls.Add(label25);
@@ -1047,6 +1043,7 @@
             pnlSupplies.Size = new Size(918, 753);
             pnlSupplies.TabIndex = 40;
             pnlSupplies.Visible = false;
+            pnlSupplies.Paint += pnlSupplies_Paint;
             // 
             // tblSupplies
             // 
@@ -1105,7 +1102,7 @@
             // 
             btnAdd.BackColor = Color.Orange;
             btnAdd.Controls.Add(label29);
-            btnAdd.Location = new Point(598, 105);
+            btnAdd.Location = new Point(706, 105);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(96, 32);
             btnAdd.TabIndex = 41;
@@ -1128,7 +1125,7 @@
             // 
             btnEdit.BackColor = Color.Orange;
             btnEdit.Controls.Add(lbl28);
-            btnEdit.Location = new Point(700, 105);
+            btnEdit.Location = new Point(808, 105);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(96, 32);
             btnEdit.TabIndex = 40;
@@ -1151,7 +1148,7 @@
             // 
             btnViewLogs.BackColor = Color.Orange;
             btnViewLogs.Controls.Add(label13);
-            btnViewLogs.Location = new Point(467, 105);
+            btnViewLogs.Location = new Point(575, 105);
             btnViewLogs.Name = "btnViewLogs";
             btnViewLogs.Size = new Size(124, 32);
             btnViewLogs.TabIndex = 37;
@@ -1170,29 +1167,6 @@
             label13.TextAlign = ContentAlignment.TopCenter;
             label13.Click += label13_Click;
             // 
-            // btnRemove
-            // 
-            btnRemove.BackColor = Color.Orange;
-            btnRemove.Controls.Add(lbl29);
-            btnRemove.Location = new Point(802, 105);
-            btnRemove.Name = "btnRemove";
-            btnRemove.Size = new Size(96, 32);
-            btnRemove.TabIndex = 39;
-            btnRemove.Click += btnRemove_Click;
-            // 
-            // lbl29
-            // 
-            lbl29.BackColor = Color.Transparent;
-            lbl29.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl29.ForeColor = Color.White;
-            lbl29.Location = new Point(3, 6);
-            lbl29.Name = "lbl29";
-            lbl29.Size = new Size(90, 22);
-            lbl29.TabIndex = 12;
-            lbl29.Text = "Remove";
-            lbl29.TextAlign = ContentAlignment.TopCenter;
-            lbl29.Click += lbl29_Click;
-            // 
             // cmbCategory
             // 
             cmbCategory.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -1200,16 +1174,18 @@
             cmbCategory.FormattingEnabled = true;
             cmbCategory.Location = new Point(253, 109);
             cmbCategory.Name = "cmbCategory";
-            cmbCategory.Size = new Size(107, 24);
+            cmbCategory.Size = new Size(107, 28);
             cmbCategory.TabIndex = 37;
+            cmbCategory.SelectedIndexChanged += cmbCategory_SelectedIndexChanged;
             // 
             // txtSearchSupply
             // 
             txtSearchSupply.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSearchSupply.Location = new Point(20, 111);
             txtSearchSupply.Name = "txtSearchSupply";
-            txtSearchSupply.Size = new Size(227, 23);
+            txtSearchSupply.Size = new Size(227, 26);
             txtSearchSupply.TabIndex = 35;
+            txtSearchSupply.TextChanged += txtSearchSupply_TextChanged;
             // 
             // label25
             // 
@@ -1235,7 +1211,6 @@
             // 
             pnlFacilitators.BackColor = SystemColors.Control;
             pnlFacilitators.Controls.Add(tblFacilitators);
-            pnlFacilitators.Controls.Add(cmbActive);
             pnlFacilitators.Controls.Add(btnAddFaci);
             pnlFacilitators.Controls.Add(btnEditFaci);
             pnlFacilitators.Controls.Add(btnRemoveFaci);
@@ -1301,16 +1276,6 @@
             tblFacilitators.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             tblFacilitators.Size = new Size(878, 586);
             tblFacilitators.TabIndex = 43;
-            // 
-            // cmbActive
-            // 
-            cmbActive.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbActive.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbActive.FormattingEnabled = true;
-            cmbActive.Location = new Point(366, 109);
-            cmbActive.Name = "cmbActive";
-            cmbActive.Size = new Size(107, 24);
-            cmbActive.TabIndex = 42;
             // 
             // btnAddFaci
             // 
@@ -1388,16 +1353,18 @@
             cmbPosition.FormattingEnabled = true;
             cmbPosition.Location = new Point(253, 109);
             cmbPosition.Name = "cmbPosition";
-            cmbPosition.Size = new Size(107, 24);
+            cmbPosition.Size = new Size(107, 28);
             cmbPosition.TabIndex = 37;
+            cmbPosition.SelectedIndexChanged += cmbPosition_SelectedIndexChanged;
             // 
             // txtSearchFacilitator
             // 
             txtSearchFacilitator.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSearchFacilitator.Location = new Point(20, 111);
             txtSearchFacilitator.Name = "txtSearchFacilitator";
-            txtSearchFacilitator.Size = new Size(227, 23);
+            txtSearchFacilitator.Size = new Size(227, 26);
             txtSearchFacilitator.TabIndex = 35;
+            txtSearchFacilitator.TextChanged += txtSearchFacilitator_TextChanged;
             // 
             // label32
             // 
@@ -1424,11 +1391,11 @@
             AutoScaleMode = AutoScaleMode.None;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1100, 750);
-            Controls.Add(pnlSideBar);
-            Controls.Add(pnlBorrowRecord);
             Controls.Add(pnlFacilitators);
-            Controls.Add(pnlDashboard);
+            Controls.Add(pnlBorrowRecord);
             Controls.Add(pnlSupplies);
+            Controls.Add(pnlSideBar);
+            Controls.Add(pnlDashboard);
             FormBorderStyle = FormBorderStyle.None;
             Name = "MainDashboard";
             StartPosition = FormStartPosition.CenterScreen;
@@ -1466,7 +1433,6 @@
             btnAdd.ResumeLayout(false);
             btnEdit.ResumeLayout(false);
             btnViewLogs.ResumeLayout(false);
-            btnRemove.ResumeLayout(false);
             pnlFacilitators.ResumeLayout(false);
             pnlFacilitators.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)tblFacilitators).EndInit();
@@ -1543,8 +1509,6 @@
         private System.Windows.Forms.Panel pnlSupplies;
         private RoundedPanel btnViewLogs;
         private System.Windows.Forms.Label label13;
-        private RoundedPanel btnRemove;
-        private System.Windows.Forms.Label lbl29;
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.TextBox txtSearchSupply;
         private System.Windows.Forms.Label label25;
@@ -1569,7 +1533,6 @@
         private System.Windows.Forms.TextBox txtSearchFacilitator;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.ComboBox cmbActive;
         private ComboBox cmbFacilitator;
         private Label btnExit;
         private Label label30;

@@ -55,13 +55,13 @@ namespace IskoLendInventory
 
             cmbBorrowDate.SelectedIndex = 0;
 
-            cmbActive.Items.Add("Active");
-            cmbActive.Items.Add("Inactive");
-
             tblBorrowRecord.ClearSelection();
             tblBorrowSummary.ClearSelection();
             tblSupplies.ClearSelection();
             tblFacilitators.ClearSelection();
+
+            LoadCategoriesToCombo();
+            LoadPositionsToCombo();
         }
 
         private void btnBorrowDetails_Click(object sender, EventArgs e)
@@ -519,8 +519,9 @@ namespace IskoLendInventory
         }
         private void LoadFilteredBorrowingRecords()
         {
-            tblBorrowRecord.DataSource = dsBR.FilteredBorrowingRecord(txtSearchBorrow.Text, cmbBorrowDate.SelectedText, cmbBorrowStatus.SelectedText);
+            tblBorrowRecord.DataSource = dsBR.FilteredBorrowingRecord(txtSearchBorrow.Text, cmbBorrowDate.Text, dsBR.GetStatusID(cmbBorrowStatus.Text));
         }
+
 
         private void cmbBorrowStatus_DropDown(object sender, EventArgs e)
         {
@@ -529,18 +530,80 @@ namespace IskoLendInventory
 
         private void LoadCmbBorrowStatus(object sender, EventArgs e)
         {
-            var stat = dsBR.GetAllStatusID();
+            var stat = dsBR.GetAllStatus();
 
             var row = stat.NewRow();
-            row["StatusID"] = "Status";
+            row["StatusName"] = "Status";
             stat.Rows.InsertAt(row, 0);
 
             cmbBorrowStatus.DataSource = null;
-            cmbBorrowStatus.DisplayMember = "StatusID";
-            cmbBorrowStatus.ValueMember = "StatusID";
+            cmbBorrowStatus.DisplayMember = "StatusName";
+            cmbBorrowStatus.ValueMember = "StatusName";
             cmbBorrowStatus.DataSource = stat;
 
             cmbBorrowStatus.SelectedIndex = 0;
+        }
+
+        private void LoadCategoriesToCombo()
+        {
+            var sup = dsSup.GetAllCategories();
+
+            var row = sup.NewRow();
+            row["CategoryName"] = "Categories";
+            sup.Rows.InsertAt(row, 0);
+
+            cmbCategory.DataSource = null;
+            cmbCategory.DisplayMember = "CategoryName";
+            cmbCategory.ValueMember = "CategoryName";
+            cmbCategory.DataSource = sup;
+
+            cmbCategory.SelectedIndex = 0;
+        }
+        private void LoadPositionsToCombo()
+        {
+            var sup = dsFaci.GetPositionsAvailable();
+
+            var row = sup.NewRow();
+            row["Position"] = "Position";
+            sup.Rows.InsertAt(row, 0);
+
+            cmbPosition.DataSource = null;
+            cmbPosition.DisplayMember = "Position";
+            cmbPosition.ValueMember = "Position";
+            cmbPosition.DataSource = sup;
+
+            cmbPosition.SelectedIndex = 0;
+        }
+
+        private void pnlSupplies_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnDashboard_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tblSupplies.DataSource = dsSup.FilteredSupplies(txtSearchSupply.Text, cmbCategory.Text);
+        }
+
+        private void txtSearchSupply_TextChanged(object sender, EventArgs e)
+        {
+            tblSupplies.DataSource = dsSup.FilteredSupplies(txtSearchSupply.Text, cmbCategory.Text);
+        }
+
+        private void cmbPosition_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tblFacilitators.DataSource = dsFaci.FilteredFacilitators(txtSearchFacilitator.Text, cmbPosition.Text);
+        }
+
+        private void txtSearchFacilitator_TextChanged(object sender, EventArgs e)
+        {
+            tblFacilitators.DataSource = dsFaci.FilteredFacilitators(txtSearchFacilitator.Text, cmbPosition.Text);
+
         }
     }
 }
