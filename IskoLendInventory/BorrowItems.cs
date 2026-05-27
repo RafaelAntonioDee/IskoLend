@@ -67,7 +67,7 @@ namespace IskoLendInventory
         private void btnSave_Click(object sender, EventArgs e)
         {
             List<BorrowingDetails> details = new List<BorrowingDetails>();
-            BorrowingRecord record;
+            BorrowingRecord record =new BorrowingRecord();
             string StudentID = txtStudentID.Text;
             if (!(string.IsNullOrEmpty(StudentID)) && _dsBR.isStudent(StudentID))
             {
@@ -75,18 +75,7 @@ namespace IskoLendInventory
                 {
                     if (!string.IsNullOrEmpty(_currFaci))
                     {
-                        DataTable supplies = (DataTable)tblItems.DataSource;
-                        record = new BorrowingRecord
-                        {
-                            StudentID = StudentID,
-                            FacilitatorID = _currFaci,
-                            StatusID = "S001",
-                            DateCompleted = null,
-                            BorrowID = _dsBR.GenerateBorrowID(),
-                            BorrowedDate = DateTime.Now
-                        };
-                        _dsBR.AddBorrowingRecord(record);
-                        _dsBR.SaveBorrowItems(supplies, record.BorrowID);
+                        AddAndSaveBorrowItems(record, StudentID);
                         this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
@@ -114,7 +103,20 @@ namespace IskoLendInventory
         {
             btnSave_Click(sender, e);
         }
-
-
+        private void AddAndSaveBorrowItems(BorrowingRecord record, string StudentID)
+        {
+            DataTable supplies = (DataTable)tblItems.DataSource;
+            record = new BorrowingRecord
+            {
+                StudentID = StudentID,
+                FacilitatorID = _currFaci,
+                StatusID = "S001",
+                DateCompleted = null,
+                BorrowID = _dsBR.GenerateBorrowID(),
+                BorrowedDate = DateTime.Now
+            };
+            _dsBR.AddBorrowingRecord(record);
+            _dsBR.SaveBorrowItems(supplies, record);
+        }
     }
 }

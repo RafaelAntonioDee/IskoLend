@@ -32,8 +32,6 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            cmbBorrowDate = new ComboBox();
-            txtSearchBorrow = new TextBox();
             label19 = new Label();
             label22 = new Label();
             tblBorrowDetail = new DataGridView();
@@ -46,30 +44,13 @@
             btnReturn.SuspendLayout();
             SuspendLayout();
             // 
-            // cmbBorrowDate
-            // 
-            cmbBorrowDate.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbBorrowDate.FormattingEnabled = true;
-            cmbBorrowDate.Location = new Point(324, 103);
-            cmbBorrowDate.Name = "cmbBorrowDate";
-            cmbBorrowDate.Size = new Size(150, 24);
-            cmbBorrowDate.TabIndex = 51;
-            // 
-            // txtSearchBorrow
-            // 
-            txtSearchBorrow.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSearchBorrow.Location = new Point(11, 103);
-            txtSearchBorrow.Name = "txtSearchBorrow";
-            txtSearchBorrow.Size = new Size(307, 23);
-            txtSearchBorrow.TabIndex = 50;
-            // 
             // label19
             // 
             label19.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label19.ForeColor = Color.Black;
             label19.Location = new Point(12, 62);
             label19.Name = "label19";
-            label19.Size = new Size(436, 47);
+            label19.Size = new Size(436, 31);
             label19.TabIndex = 49;
             label19.Text = "Track individual borrowing details.";
             // 
@@ -114,7 +95,7 @@
             tblBorrowDetail.DefaultCellStyle = dataGridViewCellStyle2;
             tblBorrowDetail.EnableHeadersVisualStyles = false;
             tblBorrowDetail.GridColor = Color.DimGray;
-            tblBorrowDetail.Location = new Point(11, 141);
+            tblBorrowDetail.Location = new Point(11, 99);
             tblBorrowDetail.MultiSelect = false;
             tblBorrowDetail.Name = "tblBorrowDetail";
             tblBorrowDetail.ReadOnly = true;
@@ -134,14 +115,14 @@
             tblBorrowDetail.RowsDefaultCellStyle = dataGridViewCellStyle4;
             tblBorrowDetail.RowTemplate.Height = 40;
             tblBorrowDetail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            tblBorrowDetail.Size = new Size(878, 330);
+            tblBorrowDetail.Size = new Size(878, 372);
             tblBorrowDetail.TabIndex = 46;
             // 
             // btnReturnDetails
             // 
             btnReturnDetails.BackColor = Color.Orange;
             btnReturnDetails.Controls.Add(label1);
-            btnReturnDetails.Location = new Point(538, 103);
+            btnReturnDetails.Location = new Point(524, 61);
             btnReturnDetails.Name = "btnReturnDetails";
             btnReturnDetails.Size = new Size(185, 32);
             btnReturnDetails.TabIndex = 52;
@@ -164,7 +145,7 @@
             // 
             btnReturn.BackColor = Color.Orange;
             btnReturn.Controls.Add(label2);
-            btnReturn.Location = new Point(729, 103);
+            btnReturn.Location = new Point(729, 61);
             btnReturn.Name = "btnReturn";
             btnReturn.Size = new Size(160, 32);
             btnReturn.TabIndex = 47;
@@ -189,8 +170,6 @@
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(900, 496);
             Controls.Add(btnReturnDetails);
-            Controls.Add(cmbBorrowDate);
-            Controls.Add(txtSearchBorrow);
             Controls.Add(label19);
             Controls.Add(label22);
             Controls.Add(btnReturn);
@@ -198,19 +177,14 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "BorrowDetails";
             StartPosition = FormStartPosition.CenterScreen;
-            Load += BorrowDetails_Load;
             ((System.ComponentModel.ISupportInitialize)tblBorrowDetail).EndInit();
             btnReturnDetails.ResumeLayout(false);
             btnReturn.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cmbBorrowDate;
-        private System.Windows.Forms.TextBox txtSearchBorrow;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label22;
         private RoundedPanel btnReturn;

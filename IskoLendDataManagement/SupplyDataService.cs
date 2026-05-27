@@ -72,6 +72,34 @@ namespace IskoLendDataManagement
 
             return sup;
         }
+        public Supply getSupplyByID(string supID,SqlTransaction tx)
+        {
+            const string sql = "SELECT * FROM SupplyInventory  WHERE SupplyID = @SupplyID;";
+
+            using var cmd = new SqlCommand(sql, tx.Connection,tx);
+            cmd.Parameters.AddWithValue("@SupplyID", supID);
+
+           
+
+            using var reader = cmd.ExecuteReader();
+
+            Supply sup = null;
+
+            if (reader.Read())
+            {
+                sup = new Supply
+                {
+                    SupplyID = reader["SupplyID"].ToString(),
+                    CategoryID = reader["CategoryID"].ToString(),
+                    SupplyName = reader["ItemName"].ToString(),
+                    Quantity = int.Parse(reader["Quantity"].ToString())
+                };
+            }
+
+           
+
+            return sup;
+        }
         public List<Supply> GetSuppliesByCategory(string categoryID)
         {
             return supplies.Where(s => s.CategoryID == categoryID).ToList();
@@ -156,7 +184,7 @@ namespace IskoLendDataManagement
             cmd.Parameters.AddWithValue("@SupplyID", sup.SupplyID);
             cmd.Parameters.AddWithValue("@CategoryID", sup.CategoryID);
             cmd.Parameters.AddWithValue("@ItemName", sup.SupplyName);
-            cmd.Parameters.AddWithValue("@Quantity",sup.Quantity);
+            cmd.Parameters.AddWithValue("@Quantity", sup.Quantity);
 
             _connection.Open();
             cmd.ExecuteNonQuery();
@@ -187,21 +215,44 @@ namespace IskoLendDataManagement
             _connection.Close();
         }
 
-        public void AddSupLog(Logs log)
+        public void AddSupLog(Logs log, SqlTransaction tx)
         {
-            const string sql = @" INSERT INTO SupplyLogs (LogID, SupplyID, FacilitatorID, ActionType,QuantityStatus,Date) VALUES (@LogID, @SupplyID, @FacilitatorID, @ActionType, @QuantityStatus, @Date);";
+            const string sql = @" INSERT INTO SupplyLogs (LogID, SupplyID, FacilitatorID, ActionType, ActionID, InitialQty, FinalQty, LogDate) VALUES (@LogID, @SupplyID, @FacilitatorID, @ActionType, @ActionID, @InitialQty, @FinalQty, @LogDate);";
 
-            using var cmd = new SqlCommand(sql, _connection);
-
+            using var cmd = new SqlCommand(sql, tx.Connection,tx);
             cmd.Parameters.Add("@LogID", SqlDbType.VarChar).Value = log.LogID;
             cmd.Parameters.Add("@SupplyID", SqlDbType.VarChar).Value = log.SupplyID;
             cmd.Parameters.Add("@FacilitatorID", SqlDbType.VarChar).Value = log.FacilitatorID;
-            cmd.Parameters.Add("@ActionType", SqlDbType.Int).Value = log.Action;
-            cmd.Parameters.Add("@QuantityStatus", SqlDbType.VarChar).Value = log.QuantityStatus;
-            cmd.Parameters.Add("@Date", SqlDbType.Int).Value = log.ActionDate;
-            _connection.Open();
+            cmd.Parameters.Add("@ActionType", SqlDbType.VarChar).Value = log.ActionType;
+            cmd.Parameters.Add("@ActionID", SqlDbType.VarChar).Value = log.ActionID;
+            cmd.Parameters.Add("@InitialQty", SqlDbType.Int).Value = log.InitialQty;
+            cmd.Parameters.Add("@FinalQty", SqlDbType.Int).Value = log.FinalQty;
+            cmd.Parameters.Add("@LogDate", SqlDbType.DateTime).Value = log.LogDate;
+            
             cmd.ExecuteNonQuery();
-            _connection.Close();
+            
+        }
+        public string GenerateLogID(SqlTransaction tx)
+        {
+            string? lastID = GetLastLogID(tx);
+
+            if (string.IsNullOrWhiteSpace(lastID))
+                return "L001";
+
+            int numericPart = int.Parse(lastID[1..]);
+            int next = numericPart + 1;
+
+            return "L" + (next < 1000 ? next.ToString("D3") : next.ToString());
+        }
+
+        public string GetLastLogID(SqlTransaction tx)
+        {
+            var statement = "SELECT TOP 1 LogID FROM SupplyLogs ORDER BY LogID DESC;";
+            SqlCommand command = new SqlCommand(statement, tx.Connection, tx);
+            
+            var result = command.ExecuteScalar();
+            
+            return result?.ToString() ?? string.Empty;
         }
     }
 }

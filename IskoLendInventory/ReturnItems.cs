@@ -86,7 +86,43 @@ namespace IskoLendInventory
 
         private void btnLost_Click(object sender, EventArgs e)
         {
+            DialogResult dr = MessageBox.Show("Are you sure the item was lost?", "Warning",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
+            if (dr != DialogResult.OK) return;
+            try
+            {
+                _returnDetail.ReturnedQty = 0;
+                _returnDetail.ReturnDate = DateTime.Now;
+
+                _dsBR.AddReturnDetail(_returnDetail);
+
+                MessageBox.Show("Item returned successfully.",
+                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+
+            catch (InvalidOperationException ex)
+            {
+                // This catches: Remaining is negative..., or any business-rule InvalidOperationException you throw
+                MessageBox.Show(ex.Message, "Invalid Return", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unexpected error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            btnLost_Click(sender, e);
         }
     }
 }

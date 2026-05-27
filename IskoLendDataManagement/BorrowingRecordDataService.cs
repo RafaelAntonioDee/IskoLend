@@ -119,8 +119,10 @@ namespace IskoLendDataManagement
             cmd.ExecuteNonQuery();
             _connection.Close();
         }
-        public void SaveBorrowItems(DataTable dt, string borrowID)
+        public void SaveBorrowItems(DataTable dt, BorrowingRecord record)
         {
+            Supply curr;
+            var service = new SupplyDataService();
             _connection.Open();
             using var tx = _connection.BeginTransaction();
 
@@ -128,18 +130,32 @@ namespace IskoLendDataManagement
             {
                 foreach (DataRow row in dt.Rows)
                 {
+                    Logs logs;
                     string supplyId = row["SupplyID"].ToString();
                     int qty = Convert.ToInt32(row["Qty"]);
+                     curr = service.getSupplyByID(supplyId,tx);
+
 
                     using (var insertCmd = new SqlCommand(@"INSERT INTO BorrowingDetails (BorrowID, SupplyID, BorrowedQty, ItemStatusID) VALUES (@BorrowID, @SupplyID, @Qty, 'S001');", _connection, tx))
                     {
-                        insertCmd.Parameters.AddWithValue("@BorrowID", borrowID);
+                        insertCmd.Parameters.AddWithValue("@BorrowID", record.BorrowID);
                         insertCmd.Parameters.AddWithValue("@SupplyID", supplyId);
                         insertCmd.Parameters.AddWithValue("@Qty", qty);
                         insertCmd.ExecuteNonQuery();
                     }
-
-                    UpdateQuantityBorrow(row, tx);
+                    logs = new Logs { 
+                        LogID = service.GenerateLogID(tx),
+                        SupplyID = supplyId,
+                        FacilitatorID = record.FacilitatorID,
+                        ActionType = "Borrow",
+                        ActionID = record.BorrowID,
+                        InitialQty = curr.Quantity,
+                        FinalQty = curr.Quantity - qty,
+                        LogDate = DateTime.Now
+                    };
+                    service.AddSupLog(logs, tx);
+                    UpdateQuantityBorrow(row,tx);
+                    
                 }
 
                 tx.Commit();
@@ -162,7 +178,7 @@ namespace IskoLendDataManagement
 
             const string sql = @"UPDATE SupplyInventory SET Quantity = Quantity - @qty WHERE SupplyID = @supplyId;";
 
-            using var cmd = new SqlCommand(sql, _connection, tx);
+            using var cmd = new SqlCommand(sql, tx.Connection, tx);
             cmd.Parameters.AddWithValue("@qty", qty);
             cmd.Parameters.AddWithValue("@supplyId", supplyId);
             cmd.ExecuteNonQuery();
@@ -313,6 +329,9 @@ namespace IskoLendDataManagement
         }
         public void AddReturnDetail(ReturnDetail returnDetail)
         {
+            var service = new SupplyDataService();
+            Logs log;
+            Supply curr;
             const string insertSql = @"
                 INSERT INTO ReturnDetails (ReturnDetailID, R_BorrowID, R_SupplyID, R_FaciID, ReturnedQty, ReturnDate)
                 VALUES (@ReturnID, @BorrowID, @SupplyID, @FaciID, @ReturnedQty, @ReturnDate);";
@@ -320,7 +339,7 @@ namespace IskoLendDataManagement
             _connection.Open();
             using var tx = _connection.BeginTransaction();
             int remaining = GetRemaining(returnDetail.R_BorrowID, returnDetail.R_SupplyID, tx);
-
+            curr = service.getSupplyByID(returnDetail.R_SupplyID, tx);
             try
             {
                 using (var cmd = new SqlCommand(insertSql, _connection, tx))
@@ -333,13 +352,24 @@ namespace IskoLendDataManagement
                     cmd.Parameters.Add("@ReturnDate", SqlDbType.DateTime).Value = returnDetail.ReturnDate;
                     cmd.ExecuteNonQuery();
                 }
-
+                log = new Logs
+                {
+                    LogID = service.GenerateLogID(tx),
+                    SupplyID = returnDetail.R_SupplyID,
+                    FacilitatorID = returnDetail.R_FaciID,
+                    ActionType = "Return",
+                    ActionID = returnDetail.ReturnDetailID,
+                    InitialQty = curr.Quantity,
+                    FinalQty = curr.Quantity + returnDetail.ReturnedQty,
+                    LogDate = DateTime.Now
+                };
                 UpdateQuantityReturn(returnDetail, tx);
                 //UpdateRemainingBorrowed(returnDetail, tx);
-                UpdateBorrowDetailStatus(returnDetail, tx);
+                UpdateBorrowDetailStatus(returnDetail, log,tx);
                 UpdateBorrowStatus(returnDetail, tx);
                 UpdateDateCompleted(returnDetail, tx);
-                tx.Commit();
+                service.AddSupLog(log, tx)
+                ;tx.Commit();
             }
             catch
             {
@@ -373,13 +403,15 @@ namespace IskoLendDataManagement
         //    cmd.Parameters.AddWithValue("@supplyId", returnDetail.R_SupplyID);
         //    cmd.ExecuteNonQuery();
         //}
-        public void UpdateBorrowDetailStatus(ReturnDetail ret, SqlTransaction tx)
+        public void UpdateBorrowDetailStatus(ReturnDetail ret, Logs log, SqlTransaction tx)
         {
             int remaining = GetRemaining(ret.R_BorrowID, ret.R_SupplyID, tx);
 
-            string? status = remaining == 0 ? "S003"
+            string? status = ret.ReturnedQty == 0 ? "S004"
+                           : remaining == 0 ? "S003"
                            : remaining > 0 ? "S002"
                            : null;
+            if (status.Equals("S004")) log.ActionType = "Return (Lost)";
 
             if (status == null)
                 throw new InvalidOperationException($"Remaining is negative for BorrowID={ret.R_BorrowID}, SupplyID={ret.R_SupplyID}.");
@@ -421,6 +453,76 @@ namespace IskoLendDataManagement
             cmd.Parameters.AddWithValue("@BorrowID", ret.R_BorrowID);
             cmd.ExecuteNonQuery();
         }
-        
+        public DataTable FilteredBorrowingRecord(string studentID, string cmbDate, string statusID)
+        {
+            // null = ALL
+            if (string.Equals(cmbDate, "Date", StringComparison.OrdinalIgnoreCase))
+                cmbDate = null;
+
+            if (string.Equals(statusID, "Status", StringComparison.OrdinalIgnoreCase))
+                statusID = null;
+
+            DateTime? fromDate = null;
+            DateTime? toDateExclusive = null;
+
+            if (cmbDate == "Today")
+            {
+                fromDate = DateTime.Today;
+                toDateExclusive = DateTime.Today.AddDays(1);
+            }
+            else if (cmbDate == "Yesterday")
+            {
+                fromDate = DateTime.Today.AddDays(-1);
+                toDateExclusive = DateTime.Today;
+            }
+            else if (cmbDate == "Last 7 Days")
+            {
+                fromDate = DateTime.Today.AddDays(-7);
+                toDateExclusive = DateTime.Today.AddDays(1);
+            }
+            else if (cmbDate == "This Month")
+            {
+                fromDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+                toDateExclusive = fromDate.Value.AddMonths(1);
+            }
+            // else: null => all dates
+
+            const string sql = @"SELECT BorrowID, B_FaciID AS FacilitatorID, StudentID, BorrowDate, StatusID, DateCompleted
+                                FROM BorrowingRecord WHERE (@student IS NULL OR StudentID LIKE '%' + @student + '%')
+                                AND (@status  IS NULL OR StatusID = @status) AND (@fromDate IS NULL OR BorrowDate >= @fromDate)
+                                AND (@toDate   IS NULL OR BorrowDate <  @toDate);";
+
+            using var cmd = new SqlCommand(sql, _connection);
+
+            cmd.Parameters.Add("@student", SqlDbType.VarChar).Value =
+                string.IsNullOrWhiteSpace(studentID) ? (object)DBNull.Value : studentID;
+
+            cmd.Parameters.Add("@status", SqlDbType.VarChar).Value =
+                string.IsNullOrWhiteSpace(statusID) ? (object)DBNull.Value : statusID;
+
+            cmd.Parameters.Add("@fromDate", SqlDbType.DateTime).Value =
+                fromDate.HasValue ? fromDate.Value : (object)DBNull.Value;
+
+            cmd.Parameters.Add("@toDate", SqlDbType.DateTime).Value =
+                toDateExclusive.HasValue ? toDateExclusive.Value : (object)DBNull.Value;
+
+            using var adapter = new SqlDataAdapter(cmd);
+            var dt = new DataTable();
+
+            _connection.Open();
+            adapter.Fill(dt);
+            _connection.Close();
+
+            return dt;
+        }
+
+        public DataTable GetAllStatusID()
+        {
+            var statement = $"Select StatusID from StatusCode;";
+            SqlDataAdapter adapter = new SqlDataAdapter(statement, _connection);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            return dataTable;
+        }
     }
 }

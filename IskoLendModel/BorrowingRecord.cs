@@ -8,11 +8,11 @@ namespace IskoLendModel
 {
     public class BorrowingRecord
     {
-        required public string BorrowID { get; set; }
-        required public string StudentID { get; set; }
-        required public string FacilitatorID { get; set; }
-        required public DateTime BorrowedDate { get; set; }
-        required public string StatusID { get; set; }
+         public string BorrowID { get; set; }
+         public string StudentID { get; set; }
+         public string FacilitatorID { get; set; }
+         public DateTime BorrowedDate { get; set; }
+         public string StatusID { get; set; }
         public DateTime? DateCompleted { get; set; }
     }
 }

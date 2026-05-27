@@ -29,16 +29,6 @@ namespace IskoLendInventory
         {
             tblReturnDetails.DataSource = _dsBR.GetSelectedReturnDetail(_borrowID, _itemName);
         }
-        private void ReturnDetails_Load(object sender, EventArgs e)
-        {
-            cmbReturnDate.Items.Add("Today");
-            cmbReturnDate.Items.Add("Yesterday");
-            cmbReturnDate.Items.Add("Last 7 Days");
-            cmbReturnDate.Items.Add("This Month");
-
-            MaximizeBox = false;
-            tblReturnDetails.ClearSelection();
-        }
 
 
         private void roundedPanel1_Paint(object sender, PaintEventArgs e)

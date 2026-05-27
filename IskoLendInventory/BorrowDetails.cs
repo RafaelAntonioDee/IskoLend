@@ -29,19 +29,7 @@ namespace IskoLendInventory
         {
             tblBorrowDetail.DataSource = _dsBR.GetSelectedBorrowDetail(_borrowID);
         }
-        private void BorrowDetails_Load(object sender, EventArgs e)
-        {
-            cmbBorrowDate.Items.Add("Today");
-            cmbBorrowDate.Items.Add("Yesterday");
-            cmbBorrowDate.Items.Add("Last 7 Days");
-            cmbBorrowDate.Items.Add("This Month");
-
-            MaximizeBox = false;
-
-            
-            tblBorrowDetail.ClearSelection();
-
-        }
+        
         private void btnReturnDetails_Click(object sender, EventArgs e)
         {
             if (tblBorrowDetail.SelectedRows.Count > 0)
@@ -77,9 +65,9 @@ namespace IskoLendInventory
                 string? ItemID = _dsBR.GetSupplyID(ItemName);
                 int? BorrowedQty = Convert.ToInt32(row.Cells[1].Value);
                 string? ReturnStatus = row.Cells[2].Value.ToString();
-                if (ReturnStatus == "Completed")
+                if (ReturnStatus == "Completed"|| ReturnStatus == "Lost")
                 {
-                    MessageBox.Show("This item has already been returned.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("This transaction is already Completed.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 tblBorrowDetail.ClearSelection();

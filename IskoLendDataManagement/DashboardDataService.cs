@@ -39,23 +39,23 @@ namespace IskoLendDataManagement
             _connection.Close();
             return result != null ? result.ToString() : string.Empty;
         }
-        public void FacilitatorOff(string FacilitatorID)
-        {
-            if (string.IsNullOrEmpty(FacilitatorID)) return;
-            var statement = $"UPDATE Facilitator SET isActive = 0 Where FacilitatorID = '{FacilitatorID}';";
-            using SqlCommand command = new SqlCommand(statement, _connection);
-            _connection.Open();
-            command.ExecuteNonQuery();
-            _connection.Close();
-        }
-        public void FacilitatorOn(string FacilitatorID)
-        {
-            if (string.IsNullOrEmpty(FacilitatorID)) return;
-            var statement = $"UPDATE Facilitator SET isActive = 1 Where FacilitatorID = '{FacilitatorID}';";
-            using SqlCommand command = new SqlCommand(statement, _connection);
-            _connection.Open();
-            command.ExecuteNonQuery();
-            _connection.Close();
-        }
+        //public void FacilitatorOff(string FacilitatorID)
+        //{
+        //    if (string.IsNullOrEmpty(FacilitatorID)) return;
+        //    var statement = $"UPDATE Facilitator SET isActive = 0 Where FacilitatorID = '{FacilitatorID}';";
+        //    using SqlCommand command = new SqlCommand(statement, _connection);
+        //    _connection.Open();
+        //    command.ExecuteNonQuery();
+        //    _connection.Close();
+        //}
+        //public void FacilitatorOn(string FacilitatorID)
+        //{
+        //    if (string.IsNullOrEmpty(FacilitatorID)) return;
+        //    var statement = $"UPDATE Facilitator SET isActive = 1 Where FacilitatorID = '{FacilitatorID}';";
+        //    using SqlCommand command = new SqlCommand(statement, _connection);
+        //    _connection.Open();
+        //    command.ExecuteNonQuery();
+        //    _connection.Close();
+        //}
     }
 }

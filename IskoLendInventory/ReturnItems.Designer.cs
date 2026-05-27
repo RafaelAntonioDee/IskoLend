@@ -122,6 +122,7 @@
             label1.TabIndex = 12;
             label1.Text = "Lost";
             label1.TextAlign = ContentAlignment.TopCenter;
+            label1.Click += label1_Click;
             // 
             // ReturnItems
             // 

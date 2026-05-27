@@ -32,6 +32,7 @@ namespace IskoLendInventory
             cmbFacilitator.DropDown += cmbFacilitator_DropDown;
             this.AutoScaleMode = AutoScaleMode.None;
             this.DoubleBuffered = true;
+            cmbBorrowStatus.DropDown += cmbBorrowStatus_DropDown;
 
             LoadFacilitatorRecords();
             LoadBorrowingRecords();
@@ -41,12 +42,18 @@ namespace IskoLendInventory
 
         }
 
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
+            cmbBorrowDate.Items.Clear();
+            cmbBorrowDate.Items.Add("Date");
             cmbBorrowDate.Items.Add("Today");
             cmbBorrowDate.Items.Add("Yesterday");
             cmbBorrowDate.Items.Add("Last 7 Days");
             cmbBorrowDate.Items.Add("This Month");
+
+            cmbBorrowDate.SelectedIndex = 0;
 
             cmbActive.Items.Add("Active");
             cmbActive.Items.Add("Inactive");
@@ -92,10 +99,10 @@ namespace IskoLendInventory
         private void cmbFacilitator_SelectedIndexChanged(object sender, EventArgs e)
         {
             currFaci = lblFacilitatorID.Text;
-            dsDB.FacilitatorOff(currFaci);
+            //dsDB.FacilitatorOff(currFaci);
             lblFacilitatorID.Text = dsDB.GetFacilitatorID(cmbFacilitator.Text);
             currFaci = lblFacilitatorID.Text;
-            dsDB.FacilitatorOn(currFaci);
+            //dsDB.FacilitatorOn(currFaci);
         }
 
         private void InitCategoryComboPlaceholder()
@@ -109,6 +116,18 @@ namespace IskoLendInventory
             cmbFacilitator.DataSource = faci;
 
             cmbFacilitator.SelectedIndex = 0;
+
+            var stat = new DataTable();
+            stat.Columns.Add("StatusID", typeof(string));
+            stat.Rows.Add("Status");
+
+            cmbBorrowStatus.DataSource = null;
+            cmbBorrowStatus.DisplayMember = "StatusID";
+            cmbBorrowStatus.ValueMember = "StatusID";
+            cmbBorrowStatus.DataSource = stat;
+
+            cmbBorrowStatus.SelectedIndex = 0;
+
         }
         private void LoadFacilitatorsToCombo()
         {
@@ -277,7 +296,7 @@ namespace IskoLendInventory
                 MessageBox.Show("Please Select Your Facilitator ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            
+
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -299,7 +318,7 @@ namespace IskoLendInventory
                     MessageBox.Show("Please Select Your Facilitator ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                
+
             }
             else
             {
@@ -336,7 +355,7 @@ namespace IskoLendInventory
                     return;
                 }
 
-                
+
             }
             else
             {
@@ -474,12 +493,50 @@ namespace IskoLendInventory
             if (result == DialogResult.Yes)
             {
                 currFaci = lblFacilitatorID.Text;
-                dsDB.FacilitatorOff(currFaci);
+                //dsDB.FacilitatorOff(currFaci);
                 Dispose();
             }
-                
+
         }
 
+        private void cmbBorrowDate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadFilteredBorrowingRecords();
+        }
 
+        private void cmbBorrowStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadFilteredBorrowingRecords();
+        }
+
+        private void txtSearchBorrow_TextChanged(object sender, EventArgs e)
+        {
+            LoadFilteredBorrowingRecords();
+        }
+        private void LoadFilteredBorrowingRecords()
+        {
+            tblBorrowRecord.DataSource = dsBR.FilteredBorrowingRecord(txtSearchBorrow.Text, cmbBorrowDate.SelectedText, cmbBorrowStatus.SelectedText);
+        }
+
+        private void cmbBorrowStatus_DropDown(object sender, EventArgs e)
+        {
+            LoadCmbBorrowStatus(sender, e);
+        }
+
+        private void LoadCmbBorrowStatus(object sender, EventArgs e)
+        {
+            var stat = dsBR.GetAllStatusID();
+
+            var row = stat.NewRow();
+            row["StatusID"] = "Status";
+            stat.Rows.InsertAt(row, 0);
+
+            cmbBorrowStatus.DataSource = null;
+            cmbBorrowStatus.DisplayMember = "StatusID";
+            cmbBorrowStatus.ValueMember = "StatusID";
+            cmbBorrowStatus.DataSource = stat;
+
+            cmbBorrowStatus.SelectedIndex = 0;
+        }
     }
 }
