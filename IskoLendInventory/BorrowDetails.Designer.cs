@@ -122,7 +122,7 @@
             // 
             btnReturnDetails.BackColor = Color.Orange;
             btnReturnDetails.Controls.Add(label1);
-            btnReturnDetails.Location = new Point(524, 61);
+            btnReturnDetails.Location = new Point(538, 61);
             btnReturnDetails.Name = "btnReturnDetails";
             btnReturnDetails.Size = new Size(185, 32);
             btnReturnDetails.TabIndex = 52;
@@ -133,9 +133,9 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(3, 6);
+            label1.Location = new Point(14, 6);
             label1.Name = "label1";
-            label1.Size = new Size(179, 22);
+            label1.Size = new Size(157, 22);
             label1.TabIndex = 12;
             label1.Text = "View Return Details";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -149,7 +149,7 @@
             btnReturn.Name = "btnReturn";
             btnReturn.Size = new Size(160, 32);
             btnReturn.TabIndex = 47;
-            btnReturn.Click += btnReturnDetails_Click;
+            btnReturn.Click += btnReturn_Click;
             btnReturn.Paint += btnReturn_Paint;
             // 
             // label2
