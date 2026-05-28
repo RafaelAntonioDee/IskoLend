@@ -19,31 +19,8 @@ namespace IskoLendDataManagement
         {
             _connection = new SqlConnection(_connectionString);
         }
-        public void Add(Supply supply)
-        {
-            supplies.Add(supply);
-        }
-        public List<Supply> RetrieveSupplies()
-        {
-            var statement = "Select * From dbo.SupplyInventory";
-            SqlCommand selectCommand = new SqlCommand(statement, _connection);
-            _connection.Open();
-            SqlDataReader reader = selectCommand.ExecuteReader();
-            var supplies = new List<Supply>();
-            while (reader.Read())
-            {
-                Supply supply = new Supply
-                {
-                    SupplyID = reader.GetString(0),
-                    SupplyName = reader.GetString(1),
-                    CategoryID = reader.GetString(2),
-                    Quantity = reader.GetInt32(3)
-                };
-                supplies.Add(supply);
-            }
-            _connection.Close();
-            return supplies;
-        }
+
+
         public Supply getSupplyByID(string supID)
         {
             const string sql = "SELECT * FROM SupplyInventory  WHERE SupplyID = @SupplyID;";
@@ -100,10 +77,7 @@ namespace IskoLendDataManagement
 
             return sup;
         }
-        public List<Supply> GetSuppliesByCategory(string categoryID)
-        {
-            return supplies.Where(s => s.CategoryID == categoryID).ToList();
-        }
+
         
         public DataTable GetSupplyLogs()
         {
@@ -391,7 +365,102 @@ WHERE
             return result?.ToString() ?? string.Empty;
         }
 
+        public DataTable FilterSupplyLogs(string search, string actionType, string date)
+        {
+            // null = ALL
+            if (string.Equals(date, "Date", StringComparison.OrdinalIgnoreCase))
+                date = null;
 
+            if (string.Equals(actionType, "Type", StringComparison.OrdinalIgnoreCase))
+                actionType = null;
+
+            DateTime? fromDate = null;
+            DateTime? toDateExclusive = null;
+
+            if (date == "Today")
+            {
+                fromDate = DateTime.Today;
+                toDateExclusive = DateTime.Today.AddDays(1);
+            }
+            else if (date == "Yesterday")
+            {
+                fromDate = DateTime.Today.AddDays(-1);
+                toDateExclusive = DateTime.Today;
+            }
+            else if (date == "Last 7 Days")
+            {
+                fromDate = DateTime.Today.AddDays(-7);
+                toDateExclusive = DateTime.Today.AddDays(1);
+            }
+            else if (date == "This Month")
+            {
+                fromDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+                toDateExclusive = fromDate.Value.AddMonths(1);
+            }
+            // else: null => all dates
+
+            const string sql = @"
+SELECT 
+    LogID,
+    S.ItemName AS Supply,
+    CONCAT(F.FirstName, ' ', F.LastName) AS Facilitator,
+    ActionType,
+    ActionID,
+    InitialQty,
+    FinalQty AS NewQty,
+    LogDate AS Date
+FROM SupplyLogs AS SL
+JOIN SupplyInventory AS S 
+    ON S.SupplyID = SL.SupplyID
+JOIN Facilitator AS F 
+    ON F.FacilitatorID = SL.FacilitatorID
+WHERE
+(
+    @SearchBar IS NULL
+    OR LogID LIKE '%' + @SearchBar + '%'
+    OR S.ItemName LIKE '%' + @SearchBar + '%'
+    OR CONCAT(F.FirstName, ' ', F.LastName) LIKE '%' + @SearchBar + '%'
+    OR ActionID LIKE '%' + @SearchBar + '%'
+)
+AND
+(
+    @actionType IS NULL
+    OR SL.ActionType = @actionType
+)
+AND
+(
+    @fromDate IS NULL
+    OR SL.LogDate >= @fromDate
+)
+AND
+(
+    @toDate IS NULL
+    OR SL.LogDate <= @toDate
+);";
+
+            using var cmd = new SqlCommand(sql, _connection);
+
+            cmd.Parameters.Add("@SearchBar", SqlDbType.VarChar).Value =
+                string.IsNullOrWhiteSpace(search) ? (object)DBNull.Value : search;
+
+            cmd.Parameters.Add("@actionType", SqlDbType.VarChar).Value =
+                string.IsNullOrWhiteSpace(actionType) ? (object)DBNull.Value : actionType;
+
+            cmd.Parameters.Add("@fromDate", SqlDbType.DateTime).Value =
+                fromDate.HasValue ? fromDate.Value : (object)DBNull.Value;
+
+            cmd.Parameters.Add("@toDate", SqlDbType.DateTime).Value =
+                toDateExclusive.HasValue ? toDateExclusive.Value : (object)DBNull.Value;
+
+            using var adapter = new SqlDataAdapter(cmd);
+            var dt = new DataTable();
+
+            _connection.Open();
+            adapter.Fill(dt);
+            _connection.Close();
+
+            return dt;
+        }
 
     }
 }

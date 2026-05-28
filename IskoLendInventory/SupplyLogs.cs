@@ -28,10 +28,23 @@ namespace IskoLendInventory
         {
             MaximizeBox = false;
 
+            cmbDate.Items.Clear();
+            cmbDate.Items.Add("Date");
             cmbDate.Items.Add("Today");
             cmbDate.Items.Add("Yesterday");
             cmbDate.Items.Add("Last 7 Days");
             cmbDate.Items.Add("This Month");
+
+            cmbDate.SelectedIndex = 0;
+
+            cmbActionType.Items.Clear();
+            cmbActionType.Items.Add("Type");
+            cmbActionType.Items.Add("Borrow");
+            cmbActionType.Items.Add("Return");
+            cmbActionType.Items.Add("Add");
+            cmbActionType.Items.Add("Edit");
+
+            cmbActionType.SelectedIndex = 0;
 
             LoadTblSupplyLogs();
 
@@ -44,5 +57,21 @@ namespace IskoLendInventory
             tblSupplyLogs.Columns["Facilitator"].FillWeight = 200;
             tblSupplyLogs.ClearSelection();
         }
+
+        private void cmbDate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtSearchLog_TextChanged(sender, e);
+        }
+
+        private void cmbActionType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtSearchLog_TextChanged(sender, e);
+        }
+
+        private void txtSearchLog_TextChanged(object sender, EventArgs e)
+        {
+            tblSupplyLogs.DataSource = _dsSup.FilterSupplyLogs(txtSearchLog.Text, cmbActionType.Text, cmbDate.Text);
+        }
+
     }
 }

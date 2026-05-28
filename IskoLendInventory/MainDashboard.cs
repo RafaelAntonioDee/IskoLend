@@ -217,7 +217,7 @@ namespace IskoLendInventory
             tblBorrowSummary.ClearSelection();
 
             LoadBorrowSummary();
-
+            LoadCounts();
         }
 
         private void btnTransactions_Click(object sender, EventArgs e)

@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
             cmbActionType = new ComboBox();
             txtSearchLog = new TextBox();
             label19 = new Label();
@@ -47,16 +47,18 @@
             cmbActionType.FormattingEnabled = true;
             cmbActionType.Location = new Point(376, 88);
             cmbActionType.Name = "cmbActionType";
-            cmbActionType.Size = new Size(121, 24);
+            cmbActionType.Size = new Size(121, 28);
             cmbActionType.TabIndex = 50;
+            cmbActionType.SelectedIndexChanged += cmbActionType_SelectedIndexChanged;
             // 
             // txtSearchLog
             // 
             txtSearchLog.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSearchLog.Location = new Point(12, 88);
             txtSearchLog.Name = "txtSearchLog";
-            txtSearchLog.Size = new Size(358, 23);
+            txtSearchLog.Size = new Size(358, 26);
             txtSearchLog.TabIndex = 49;
+            txtSearchLog.TextChanged += txtSearchLog_TextChanged;
             // 
             // label19
             // 
@@ -84,8 +86,9 @@
             cmbDate.FormattingEnabled = true;
             cmbDate.Location = new Point(503, 88);
             cmbDate.Name = "cmbDate";
-            cmbDate.Size = new Size(121, 24);
+            cmbDate.Size = new Size(121, 28);
             cmbDate.TabIndex = 51;
+            cmbDate.SelectedIndexChanged += cmbDate_SelectedIndexChanged;
             // 
             // tblSupplyLogs
             // 
@@ -97,44 +100,44 @@
             tblSupplyLogs.BackgroundColor = SystemColors.Control;
             tblSupplyLogs.BorderStyle = BorderStyle.None;
             tblSupplyLogs.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.Maroon;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.Maroon;
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            tblSupplyLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.Maroon;
+            dataGridViewCellStyle9.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle9.ForeColor = Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = Color.Maroon;
+            dataGridViewCellStyle9.SelectionForeColor = Color.White;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            tblSupplyLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             tblSupplyLogs.ColumnHeadersHeight = 40;
             tblSupplyLogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.Moccasin;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            tblSupplyLogs.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = SystemColors.Window;
+            dataGridViewCellStyle10.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle10.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.False;
+            tblSupplyLogs.DefaultCellStyle = dataGridViewCellStyle10;
             tblSupplyLogs.EnableHeadersVisualStyles = false;
             tblSupplyLogs.GridColor = Color.DimGray;
             tblSupplyLogs.Location = new Point(13, 122);
             tblSupplyLogs.MultiSelect = false;
             tblSupplyLogs.Name = "tblSupplyLogs";
             tblSupplyLogs.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = Color.Maroon;
-            dataGridViewCellStyle3.SelectionForeColor = Color.White;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            tblSupplyLogs.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = SystemColors.Control;
+            dataGridViewCellStyle11.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle11.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = Color.Maroon;
+            dataGridViewCellStyle11.SelectionForeColor = Color.White;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            tblSupplyLogs.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             tblSupplyLogs.RowHeadersVisible = false;
             tblSupplyLogs.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.SelectionBackColor = Color.Moccasin;
-            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
-            tblSupplyLogs.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.BackColor = SystemColors.Control;
+            dataGridViewCellStyle12.SelectionBackColor = Color.Moccasin;
+            dataGridViewCellStyle12.SelectionForeColor = Color.Black;
+            tblSupplyLogs.RowsDefaultCellStyle = dataGridViewCellStyle12;
             tblSupplyLogs.RowTemplate.Height = 40;
             tblSupplyLogs.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             tblSupplyLogs.Size = new Size(962, 415);
