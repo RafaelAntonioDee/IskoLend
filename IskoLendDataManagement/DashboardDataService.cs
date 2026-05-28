@@ -39,6 +39,47 @@ namespace IskoLendDataManagement
             _connection.Close();
             return result != null ? result.ToString() : string.Empty;
         }
+
+        public int CountAvailableItems()
+        {
+            var statement = "SELECT COUNT(*) FROM SupplyInventory Where Quantity > 0;";
+            SqlCommand command = new SqlCommand(statement, _connection);
+            _connection.Open();
+            var result = command.ExecuteScalar();
+            _connection.Close();
+            return result != null ? Convert.ToInt32(result) : 0;
+        }
+
+        public int CountOngoingTransactions()
+        {
+            var statement = "SELECT COUNT(*) FROM BorrowingRecord Where DateCompleted IS NULL;";
+            SqlCommand command = new SqlCommand(statement, _connection);
+            _connection.Open();
+            var result = command.ExecuteScalar();
+            _connection.Close();
+            return result != null ? Convert.ToInt32(result) : 0;
+        }
+
+        public int CountLostTransactions()
+        {
+            var statement = "SELECT COUNT(*) FROM BorrowingDetails Where ItemStatusID = 'S004';";
+            SqlCommand command = new SqlCommand(statement, _connection);
+            _connection.Open();
+            var result = command.ExecuteScalar();
+            _connection.Close();
+            return result != null ? Convert.ToInt32(result) : 0;
+        }
+
+        public int CountCompletedTransactions()
+        {
+            var statement = "SELECT COUNT(*) FROM BorrowingRecord Where DateCompleted IS NOT NULL;";
+            SqlCommand command = new SqlCommand(statement, _connection);
+            _connection.Open();
+            var result = command.ExecuteScalar();
+            _connection.Close();
+            return result != null ? Convert.ToInt32(result) : 0;
+        }
+
         //public void FacilitatorOff(string FacilitatorID)
         //{
         //    if (string.IsNullOrEmpty(FacilitatorID)) return;
@@ -57,5 +98,7 @@ namespace IskoLendDataManagement
         //    command.ExecuteNonQuery();
         //    _connection.Close();
         //}
+
+
     }
 }

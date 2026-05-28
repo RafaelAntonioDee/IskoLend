@@ -604,7 +604,7 @@
             cmbFacilitator.FormattingEnabled = true;
             cmbFacilitator.Location = new Point(91, 237);
             cmbFacilitator.Name = "cmbFacilitator";
-            cmbFacilitator.Size = new Size(114, 26);
+            cmbFacilitator.Size = new Size(114, 23);
             cmbFacilitator.TabIndex = 39;
             cmbFacilitator.SelectedIndexChanged += cmbFacilitator_SelectedIndexChanged;
             // 
@@ -881,7 +881,7 @@
             cmbBorrowStatus.FormattingEnabled = true;
             cmbBorrowStatus.Location = new Point(366, 109);
             cmbBorrowStatus.Name = "cmbBorrowStatus";
-            cmbBorrowStatus.Size = new Size(107, 28);
+            cmbBorrowStatus.Size = new Size(107, 24);
             cmbBorrowStatus.TabIndex = 38;
             cmbBorrowStatus.DropDown += cmbBorrowStatus_DropDown;
             cmbBorrowStatus.SelectedIndexChanged += cmbBorrowStatus_SelectedIndexChanged;
@@ -893,7 +893,7 @@
             cmbBorrowDate.FormattingEnabled = true;
             cmbBorrowDate.Location = new Point(253, 109);
             cmbBorrowDate.Name = "cmbBorrowDate";
-            cmbBorrowDate.Size = new Size(107, 28);
+            cmbBorrowDate.Size = new Size(107, 24);
             cmbBorrowDate.TabIndex = 37;
             cmbBorrowDate.SelectedIndexChanged += cmbBorrowDate_SelectedIndexChanged;
             // 
@@ -902,7 +902,7 @@
             txtSearchBorrow.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSearchBorrow.Location = new Point(20, 111);
             txtSearchBorrow.Name = "txtSearchBorrow";
-            txtSearchBorrow.Size = new Size(227, 26);
+            txtSearchBorrow.Size = new Size(227, 23);
             txtSearchBorrow.TabIndex = 35;
             txtSearchBorrow.TextChanged += txtSearchBorrow_TextChanged;
             // 
@@ -1174,7 +1174,7 @@
             cmbCategory.FormattingEnabled = true;
             cmbCategory.Location = new Point(253, 109);
             cmbCategory.Name = "cmbCategory";
-            cmbCategory.Size = new Size(107, 28);
+            cmbCategory.Size = new Size(107, 24);
             cmbCategory.TabIndex = 37;
             cmbCategory.SelectedIndexChanged += cmbCategory_SelectedIndexChanged;
             // 
@@ -1183,7 +1183,7 @@
             txtSearchSupply.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSearchSupply.Location = new Point(20, 111);
             txtSearchSupply.Name = "txtSearchSupply";
-            txtSearchSupply.Size = new Size(227, 26);
+            txtSearchSupply.Size = new Size(227, 23);
             txtSearchSupply.TabIndex = 35;
             txtSearchSupply.TextChanged += txtSearchSupply_TextChanged;
             // 
@@ -1353,7 +1353,7 @@
             cmbPosition.FormattingEnabled = true;
             cmbPosition.Location = new Point(253, 109);
             cmbPosition.Name = "cmbPosition";
-            cmbPosition.Size = new Size(107, 28);
+            cmbPosition.Size = new Size(107, 24);
             cmbPosition.TabIndex = 37;
             cmbPosition.SelectedIndexChanged += cmbPosition_SelectedIndexChanged;
             // 
@@ -1362,7 +1362,7 @@
             txtSearchFacilitator.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSearchFacilitator.Location = new Point(20, 111);
             txtSearchFacilitator.Name = "txtSearchFacilitator";
-            txtSearchFacilitator.Size = new Size(227, 26);
+            txtSearchFacilitator.Size = new Size(227, 23);
             txtSearchFacilitator.TabIndex = 35;
             txtSearchFacilitator.TextChanged += txtSearchFacilitator_TextChanged;
             // 
@@ -1391,11 +1391,11 @@
             AutoScaleMode = AutoScaleMode.None;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1100, 750);
+            Controls.Add(pnlSupplies);
+            Controls.Add(pnlSideBar);
             Controls.Add(pnlDashboard);
             Controls.Add(pnlFacilitators);
             Controls.Add(pnlBorrowRecord);
-            Controls.Add(pnlSupplies);
-            Controls.Add(pnlSideBar);
             FormBorderStyle = FormBorderStyle.None;
             Name = "MainDashboard";
             StartPosition = FormStartPosition.CenterScreen;

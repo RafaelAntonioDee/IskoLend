@@ -34,6 +34,7 @@ namespace IskoLendInventory
             this.DoubleBuffered = true;
             cmbBorrowStatus.DropDown += cmbBorrowStatus_DropDown;
 
+            LoadCounts();
             LoadFacilitatorRecords();
             LoadBorrowingRecords();
             LoadBorrowSummary();
@@ -42,7 +43,13 @@ namespace IskoLendInventory
 
         }
 
-
+        private void LoadCounts()
+        {
+            lblTotalSupply.Text = dsDB.CountAvailableItems().ToString();
+            lblCurrentlyLent.Text = dsDB.CountOngoingTransactions().ToString();
+            lblLostSupplies.Text = dsDB.CountLostTransactions().ToString();
+            lblTransactionsDone.Text = dsDB.CountCompletedTransactions().ToString();
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -289,10 +296,13 @@ namespace IskoLendInventory
             if (!string.IsNullOrEmpty(currFaci))
             {
                 AddSupply form = new AddSupply(dsSup, currFaci);
-                form.ShowDialog();
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    tblSupplies.ClearSelection();
+                    LoadSupplies();
+                }
 
-                tblSupplies.ClearSelection();
-                LoadSupplies();
+                
             }
             else
             {

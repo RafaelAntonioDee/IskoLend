@@ -47,7 +47,7 @@
             cmbActionType.FormattingEnabled = true;
             cmbActionType.Location = new Point(376, 88);
             cmbActionType.Name = "cmbActionType";
-            cmbActionType.Size = new Size(121, 28);
+            cmbActionType.Size = new Size(121, 24);
             cmbActionType.TabIndex = 50;
             // 
             // txtSearchLog
@@ -55,7 +55,7 @@
             txtSearchLog.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSearchLog.Location = new Point(12, 88);
             txtSearchLog.Name = "txtSearchLog";
-            txtSearchLog.Size = new Size(358, 26);
+            txtSearchLog.Size = new Size(358, 23);
             txtSearchLog.TabIndex = 49;
             // 
             // label19
@@ -84,7 +84,7 @@
             cmbDate.FormattingEnabled = true;
             cmbDate.Location = new Point(503, 88);
             cmbDate.Name = "cmbDate";
-            cmbDate.Size = new Size(121, 28);
+            cmbDate.Size = new Size(121, 24);
             cmbDate.TabIndex = 51;
             // 
             // tblSupplyLogs
@@ -115,7 +115,6 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             tblSupplyLogs.DefaultCellStyle = dataGridViewCellStyle2;
-            tblSupplyLogs.Enabled = false;
             tblSupplyLogs.EnableHeadersVisualStyles = false;
             tblSupplyLogs.GridColor = Color.DimGray;
             tblSupplyLogs.Location = new Point(13, 122);
