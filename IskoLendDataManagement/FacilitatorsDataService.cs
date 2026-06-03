@@ -21,7 +21,7 @@ namespace IskoLendDataManagement
         }
         public DataTable GetAllFacilitatorRecord()
         {
-            var statement = "Select FacilitatorID ,D.Position ,FirstName ,LastName ,isActive From Facilitator AS F JOIN Designation AS D ON D.DesignationID = F.DesignationID WHERE IsActive = 1;";
+            var statement = "Select FacilitatorID ,D.Position ,FirstName ,LastName From Facilitator AS F JOIN Designation AS D ON D.DesignationID = F.DesignationID WHERE IsActive = 1;";
             SqlDataAdapter adapter = new SqlDataAdapter(statement, _connection);
             _connection.Open();
             DataTable dataTable = new DataTable();
@@ -47,8 +47,7 @@ SELECT
     FacilitatorID,
     D.Position,
     FirstName,
-    LastName,
-    IsActive
+    LastName
 FROM Facilitator AS F
 JOIN Designation AS D 
     ON D.DesignationID = F.DesignationID
